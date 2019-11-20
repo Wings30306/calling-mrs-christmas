@@ -35,7 +35,7 @@ This website is for the (fictional) company Calling Mrs Christmas, a startup whi
 
 ### Wireframes, diagrams...
 _This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser._
-
+<!--
 ## Features
 
 In this section, you should go over the different parts of your project, and describe each in a sentence or so.
@@ -90,15 +90,15 @@ In particular, you should provide all details of the differences between the dep
 
 In addition, if it is not obvious, you should also describe how to run your code locally.
 
-
+-->
 ## Credits
-
+<!--
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
 
 ### Media
 - The photos used in this site were obtained from ...
-
+-->
 ### Acknowledgements
 
 - Thank you to the fabulous [Carole Matthews](https://www.carolematthews.com/), author of the book [Calling Mrs Christmas](https://www.carolematthews.com/books/calling-mrs-christmas/), without whose wonderful story and kind permission this project would not have happened. 
