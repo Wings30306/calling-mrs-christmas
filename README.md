@@ -4,14 +4,37 @@ Calling Mrs Christmas! You haven't got the time or the energy for Christmas this
 
 Cassie and her mischievous little elves have been working hard to make their clients' Christmases magical since 2013, from getting those beloved baubles down from the attic to lavish holidays to Lapland, the home of Santa himself, including a visit to the world-famous Ice Hotel. Want to see what we have to offer? Find out more at [Calling Mrs Christmas]()!
  
+
 ## UX
  
-Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+This website is for the (fictional) company Calling Mrs Christmas, a startup which offers Christmas-related services to its customers. The company is based in Hemel Hampstead, UK and run by Cassie Smith and her partner Jim. 
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+### User Stories
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+#### Cassie Smith, CEO
+- As the company owner, I want have an online presence, so new clients can find out more about the company.
+- As the company owner, I want to showcase my services for potential customers, so they know the range we offer.
+- As the company owner, I want to introduce my team to my customers, so they know they are appreciated. It's not just me on my own doing all this, you know.
+- As the company owner, I want to keep track of orders and a calendar for when we're doing what.
+- As the company owner, I want to be paid a deposit (10%) in advance to help with outlay: wrapping paper, transport costs etc., with the remainder to be paid on delivery.
+
+#### Customers
+
+##### Potential customer
+- As a potential customer I want to know more about the company: who are they, where are they based?
+- As a potential customer, I want to see a portfolio of past projects, so I can decide whether they're the right fit for what I need.
+- As a potential customer, I want to see the services on order and know in advance how much they cost. 
+- As a potential customer, I want to read reviews. An average score would be helpful too in deciding whether to trust this company with my money.
+
+##### Current customer
+- As a customer, I want a clean and easy way to make a booking for services. A calendar where I can see which dates are still available would be helpful.
+- As a customer, I want to keep track of my order. (Nice to have: a reminder when Calling Mrs Christmas will be providing the booked services.)
+
+##### Past customer
+- As a customer whose order has been executed, I want to leave a review for Cassie and her team. 
+
+### Wireframes, diagrams...
+_This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser._
 
 ## Features
 
