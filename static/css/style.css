@@ -7,3 +7,7 @@
 .footer {
     background-color: darkgreen;
 }
+
+body {
+    background-position: right;
+}
