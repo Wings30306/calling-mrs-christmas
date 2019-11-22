@@ -2,33 +2,70 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-<title>Calling Mrs Christmas</title>
-</head>
-<body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<ul class="nav ">
-<li class="nav-item">
-<a class="nav-link active" href="/">Active</a>
-</li>
-<li class="nav-item">
-<a class="nav-link" href="#">Link</a>
-</li>
-<li class="nav-item">
-<a class="nav-link disabled" href="#">Disabled</a>
-</li>
-</ul>
-</nav>
-{% block content %}
-{% endblock %}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>Calling Mrs Christmas</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <ul class="nav ">
+        <li class="nav-item">
+          <a class="nav-link active" href="/">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+    </nav>
+    {% block content %} {% endblock %}
+    <footer>
+      <!--Christmas countdown clocks obtained from https://www.days-until-christmas.co.uk/website-xmas-countdown.htm-->
+      <!--Small clock for mobiles-->
+      <div
+        id="xcd3249"
+        class="d-md-none"
+        onclick="window.open('https://www.days-until-christmas.co.uk');"
+      >
+        <a
+          href="https://www.days-until-christmas.co.uk"
+          id="xcda3249"
+          target="_blank"
+          >Days Until Christmas</a
+        >
+        <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3249.js"></script>
+      </div>
+      <!--Large clock for larger screens-->
+      <div
+        class="d-none d-sm-none d-md-block"
+        id="xcd3250"
+        onclick="window.open('https://www.days-until-christmas.co.uk');"
+      >
+        <a
+          href="https://www.days-until-christmas.co.uk"
+          id="xcda3250"
+          target="_blank"
+          >Days Until Christmas</a
+        >
+        <!--Script left here because otherwise, the number shows up outside of the image-->
+        <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3250.js"></script>
+      </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
 </html>
