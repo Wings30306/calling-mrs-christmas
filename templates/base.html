@@ -14,56 +14,110 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <title>Calling Mrs Christmas</title>
+
+    <!-- Custom fonts for this template -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/business-casual.min.css' %}" rel="stylesheet" />
+
+    <!-- Custom styles for this site-->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
+
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <ul class="nav ">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-    </nav>
-    {% block content %} {% endblock %}
-    <footer>
-      <!--Christmas countdown clocks obtained from https://www.days-until-christmas.co.uk/website-xmas-countdown.htm-->
-      <!--Small clock for mobiles-->
-      <div
-        id="xcd3249"
-        class="d-md-none"
-        onclick="window.open('https://www.days-until-christmas.co.uk');"
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3"
+        >Calling Mrs</span
       >
+      <span class="site-heading-lower">Christmas</span>
+    </h1>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+      <div class="container">
         <a
-          href="https://www.days-until-christmas.co.uk"
-          id="xcda3249"
-          target="_blank"
-          >Days Until Christmas</a
+          class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
+          href="#"
+          ><img src="{% static 'img/callingmrschristmas.png'%}" alt=""></a
         >
-        <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3249.js"></script>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item active px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="index.html"
+                >Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="about.html"
+                >About</a
+              >
+            </li>
+            <li class="nav-item px-lg-4">
+              <a
+                class="nav-link text-uppercase text-expanded"
+                href="products.html"
+                >Products</a
+              >
+            </li>
+            <li class="nav-item px-lg-4">
+              <a class="nav-link text-uppercase text-expanded" href="store.html"
+                >Store</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-      <!--Large clock for larger screens-->
-      <div
-        class="d-none d-sm-none d-md-block"
-        id="xcd3250"
-        onclick="window.open('https://www.days-until-christmas.co.uk');"
-      >
-        <a
-          href="https://www.days-until-christmas.co.uk"
-          id="xcda3250"
-          target="_blank"
-          >Days Until Christmas</a
-        >
-        <!--Script left here because otherwise, the number shows up outside of the image-->
-        <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3250.js"></script>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer class="footer text-faded text-center py-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="m-0 small">Copyright &copy; Calling Mrs Christmas 2019</p>
+          </div>
+          <div class="col-md-6">
+            <!--Christmas countdown clocks obtained from https://www.days-until-christmas.co.uk/website-xmas-countdown.htm-->
+            <!--Small clock for mobiles-->
+            <div
+              id="xcd3249"
+              onclick="window.open('https://www.days-until-christmas.co.uk');"
+            >
+              <a
+                href="https://www.days-until-christmas.co.uk"
+                id="xcda3249"
+                target="_blank"
+                >Days Until Christmas</a
+              >
+              <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3249.js"></script>
+            </div>
+           
+          </div>
+        </div>
       </div>
     </footer>
+    <footer></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>

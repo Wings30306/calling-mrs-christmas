@@ -101,7 +101,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 -->
 ### Code-related acknowledgements
 - Christmas countdown clocks obtained from [Days Until Christmas](https://www.days-until-christmas.co.uk/website-xmas-countdown.htm). Clock style 2 was used for mobile as it's much smaller and less obtrusive. Clock style 3 was used for larger screens.
+- Telephone horn in logo found on [PNG Guru](https://www.pngguru.com/free-transparent-background-png-clipart-vhzzo)
 
 ### Acknowledgements
-
 - Thank you to the fabulous [Carole Matthews](https://www.carolematthews.com/), author of the book [Calling Mrs Christmas](https://www.carolematthews.com/books/calling-mrs-christmas/), without whose wonderful story and kind permission this project would not have happened. 
