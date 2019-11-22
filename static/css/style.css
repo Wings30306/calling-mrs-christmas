@@ -2,3 +2,8 @@
     width: 50vw;
     height: auto;
 }
+
+#mainNav,
+.footer {
+    background-color: darkgreen;
+}
