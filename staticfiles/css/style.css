@@ -1,0 +1,17 @@
+.navbar-brand img {
+    width: 50vw;
+    height: auto;
+}
+
+#mainNav,
+.footer {
+    background-color: darkgreen;
+}
+
+body {
+    background-position: right;
+}
+
+.cta {
+    background-color: rgba(128, 0, 0, .9);
+}
