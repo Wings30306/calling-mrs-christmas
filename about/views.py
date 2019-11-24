@@ -1,5 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
+from django.contrib import messages
+from .models import Employee
 
 # Create your views here.
 def index_view(request):
@@ -13,3 +15,16 @@ def about_view(request):
         "object_list": object_list
         }
     return render(request, template_name, context)
+
+def detail_view(request, id):
+    template_name = "staffmember.html"
+    obj = get_object_or_404(User, id=id)
+    if obj.is_staff == True:
+        context = {
+            "obj": obj
+        }
+    else:
+        messages.error(request, 'No staff member matching this id')
+        return redirect(about_view)
+    return render(request, template_name, context)
+    
