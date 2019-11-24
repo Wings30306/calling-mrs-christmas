@@ -5,7 +5,11 @@
 
 #mainNav,
 .footer {
-    background-color: darkgreen;
+    background-color: #013006;
+}
+
+.section-heading .section-heading-lower {
+    font-size: 2rem;
 }
 
 body {
@@ -15,3 +19,15 @@ body {
 .cta {
     background-color: rgba(128, 0, 0, .9);
 }
+
+@media screen and (min-width: 481px) {
+    .section-heading .section-heading-lower {
+        font-size: 2.5rem;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .section-heading .section-heading-lower {
+        font-size: 3rem;
+    }
+  }
