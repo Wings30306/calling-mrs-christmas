@@ -1,0 +1,68 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="page-section about-heading">
+  <div class="container">
+    <img
+      class="img-fluid rounded about-heading-img mb-3 mb-lg-0"
+      src="img/about.jpg"
+      alt=""
+    />
+    <div class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+          <div class="bg-faded rounded p-5">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper"
+                >Bringing back the Magic of Christmas</span
+              >
+              <span class="section-heading-lower">About Our Company</span>
+            </h2>
+            <p>
+              Founded in 2013 by Cassie Smith, our establishment has been
+              serving up rich coffee sourced from artisan farmers in various
+              regions of South and Central America. We are dedicated to
+              travelling the world, finding the best coffee, and bringing back
+              to you here in our cafe.
+            </p>
+            <p class="mb-0">
+              We guarantee that you will fall in <em>lust</em> with our decadent
+              blends the moment you walk inside until you finish your last sip.
+              Join us for your daily routine, an outing with friends, or simply
+              just to enjoy some alone time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <img
+      class="img-fluid rounded about-heading-img mb-3 mb-lg-0"
+      src="{% static 'img/about.jpg' %}"
+      alt="Meet the team"
+    />
+    <div class="about-heading-content">
+      <div class="row">
+        <div class="col-xl-9 col-lg-10 mx-auto">
+          <div class="bg-faded rounded p-5">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">Not a one-man job</span>
+              <span class="section-heading-lower">Meet the team</span>
+            </h2>
+            <div class="row">
+              {% for instance in object_list %}
+              <div class="col-md-6">
+                <div class="card team-member">
+                    <img src="{{ instance.profile_pic }}" alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}">
+                  <h2>{{ instance.first_name }} {{ instance.last_name }}</h2>
+                  <h3>{{ instance.title }}</h3>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

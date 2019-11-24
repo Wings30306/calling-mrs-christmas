@@ -100,6 +100,8 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The photos used in this site were obtained from Pexels, specifically:
     - Background: 
     - Intro: [Photo by Thanakorn Phanthura](https://www.pexels.com/photo/man-and-woman-standing-beside-christmas-tree-3183385/)
+    - About: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
+    
 -->
 ### Code-related acknowledgements
 - Christmas countdown clocks obtained from [Days Until Christmas](https://www.days-until-christmas.co.uk/website-xmas-countdown.htm). Clock style 2 was used for mobile as it's much smaller and less obtrusive. Clock style 3 was used for larger screens.
