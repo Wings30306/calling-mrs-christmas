@@ -20,6 +20,10 @@ body {
   background-color: rgba(128, 0, 0, 0.9);
 }
 
+.rounded {
+    border-radius: 1rem;
+}
+
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
@@ -39,4 +43,11 @@ body {
     position: relative;
     z-index: 1;
   }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 80%;
+    }
+    
 }

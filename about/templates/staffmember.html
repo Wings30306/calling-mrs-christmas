@@ -2,13 +2,13 @@
 <section class="page-section about-heading">
   <div class="container">
     <img
-      class="img-fluid rounded about-heading-img mb-3 mb-lg-0"
-      src="{{ obj.employee.profile_pic.url }}"
+      class="img-fluid rounded about-heading-img"
+      src="{% static 'img/staffmember.jpg' %}"
       alt="Profile pic for {{ obj.first_name }}"
     />
     <div class="about-heading-content">
       <div class="row">
-        <div class="col-xl-9 col-lg-10 mx-auto">
+        <div class="col-xl-9 col-lg-10 ml-auto">
           <div class="bg-faded rounded p-5">
             <h2 class="section-heading mb-4">
               <span class="section-heading-upper"
@@ -18,7 +18,7 @@
                 >{{ obj.first_name }} {{ obj.last_name}}</span
               >
             </h2>
-            <p class="mb-0">
+            <p>
               {{ obj.employee.intro }}
             </p>
           </div>
@@ -26,6 +26,6 @@
       </div>
     </div>
   </div>
-
-  {% endblock %}
 </section>
+  {% endblock %}
+
