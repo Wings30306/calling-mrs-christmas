@@ -100,7 +100,8 @@ In addition, if it is not obvious, you should also describe how to run your code
 - The photos used in this site were obtained from Pexels, specifically:
     - Background: 
     - Intro: [Photo by Thanakorn Phanthura](https://www.pexels.com/photo/man-and-woman-standing-beside-christmas-tree-3183385/)
-    - About: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
+    - About: [Photo by Oleg Magni](https://www.pexels.com/photo/green-christmas-tree-with-baubles-1762887/)
+    - Team: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
     
 -->
 ### Code-related acknowledgements

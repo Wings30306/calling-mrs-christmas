@@ -1,33 +1,42 @@
 .navbar-brand img {
-    width: 50vw;
-    height: auto;
+  width: 50vw;
+  height: auto;
 }
 
 #mainNav,
 .footer {
-    background-color: #013006;
+  background-color: #013006;
 }
 
 .section-heading .section-heading-lower {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 body {
-    background-position: right;
+  background-position: right;
 }
 
 .cta {
-    background-color: rgba(128, 0, 0, .9);
+  background-color: rgba(128, 0, 0, 0.9);
 }
 
 @media screen and (min-width: 481px) {
-    .section-heading .section-heading-lower {
-        font-size: 2.5rem;
-    }
+  .section-heading .section-heading-lower {
+    font-size: 2.5rem;
   }
+}
 
-  @media screen and (min-width: 769px) {
-    .section-heading .section-heading-lower {
-        font-size: 3rem;
-    }
+@media screen and (min-width: 769px) {
+  .section-heading .section-heading-lower {
+    font-size: 3rem;
   }
+}
+
+@media (min-width: 992px) {
+  .about-heading .about-heading-content {
+    margin-top: -30rem;
+    margin-bottom: 10rem;
+    position: relative;
+    z-index: 1;
+  }
+}
