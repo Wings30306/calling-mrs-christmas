@@ -23,7 +23,9 @@ from about.views import index_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index_view, name="index"),
-    path('about/', include('about.urls'))
+    path('about/', include('about.urls')),
+    path('services/', include('services.urls')),
+    path('contact/', include('contact.urls')),
 ]
  
 urlpatterns += staticfiles_urlpatterns()
