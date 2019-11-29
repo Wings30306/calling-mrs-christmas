@@ -12,21 +12,5 @@ class Employee(models.Model):
     profile_pic = models.ImageField()
     is_staff = models.BooleanField(default=True)
 
-    def save(self, *args, **kwargs):
-        """
-        - installed 'django-cleanup' to auto-remove old image.
-        - installed 'pillow' to resize larger images.
-        - resizes all image formats except '.gif' as these cannot be resized
-        """
-        super(Employee, self).save(*args, **kwargs)
-        if self.profile_pic:
-            extension = "png"
-            img = Image.open(self.profile_pic)
-            new = ImageOps.fit(img, (500, 500))
-            temp = storage.open(self.profile_pic.name, "w")
-            new.save(temp.name, extension)
-            temp.close()
-            # continue if image format is not .gif
-            super(Employee, self).save(*args, **kwargs)
 
     

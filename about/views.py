@@ -19,7 +19,8 @@ def about_view(request):
 def detail_view(request, id):
     template_name = "staffmember.html"
     obj = get_object_or_404(User, id=id)
-    if obj.is_staff == True:
+    if obj.employee.is_staff == True:
+        print(obj.employee.profile_pic)
         context = {
             "obj": obj
         }
