@@ -21,13 +21,13 @@ body {
 }
 
 .rounded {
-    border-radius: 1rem;
+  border-radius: 1rem;
 }
 
 .team-member img {
-    width: 50%;
-    margin-left: auto;
-    border-radius: 50%;
+  width: 50%;
+  margin-left: auto;
+  border-radius: 50%;
 }
 
 @media screen and (min-width: 481px) {
@@ -51,13 +51,18 @@ body {
   }
 
   .about-heading .about-heading-img {
-    margin-bottom: 10rem
-}
+    margin-bottom: 10rem;
+  }
+
+  .staff-image {
+    width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+  }
 }
 
 @media (min-width: 1200px) {
-    .container {
-        max-width: 80%;
-    }
-    
+  .container {
+    max-width: 80%;
+  }
 }
