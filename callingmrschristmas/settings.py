@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     #OWN APPS
     'about',
     'services',
+    'contact',
 ]
 
 MIDDLEWARE = [
