@@ -30,6 +30,14 @@ body {
   border-radius: 50%;
 }
 
+.service-image {
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
