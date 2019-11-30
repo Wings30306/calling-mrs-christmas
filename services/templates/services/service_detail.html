@@ -1,0 +1,29 @@
+{% extends "base.html" %} {% block content %}
+<section class="page-section about-heading">
+    <div class="container">
+
+        <img
+        src="/media/{{ object.image }}"
+        alt="{{ object.image_description }}"
+        class="about-heading-img service-detail-image"
+      />
+      <div class="about-heading-content">
+        <div class="row">
+          <div class="col-xl-9 col-lg-10 ml-auto">
+            <div class="bg-faded rounded p-5">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower"
+                  >{{ object.title }}</span
+                >
+              </h2>
+              <p>
+                  {{ object.detailed_description }}
+              </p>
+              <h5>{{ object.price }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

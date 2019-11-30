@@ -62,10 +62,10 @@ body {
     margin-bottom: 10rem;
   }
 
-  .staff-image {
+  .staff-image,
+  .service-detail-image {
     width: 60%;
     height: auto;
-    margin-bottom: 20px;
   }
 }
 
