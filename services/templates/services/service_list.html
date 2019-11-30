@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<div class="container-fluid">
+  <div class="row">
+    {% for instance in object_list %}
+    <div class="col-6 col-md-4 col-lg-3 col-xl-2">
+      <div class="card">
+        <h3>{{ instance.title }}</h3>
+        <img
+          src="/media/{{ instance.image }}"
+          alt="{{ instance.image_description }}"
+          class="service-image"
+        />
+        <p>{{ instance.brief_description }}</p>
+        <h5>{{ instance.price }}</h5>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+      <div class="card">
+        <p>No services to show yet, please check back soon!</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
