@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from .models import Service
 
@@ -6,5 +6,5 @@ from .models import Service
 class ServiceListView(ListView):
     queryset = Service.objects.all()
 
-def services_detail_view(request, *args, **kwargs):
-    return render(request, "services_detail.html")
+class ServiceDetailView(DetailView):
+    model = Service
