@@ -17,7 +17,9 @@ This website is for the (fictional) company Calling Mrs Christmas, a startup whi
 - As the company owner, I want to introduce my team to my customers, so they know they are appreciated. It's not just me on my own doing all this, you know.
 - As the company owner, I want to keep track of orders and a calendar for when we're doing what.
 - As the company owner, I want to be paid a deposit (10%) in advance to help with outlay: wrapping paper, transport costs etc., with the remainder to be paid on delivery.
-
+- Nice to have: As the company owner, I'd like a map so users can see where our different branches are located. (Currently there's only one, but we're looking to expand so that would really future-proof the website.)
+<!--Note to self: https://pypi.org/project/django-leaflet/ to integrate Leaflet map
+Tutorial: http://blog.mathieu-leplatre.info/geodjango-maps-with-leaflet.html-->
 #### Customers
 
 ##### Potential customer
