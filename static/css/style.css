@@ -1,3 +1,9 @@
+img.site_heading {
+  margin: 2em;
+  width: 50vw;
+  height: auto;
+}
+
 .navbar-brand img {
   width: 50vw;
   height: auto;
