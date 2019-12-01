@@ -24,10 +24,29 @@ body {
   border-radius: 1rem;
 }
 
+.card.team-member {
+  height: 100%;
+}
+
 .team-member img {
   width: 50%;
   margin-left: auto;
   border-radius: 50%;
+}
+
+.service-image,
+.card img {
+  width: 80%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+
+.card {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media screen and (min-width: 481px) {
@@ -54,10 +73,10 @@ body {
     margin-bottom: 10rem;
   }
 
-  .staff-image {
+  .staff-image,
+  .service-detail-image {
     width: 60%;
     height: auto;
-    margin-bottom: 20px;
   }
 }
 
