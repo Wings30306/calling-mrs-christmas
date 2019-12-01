@@ -8,11 +8,11 @@
 </div>
 <hr />
 <div class="container bg-faded my-3 p-3 text-center">
-  <h2>Visit our office!</h2>
+  <h2>Visit our office{% if object_list|length > 1 %}s{% endif %}!</h2>
   <div class="row">
     {% for instance in object_list %} {% if object_list|length == 1 %}
     <div class="col-12">
-      {% elif object_list|length < 1 %}
+      {% elif object_list|length > 1 %}
       <div class="col-md-6">
         {% endif %}
         <div class="card">
@@ -23,7 +23,7 @@
           />
           <p>{{ instance.street }} {{ instance.number }}</p>
         </div>
-
+      </div>
         {% empty %}
         <h5>Coming soon!</h5>
         {% endfor %}
