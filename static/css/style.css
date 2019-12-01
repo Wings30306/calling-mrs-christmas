@@ -30,12 +30,19 @@ body {
   border-radius: 50%;
 }
 
-.service-image {
+.service-image,
+.card img {
   width: 80%;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 20px auto;
   border-radius: 5px;
+}
+
+.card {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
 }
 
 @media screen and (min-width: 481px) {
