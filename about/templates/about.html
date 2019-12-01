@@ -4,7 +4,7 @@
     <img
       class="img-fluid rounded about-heading-img mb-3 mb-lg-0 col-lg-6 col-xl-5"
       src="{% static 'img/about.jpg' %}"
-      alt=""
+      alt="Our office Christmas tree with silver baubles and tinsel, with red parcels at the bottom"
     />
     <div class="about-heading-content">
       <div class="row">
@@ -17,17 +17,19 @@
               <span class="section-heading-lower">About Our Company</span>
             </h2>
             <p>
-              Founded in 2013 by Cassie Smith, our establishment has been
-              serving up rich coffee sourced from artisan farmers in various
-              regions of South and Central America. We are dedicated to
-              travelling the world, finding the best coffee, and bringing back
-              to you here in our cafe.
+              Founded in 2013 by Cassie Smith, our company has been making
+              Christmas magical again for the people of Hemel Hempstead and
+              surrounding areas. So far, we've catered for both office and home
+              parties, decked out Christmas trees large and small, organised
+              lavish Christmas-themed getaways up to and including a visit to
+              Father Christmas himself, and once we were even asked to help with
+              a festive deep-clean!
             </p>
             <p class="mb-0">
-              We guarantee that you will fall in <em>lust</em> with our decadent
-              blends the moment you walk inside until you finish your last sip.
-              Join us for your daily routine, an outing with friends, or simply
-              just to enjoy some alone time.
+              Too good to be true? It's not. We guarantee that you will fall in
+              <em>love</em> with the season again even if you're an absolute
+              Scrooge who thinks it's all just humbug when you see what we can
+              do. Let us help make your Christmas magical again!
             </p>
           </div>
         </div>
@@ -52,7 +54,10 @@
               {% for instance in object_list %}
               <div class="col-md-6">
                 <div class="card team-member">
-                    <img src="/media/{{ instance.employee.profile_pic }}" alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}">
+                  <img
+                    src="/media/{{ instance.employee.profile_pic }}"
+                    alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}"
+                  />
                   <h2>{{ instance.first_name }} {{ instance.last_name }}</h2>
                   <h3>{{ instance.employee.title }}</h3>
                 </div>
