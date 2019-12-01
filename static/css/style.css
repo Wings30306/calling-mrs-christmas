@@ -24,6 +24,10 @@ body {
   border-radius: 1rem;
 }
 
+.card.team-member {
+  height: 100%;
+}
+
 .team-member img {
   width: 50%;
   margin-left: auto;
