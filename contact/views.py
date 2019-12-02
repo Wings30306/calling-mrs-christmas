@@ -8,3 +8,12 @@ class LocationListView(ListView):
 
 class LocationDetailView(DetailView):
     model = Location
+
+class LocationCreateView(CreateView):
+    model = Location
+
+class LocationUpdateView(UpdateView):
+    model = Location
+
+class LocationDeleteView(DeleteView):
+    model = Location
