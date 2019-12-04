@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
 from .models import Location
+from .forms import LocationModelForm
 
 # Create your views here.
 class LocationListView(ListView):
@@ -10,9 +11,12 @@ class LocationDetailView(DetailView):
     model = Location
 
 class LocationCreateView(CreateView):
-    model = Location
+    template_name = 'contact/location_create.html'
+    form_class = LocationModelForm
 
 class LocationUpdateView(UpdateView):
+    template_name = 'contact/location_create.html'
+    form_class = LocationModelForm
     model = Location
 
 class LocationDeleteView(DeleteView):
