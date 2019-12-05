@@ -10,7 +10,7 @@ class Location(models.Model):
     latitude = models.DecimalField(max_digits=10, decimal_places=6, null=True)
     longitude = models.DecimalField(max_digits=10, decimal_places=6, null=True)
     email = models.EmailField(default="info@callingmrschristmas.com")
-    image = models.ImageField()
+    image = models.ImageField(null=True, blank=True)
 
 
     def get_absolute_url(self):

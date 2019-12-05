@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <div class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Contact form</h2>
   <form action="" method="post">
@@ -17,10 +17,14 @@
         {% endif %}
         <div class="card">
           <h5>{{ instance.town }}</h5>
-          <img
-            src="/media/{{ instance.image }}"
-            alt="Image for {{ instance.town }} branch"
-          />
+          {% if instance.image %}
+      <img
+        src="/media/{{ instance.image }}"
+        alt="Photo of our office in {{ instance.town }}"
+      />
+      {% else %}
+      <img src="{% static 'img/image-to-be-added.jpg' %}" alt="Image to be added">
+      {% endif %}
           <p>{{ instance.street }} {{ instance.number }}</p>
         </div>
       </div>

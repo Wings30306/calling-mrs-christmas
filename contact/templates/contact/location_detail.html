@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <div class="container bg-faded rounded my-3 text-center">
   <h2>Our office in {{ object.town }}</h2>
   <div class="row">
@@ -18,10 +18,14 @@
     </div>
 
     <div class="col-md-8">
+      {% if object.image %}
       <img
         src="/media/{{ object.image }}"
         alt="Photo of our office in {{ object.town }}"
       />
+      {% else %}
+      <img src="{% static 'img/image-to-be-added.jpg' %}" alt="Image to be added">
+      {% endif %}
     </div>
   </div>
 </div>
