@@ -2,7 +2,7 @@
 <div class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Contact form</h2>
   <form action="" method="post">
-          <p>form to be added</p>
+    <p>form to be added</p>
     <button type="submit">Send</button>
   </form>
 </div>
@@ -18,20 +18,22 @@
         <div class="card">
           <h5>{{ instance.town }}</h5>
           {% if instance.image %}
-      <img
-        src="{{ MEDIA_URL }}{{ instance.image }}"
-        alt="Photo of our office in {{ instance.town }}"
-      />
-      {% else %}
-      <img src="{% static 'img/image-to-be-added.jpg' %}" alt="Image to be added">
-      {% endif %}
+          <img
+            src="{{ MEDIA_URL }}{{ instance.image }}"
+            alt="Photo of our office in {{ instance.town }}"
+          />
+          {% else %}
+          <img
+            src="{% static 'img/image-to-be-added.jpg' %}"
+            alt="Image to be added"
+          />
+          {% endif %}
           <p>{{ instance.street }} {{ instance.number }}</p>
         </div>
       </div>
-        {% empty %}
-        <h5>Coming soon!</h5>
-        {% endfor %}
-      </div>
+      {% empty %}
+      <h5>Coming soon!</h5>
+      {% endfor %}
     </div>
   </div>
 </div>
