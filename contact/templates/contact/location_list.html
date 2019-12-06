@@ -19,7 +19,7 @@
           <h5>{{ instance.town }}</h5>
           {% if instance.image %}
       <img
-        src="/media/{{ instance.image }}"
+        src="{{ MEDIA_URL }}{{ instance.image }}"
         alt="Photo of our office in {{ instance.town }}"
       />
       {% else %}

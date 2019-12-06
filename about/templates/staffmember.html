@@ -3,7 +3,7 @@
   <div class="container">
     <img
       class="img-fluid rounded about-heading-img staff-image"
-      src="/media/{{ obj.employee.profile_pic }}"
+      src="{{ MEDIA_URL }}{{ obj.employee.profile_pic }}"
       alt="Profile pic for {{ obj.first_name }}"
     />
     <div class="about-heading-content">

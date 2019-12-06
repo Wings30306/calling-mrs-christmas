@@ -55,7 +55,7 @@
               <div class="col-md-6">
                 <div class="card team-member">
                   <img
-                    src="/media/{{ instance.employee.profile_pic }}"
+                    src="{{ MEDIA_URL }}{{ instance.employee.profile_pic }}"
                     alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}"
                   />
                   <h2>{{ instance.first_name }} {{ instance.last_name }}</h2>

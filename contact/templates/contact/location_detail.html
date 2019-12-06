@@ -20,7 +20,7 @@
     <div class="col-md-8">
       {% if object.image %}
       <img
-        src="/media/{{ object.image }}"
+        src="{{ MEDIA_URL }}{{ object.image }}"
         alt="Photo of our office in {{ object.town }}"
       />
       {% else %}
