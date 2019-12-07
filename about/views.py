@@ -1,12 +1,16 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .models import Employee
+from .models import Employee, CaseStudy
 
 # Create your views here.
 def index_view(request):
     template_name = "main.html"
-    return render(request, template_name)
+    queryset = CaseStudy.objects.all()
+    context = {
+        "queryset": queryset
+    }
+    return render(request, template_name, context)
 
 def about_view(request):
     template_name = "about.html"
