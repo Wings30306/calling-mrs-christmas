@@ -105,6 +105,8 @@ In addition, if it is not obvious, you should also describe how to run your code
     - About: [Photo by Oleg Magni](https://www.pexels.com/photo/green-christmas-tree-with-baubles-1762887/)
     - Team: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
     - Placeholder image "Image to be added" edited from [Photo by Tirachard Kumtanom](https://www.pexels.com/photo/black-and-silver-film-camera-on-brown-wooden-surface-733853/)
+    - Dog sledding (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by Lars Ley](https://www.pexels.com/photo/sled-pulled-by-dogs-2531014/)
+    - A room at the Ice Hotel (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by By Stephan Herz (User:Stephan_Herz) - Own work, CC BY 2.5 on Wikipedia](https://commons.wikimedia.org/w/index.php?curid=485145)
     
 -->
 ### Code-related acknowledgements
