@@ -30,7 +30,7 @@ def register(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "Welcome, " + user.first_name + "! Your account was successfully created.")
-                return redirect(reverse('index'))
+                return redirect(reverse('profile'))
             else:
                 registration_form.add_error(request("Sorry, we are unable to register your account at this time."))
 
@@ -48,7 +48,7 @@ def login(request):
     if request.user.is_authenticated:
         """"Prevent logged in user from going back to login page"""
         messages.success(request, request.user.first_name + ", you are already signed in!")
-        return redirect(reverse('index'))
+        return redirect(reverse('profile'))
     if request.method == "POST":
         """Log in the user using form data"""
         form = UserLoginForm(request.POST)
@@ -60,7 +60,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "Welcome, " + user.first_name + "!")
-                return redirect(reverse('index'))
+                return redirect(reverse('profile'))
             else:
                 form.add_error(None, "Your username or password is incorrect.")
     else: 
