@@ -1,10 +1,11 @@
 from django.shortcuts import render, redirect, reverse
-from django.contrib import auth
+from django.contrib import auth, messages
 
 # Create your views here.
 def logout(request):
     """Log the user out"""
     auth.logout(request)
+    messages.success(request, "Thanks for visiting, see you again soon!")
     return redirect(reverse('index'))
 
 def register(request):
@@ -13,16 +14,17 @@ def register(request):
     return redirect(reverse('index'))
 
 def login(request):
+    ""
+
     """Log the user in to their account"""
-    auth.logout(request)
-    return redirect(reverse('index'))
+    if request.method == POST:
+        return redirect(reverse('index'))
 
-def profile(request):
+def profile(request, username):
     """Redirect user to their profile"""
-    auth.logout(request)
+    
     return redirect(reverse('index'))
 
-def edit_profile(request):
+def edit_profile(request, username):
     """Allow user to edit their profile info"""
-    auth.logout(request)
     return redirect(reverse('index'))
