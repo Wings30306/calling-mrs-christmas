@@ -112,12 +112,14 @@
       </div>
     </nav>
     {% if messages %}
-    <div class="alert text-center bg-faded">
-      {% for message in messages %}
-      <p>
-        {{ message }}
-      </p>
-      {% endfor %}
+    <div class="alert text-center cta" role="alert">
+      <div class="cta-inner">
+          {% for message in messages %}
+          <p>
+            {{ message }}
+          </p>
+          {% endfor %}
+      </div>
     </div>
     {% endif %}
     {% block content %} {% endblock %}

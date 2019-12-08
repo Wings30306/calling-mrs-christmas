@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container bg-faded my-3 p-3 rounded">
+    <h2>{{ form_title }}</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">{{ button_text }}</button>
+    </form>
+    
+</div>
+
+{% endblock %}
