@@ -34,7 +34,11 @@
   </head>
 
   <body>
-    <img class="site_heading d-none d-lg-block" src="{% static 'img/callingmrschristmas.png'%}" alt="">
+    <img
+      class="site_heading d-none d-lg-block"
+      src="{% static 'img/callingmrschristmas.png'%}"
+      alt=""
+    />
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
@@ -42,8 +46,9 @@
         <a
           class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none"
           href="#"
-          ><img src="{% static 'img/callingmrschristmas.png'%}" alt=""></a
-        >
+          ><img src="{% static 'img/callingmrschristmas.png'%}" alt=""
+        /></a>
+
         <button
           class="navbar-toggler"
           type="button"
@@ -69,9 +74,7 @@
               >
             </li>
             <li class="nav-item px-lg-4">
-              <a
-                class="nav-link text-uppercase text-expanded"
-                href="/services"
+              <a class="nav-link text-uppercase text-expanded" href="/services"
                 >Services</a
               >
             </li>
@@ -80,12 +83,35 @@
                 >Contact</a
               >
             </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <i class="fas fa-user"></i> 
+                {% if user.is_authenticated %}
+                {{ user.first_name }}
+                {% endif %}
+              </a>
+              <div class="dropdown-menu">
+                {% if user.is_authenticated %}
+                <a class="dropdown-item" href="{% url 'accounts:logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out </a>
+                <a class="dropdown-item" href="{% url 'accounts:profile' %}"><i class="fas fa-id-badge"></i> Profile </a>
+                {% else %}
+                <a class="dropdown-item" href="{% url 'accounts:login' %}"><i class="fas fa-door-open"></i> Log In </a>
+                <a class="dropdown-item" href="{% url 'accounts:register' %}"><i class="fas fa-user-plus"></i> New User? </i></a>
+                {% endif %}
+              </div>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
     <footer class="footer text-faded text-center py-5">
       <div class="container">
         <div class="row">
@@ -107,7 +133,6 @@
               >
               <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3249.js"></script>
             </div>
-           
           </div>
         </div>
       </div>
