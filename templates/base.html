@@ -100,7 +100,7 @@
               <div class="dropdown-menu">
                 {% if user.is_authenticated %}
                 <a class="dropdown-item" href="{% url 'accounts:logout' %}"><i class="fas fa-sign-out-alt"></i> Log Out </a>
-                <a class="dropdown-item" href="{% url 'accounts:profile' username=user.username %}"><i class="fas fa-id-badge"></i> Profile </a>
+                <a class="dropdown-item" href="{% url 'accounts:profile' %}"><i class="fas fa-id-badge"></i> Profile </a>
                 {% else %}
                 <a class="dropdown-item" href="{% url 'accounts:login' %}"><i class="fas fa-door-open"></i> Log In </a>
                 <a class="dropdown-item" href="{% url 'accounts:register' %}"><i class="fas fa-user-plus"></i> New User? </i></a>

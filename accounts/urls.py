@@ -7,6 +7,6 @@ urlpatterns = [
     path('logout', logout, name="logout"),
     path('login', login, name="login"),
     path('register', register, name="register"),
-    path('<slug:username>', profile, name="profile"),
-    path('<slug:username>/edit', edit_profile, name="edit_profile"),
+    path('profile', profile, name="profile"),
+    path('profile/edit', edit_profile, name="edit_profile"),
 ]

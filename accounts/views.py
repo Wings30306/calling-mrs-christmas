@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -73,12 +74,13 @@ def login(request):
 
 
 @login_required
-def profile(request, username):
-    """Redirect user to their profile"""
-    if auth.user.username != username:
-        messages.danger(request, "You cannot visit someone else's profile!")
-        return redirect(reverse('index'))
-    return redirect(reverse('index'))
+def profile(request):
+    """Render user's profile page"""
+    user = User.objects.get(username=request.user.username)
+    context = {
+        "profile": user
+    }
+    return render(request, 'profile.html', context)
 
 @login_required
 def edit_profile(request, username):
