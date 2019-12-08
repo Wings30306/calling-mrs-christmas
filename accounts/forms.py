@@ -23,6 +23,7 @@ class UserRegistrationForm(UserCreationForm):
         username = self.cleaned_data.get('username')
         if User.objects.filter(email=email).exclude(username=username):
             raise forms.ValidationError(u'Email address must be unique.')
+        return email
         
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
