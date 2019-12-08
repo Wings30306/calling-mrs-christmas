@@ -37,7 +37,10 @@
         <div class="cta-inner text-center rounded">
           <h2 class="section-heading mb-4">
             <span class="section-heading-upper">Our Promise</span>
-            <span class="section-heading-lower">To You</span>
+            <span class="section-heading-lower">
+              To You{% if user.is_authenticated %}, {{ user.first_name }}
+              {% endif %}
+            </span>
           </h2>
           <p class="mb-0">
             Whether you come to our premises on the High Street for a
@@ -60,7 +63,7 @@
         <h2 class="section-heading mb-4">
           <span class="section-heading-upper"
             >Success story: {{ casestudy.client_first_name}} 
-            {{ casestudy.client_last_name_initial}}</span
+            {{casestudy.client_last_name_initial}}</span
           >
           <span class="section-heading-lower">{{ casestudy.title }}</span>
         </h2>
