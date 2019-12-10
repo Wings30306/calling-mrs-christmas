@@ -71,7 +71,8 @@ def login(request):
         "form": form,
         "form_title": "Log In",
         "button_text": "Log me in",
-        "wrong_page_redirect": "<p>You don't have an account yet? " +
+        "wrong_page_redirect": "<p><strong>If you were redirected here after password reset, " +
+                               "please sign in again with your new password.</strong></p>" + "<p>You don't have an account yet? " +
                                "You can <a href='/accounts/register'>sign up</a> instead.</p>"
     }
     return render(request, "form.html", context)
