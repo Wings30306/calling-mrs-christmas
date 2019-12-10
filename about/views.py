@@ -14,22 +14,23 @@ def index_view(request):
 
 def about_view(request):
     template_name = "about.html"
-    object_list = User.objects.all()
+    object_list = User.objects.filter(is_staff=True)
     context = {
         "object_list": object_list
         }
     return render(request, template_name, context)
 
-def detail_view(request, id):
+def detail_view(request, user):
     template_name = "staffmember.html"
-    obj = get_object_or_404(User, id=id)
-    if obj.employee.is_staff == True:
-        print(obj.employee.profile_pic)
-        context = {
-            "obj": obj
-        }
+    obj = User.objects.get(username=user)
+    print(obj)
+    if obj != None:
+        if obj.employee.is_staff:
+            context = {
+                "obj": obj
+            }
     else:
-        messages.error(request, 'No staff member matching this id')
+        messages.error(request, 'No staff member with this username')
         return redirect(about_view)
     return render(request, template_name, context)
     
