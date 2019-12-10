@@ -22,15 +22,18 @@ def about_view(request):
 
 def detail_view(request, user):
     template_name = "staffmember.html"
-    obj = User.objects.get(username=user)
-    print(obj)
-    if obj != None:
-        if obj.employee.is_staff:
+    try:
+        obj = User.objects.get(username=user)
+        print(obj)
+        if obj.is_staff:
             context = {
                 "obj": obj
             }
-    else:
-        messages.error(request, 'No staff member with this username')
-        return redirect(about_view)
+        else:
+            messages.error(request, 'No staff member with this username')
+            return redirect("about:about_list")
+    except User.DoesNotExist:
+        messages.error(request, 'No staff member with the username <em>' + user + '<em>.')
+        return redirect("about:about_list")
     return render(request, template_name, context)
     
