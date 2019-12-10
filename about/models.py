@@ -18,7 +18,7 @@ class Employee(models.Model):
         return self.user.username
 
     def get_absolute_url(self):
-        return reverse("detail_view", kwargs={"user": self.user.username})
+        return reverse("about:about_detail", kwargs={"user": self.user.username})
 
 
 class CaseStudy(models.Model):
