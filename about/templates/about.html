@@ -52,15 +52,18 @@
             </h2>
             <div class="row">
               {% for instance in object_list %}
+
               <div class="col-md-6">
-                <div class="card team-member">
-                  <img
-                    src="{{ MEDIA_URL }}{{ instance.employee.profile_pic }}"
-                    alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}"
-                  />
-                  <h2>{{ instance.first_name }} {{ instance.last_name }}</h2>
-                  <h3>{{ instance.employee.title }}</h3>
-                </div>
+                <a href="{{ instance.employee.get_absolute_url }}">
+                  <div class="card team-member">
+                    <img
+                      src="{{ MEDIA_URL }}{{ instance.employee.profile_pic }}"
+                      alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}"
+                    />
+                    <h2>{{ instance.first_name }} {{ instance.last_name }}</h2>
+                    <h3>{{ instance.employee.title }}</h3>
+                  </div>
+                </a>
               </div>
               {% endfor %}
             </div>
