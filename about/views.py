@@ -30,10 +30,10 @@ def detail_view(request, user):
                 "obj": obj
             }
         else:
-            messages.error(request, 'No staff member with this username')
+            messages.error(request, 'No staff member with the username <em>' + user + '</em>.')
             return redirect("about:about_list")
     except User.DoesNotExist:
-        messages.error(request, 'No staff member with the username <em>' + user + '<em>.')
+        messages.error(request, 'No staff member with the username <em>' + user + '</em>.')
         return redirect("about:about_list")
     return render(request, template_name, context)
     
