@@ -5,7 +5,7 @@
   {% else %}
   <h2>New location</h2>
   {% endif %}
-  <form method="post">
+  <form method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <table>
       {{ form.as_table }}
