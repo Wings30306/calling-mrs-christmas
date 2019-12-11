@@ -5,7 +5,10 @@
     <h2>{{ form_title }}</h2>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
+        <table>
+          {{ form.as_table }}  
+        </table>
+        
         <button type="submit">{{ button_text }}</button>
     </form>
     <hr>
