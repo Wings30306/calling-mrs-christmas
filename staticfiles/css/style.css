@@ -1,3 +1,16 @@
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 2em;
+  margin: 2em auto;
+}
+
+img.site_heading {
+  margin: 2em;
+  width: 50vw;
+  height: auto;
+}
+
 .navbar-brand img {
   width: 50vw;
   height: auto;
