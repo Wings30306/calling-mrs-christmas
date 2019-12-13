@@ -146,12 +146,12 @@ AAWS_S3_OBJECT_PARAMATERS = {
 
 AWS_DEFAULT_ACL = None
 
-AWS_STORAGE_BUCKET_NAME = 'calling-mrs-christmas'
-AWS_S3_REGION_NAME = 'eu-west-3'
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
+# AWS_STORAGE_BUCKET_NAME = 'calling-mrs-christmas'
+# AWS_S3_REGION_NAME = 'eu-west-3'
+# AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
+# AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
 
-AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+# AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
@@ -161,11 +161,13 @@ STATIC_ROOT = 'staticfiles'
 
 
 MEDIAFILES_LOCATION = 'media'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+# DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+
+# MEDIA_URL = "https://%s/%s/" % (AWS_S3_CUSTOM_DOMAIN, MEDIAFILES_LOCATION)
+MEDIA_URL = "/media/"
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
