@@ -57,7 +57,7 @@
                 <a href="{{ instance.employee.get_absolute_url }}">
                   <div class="card team-member">
                     <img
-                      src="{{ MEDIA_URL }}{{ instance.employee.profile_pic }}"
+                      src="{% static 'img/employee-profile-images/' %}{{instance.username}}.png"
                       alt="Profile pic for {{ instance.first_name }} {{ instance.last_name }}"
                     />
                     <h2>{{ instance.first_name }} {{ instance.last_name }}</h2>
