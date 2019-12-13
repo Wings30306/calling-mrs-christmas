@@ -11,7 +11,6 @@ class Employee(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     intro = models.TextField()
-    profile_pic = models.ImageField()
     is_staff = models.BooleanField(default=True)
 
     def __str__(self):
@@ -33,11 +32,11 @@ class CaseStudy(models.Model):
         return 'Case Study: ' + self.title
 
 
-class CaseStudyImage(models.Model):
-    casestudy = models.ForeignKey(
-        CaseStudy, related_name='images', on_delete=models.CASCADE)
-    image = models.ImageField()
-    alt = models.CharField(max_length=100)
+# class CaseStudyImage(models.Model):
+#     casestudy = models.ForeignKey(
+#         CaseStudy, related_name='images', on_delete=models.CASCADE)
+#     image = models.ImageField()
+#     alt = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.alt
+#     def __str__(self):
+#         return self.alt
