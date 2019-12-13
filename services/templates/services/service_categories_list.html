@@ -1,0 +1,56 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+{% for instance in object_list %}
+{% if forloop.counter|divisibleby:2 %}
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex ml-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">{{ instance.tagline }}</span>
+            <span class="section-heading-lower">{{ instance.title }}</span>
+          </h2>
+        </div>
+      </div>
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static/img/service-images/ %}{{ instance.name }}.png" alt="{{ instance.img_alt }}">
+      <div class="product-item-description d-flex mr-auto">
+        <div class="bg-faded p-5 rounded">
+          <p class="mb-0">{{ instance.description }}</p>
+          <a href="">Read more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex mr-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">{{ instance.tagline }}</span>
+            <span class="section-heading-lower">{{ instance.title }}</span>
+          </h2>
+        </div>
+      </div>
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static/img/service-images/ %}{{ instance.name }}.jpg" alt="{{ instance.img_alt }}">
+      <div class="product-item-description d-flex ml-auto">
+        <div class="bg-faded p-5 rounded">
+          <p class="mb-0">{{ instance.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %}
+{% empty %}
+<div class="container bg-faded p-5 d-flex my-3 rounded">
+  <h2 class="section-heading my-3">
+    <span class="section-heading-upper">No services to show yet!</span>
+    <span class="section-heading-lower">Please check back soon</span>
+  </h2>
+</div>
+{% endfor %}
+{% endblock %}
