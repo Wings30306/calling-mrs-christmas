@@ -37,3 +37,14 @@ def detail_view(request, user):
         return redirect("about:about_list")
     return render(request, template_name, context)
     
+def create_employee_profile(request):
+    pass
+
+def update_employee_profile(request):
+    pass
+
+def create_casestudy(request):
+    pass
+
+def update_casestudy(request):
+    pass
