@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
 
 {% for instance in object_list %}
 {% if forloop.counter|divisibleby:2 %}
@@ -13,10 +15,10 @@
           </h2>
         </div>
       </div>
-      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static/img/service-images/ %}{{ instance.name }}.png" alt="{{ instance.img_alt }}">
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'img/service-images/' %}{{ instance.name_for_image }}.jpg" alt="{{ instance.img_alt }}">
       <div class="product-item-description d-flex mr-auto">
         <div class="bg-faded p-5 rounded">
-          <p class="mb-0">{{ instance.description }}</p>
+          {{ instance.description|linebreaks }}
           <a href="">Read more</a>
         </div>
       </div>
@@ -35,10 +37,10 @@
           </h2>
         </div>
       </div>
-      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static/img/service-images/ %}{{ instance.name }}.jpg" alt="{{ instance.img_alt }}">
+      <img class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0" src="{% static 'img/service-images/' %}{{ instance.name_for_image }}.jpg" alt="{{ instance.img_alt }}">
       <div class="product-item-description d-flex ml-auto">
         <div class="bg-faded p-5 rounded">
-          <p class="mb-0">{{ instance.description }}</p>
+          {{ instance.description|linebreaks }}
         </div>
       </div>
     </div>
