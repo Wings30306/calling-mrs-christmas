@@ -1,10 +1,11 @@
 from django.db import models
-from django.core.files.storage import default_storage as storage
+from django.urls import reverse
 
 # Create your models here.
 
 
 class ServiceCategory(models.Model):
+    """"Model to store service categories (comparable to product types in a webshop)"""
     title = models.CharField(max_length=100)
     tagline = models.CharField(max_length=100)
     description = models.TextField()
@@ -14,8 +15,13 @@ class ServiceCategory(models.Model):
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        """Get absolute url for an instance of this model"""
+        return reverse("services:services_list", kwargs={"name": self.name})
+
 
 class Service(models.Model):
+    """Get absolute url for a service's detail page"""
     title = models.CharField(max_length=100)
     tagline = models.CharField(max_length=100)
     category = models.ForeignKey(
@@ -29,3 +35,7 @@ class Service(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        """Get absolute url for an instance of this model"""
+        return reverse("services:service_detail", kwargs={"pk": self.id})
