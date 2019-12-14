@@ -1,5 +1,6 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import CreateView, DetailView, ListView, UpdateView, DeleteView
+from django.shortcuts import render, redirect
+from django.views.generic import ListView
+from django.contrib import messages
 from .models import Service, ServiceCategory
 
 # Create your views here.
@@ -12,15 +13,31 @@ class ServiceCategoryListView(ListView):
 
 
 def service_list_by_category_view(request, category):
+    """Shows services for a chosen category.
+    If url doesn't link to existing category, return user to categories list"""
     template_name = 'services/service-list-by-category.html'
-    obj = ServiceCategory.objects.get(name=category)
-    queryset = Service.objects.filter(category=obj.pk)
-    context = {
-        "obj": obj,
-        "queryset": queryset
-    }
+    try:
+        obj = ServiceCategory.objects.get(name=category)
+        queryset = Service.objects.filter(category=obj.pk)
+        context = {
+            "obj": obj,
+            "queryset": queryset
+        }
+    except ServiceCategory.DoesNotExist:
+        messages.error(request, 'No category named <em>' + category + '</em>.')
+        return redirect("services:services_list")
     return render(request, template_name=template_name, context=context)
 
 
-class ServiceDetailView(DetailView):
-    model = Service
+def service_detail_view(request, pk):
+    """Shows details for a specific service"""
+    template_name = 'services/service-detail.html'
+    try:
+        obj = Service.objects.get(pk=pk)
+        context = {
+            "object": obj
+        }
+    except ServiceCategory.DoesNotExist:
+        messages.error(request, 'No service with this id: ' + pk + '</em>.')
+        return redirect("services:services_list")
+    return render(request, template_name=template_name, context=context)
