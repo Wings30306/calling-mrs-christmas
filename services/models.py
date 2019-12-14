@@ -17,7 +17,7 @@ class ServiceCategory(models.Model):
 
     def get_absolute_url(self):
         """Get absolute url for an instance of this model"""
-        return reverse("services:services_list", kwargs={"name": self.name})
+        return reverse("services:services_list_by_cat", kwargs={"category": self.name})
 
 
 class Service(models.Model):
