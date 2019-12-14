@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<h2 class="site-heading text-center text-white d-none d-lg-block">
+  <span class="site-heading-upper text-success mb-3">Our services</span>
+  <span class="site-heading-lower text-danger">{{ obj.title }}</span>
+</h2>
+{% for instance in queryset %} {% if forloop.counter|divisibleby:2 %}
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex ml-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">{{ instance.tagline }}</span>
+            <span class="section-heading-lower">{{ instance.title }}</span>
+          </h2>
+        </div>
+      </div>
+      <img
+        class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+        src="{% static 'img/service-images/' %}{{ instance.img_name }}.jpg"
+        alt="{{ instance.img_alt }}"
+      />
+      <div class="product-item-description d-flex mr-auto">
+        <div class="bg-faded p-5 rounded">
+          {{ instance.brief_description|linebreaks }}
+          <h5>Cost: £{{ instance.price }}</h5>
+          <a href="btn btn-success btn-lg"
+            ><i class="fas fa-cart"></i> Book now</a
+          >
+          <a href="btn btn-danger btn-lg"
+            ><i class="fas fa-open-book"></i> Read more</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex mr-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">{{ instance.tagline }}</span>
+            <span class="section-heading-lower">{{ instance.title }}</span>
+          </h2>
+        </div>
+      </div>
+      <img
+        class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+        src="{% static 'img/service-images/' %}{{ instance.img_name }}.jpg"
+        alt="{{ instance.img_alt }}"
+      />
+      <div class="product-item-description d-flex ml-auto">
+        <div class="bg-faded p-5 rounded">
+          {{ instance.brief_description|linebreaks }}
+          <h5>Cost: £{{ instance.price }}</h5>
+          <a href="btn btn-success btn-lg"
+            ><i class="fas fa-cart"></i> Book now</a
+          >
+          <a href="btn btn-danger btn-lg"
+            ><i class="fas fa-open-book"></i> Read more</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %} {% empty %}
+<div class="container bg-faded p-5 d-flex my-3 rounded">
+  <h2 class="section-heading my-3">
+    <span class="section-heading-upper">No services to show yet for {{ category }}</span>
+    <span class="section-heading-lower">Please check back soon</span>
+  </h2>
+</div>
+{% endfor %} {% endblock %}
