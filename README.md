@@ -121,6 +121,7 @@ In addition, if it is not obvious, you should also describe how to run your code
     - Catering (service category): [Photo by picjumbo.com from Pexels](https://www.pexels.com/photo/blur-bokeh-candle-christmas-decoration-196648/)
     - Gift-shopping (service category): [Photo by freestocks.org from Pexels](https://www.pexels.com/photo/paper-bags-near-wall-749353/)
     - Decorating (service category): [Photo by Toni Cuenca from Pexels](https://www.pexels.com/photo/green-christmas-tree-688573/)
+    - Brown paper packages tied up with string (service): [Photo by Ylanite Koppens from Pexels](https://www.pexels.com/photo/photo-of-two-brown-wrapped-gifts-on-wooden-table-1693650/)
 
     Images not from Pexels:
     - Staff profile images created on [Cartoonify](https://www.cartoonify.de/)
