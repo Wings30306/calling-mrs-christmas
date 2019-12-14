@@ -18,7 +18,8 @@ class ServiceCategory(models.Model):
 class Service(models.Model):
     title = models.CharField(max_length=100)
     tagline = models.CharField(max_length=100)
-    ServiceCategory = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
+    category = models.ForeignKey(
+        ServiceCategory, related_name='services', on_delete=models.CASCADE)
     brief_description = models.TextField()
     detailed_description = models.TextField()
     img_name = models.CharField(max_length=100)
