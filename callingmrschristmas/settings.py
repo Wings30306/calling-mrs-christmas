@@ -44,10 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    #LIBRARIES AND OTHER IMPORTED APPS
+    # LIBRARIES AND OTHER IMPORTED APPS
     'storages',
 
-    #OWN APPS
+    # OWN APPS
     'about',
     'accounts',
     'services',
@@ -63,7 +63,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    #ADDITIONAL MIDDLEWARE
+    # ADDITIONAL MIDDLEWARE
     'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
@@ -93,14 +93,15 @@ WSGI_APPLICATION = 'callingmrschristmas.wsgi.application'
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 if os.getenv("DATABASE_URL"):
-    DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+    DATABASES = {'default': dj_database_url.parse(
+        os.environ.get('DATABASE_URL'))}
 else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
     }
-}
 
 
 # Password validation
