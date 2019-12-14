@@ -8,7 +8,7 @@ class ServiceCategory(models.Model):
     title = models.CharField(max_length=100)
     tagline = models.CharField(max_length=100)
     description = models.TextField()
-    name_for_image = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, unique=True)
     img_alt = models.CharField(max_length=100)
 
     def __str__(self):
@@ -17,6 +17,8 @@ class ServiceCategory(models.Model):
 
 class Service(models.Model):
     title = models.CharField(max_length=100)
+    tagline = models.CharField(max_length=100)
+    ServiceCategory = models.ForeignKey(ServiceCategory, on_delete=models.CASCADE)
     brief_description = models.TextField()
     detailed_description = models.TextField()
     img_name = models.CharField(max_length=100)
