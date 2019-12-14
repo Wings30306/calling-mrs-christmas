@@ -1,9 +1,9 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 <section class="page-section about-heading">
   <div class="container">
     <img
-      src="{{ MEDIA_URL }}{{ object.image }}"
-      alt="{{ object.image_description }}"
+      src="{% static 'img/service-images/' %}{{ object.img_name }}.jpg"
+      alt="{{ object.img_alt }}"
       class="about-heading-img service-detail-image"
     />
     <div class="about-heading-content">
@@ -11,12 +11,14 @@
         <div class="col-xl-9 col-lg-10 ml-auto">
           <div class="bg-faded rounded p-5">
             <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">{{ object.tagline }}</span>
               <span class="section-heading-lower">{{ object.title }}</span>
             </h2>
             <p>
               {{ object.detailed_description }}
             </p>
-            <h5>{{ object.price }}</h5>
+            <h5>£ {{ object.price }}</h5>
+            <a href="">Book now</a>
           </div>
         </div>
       </div>
