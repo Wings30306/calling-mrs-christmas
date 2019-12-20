@@ -38,4 +38,4 @@ class Service(models.Model):
 
     def get_absolute_url(self):
         """Get absolute url for an instance of this model"""
-        return reverse("services:service_detail", kwargs={"pk": self.id})
+        return reverse("services:service_detail", kwargs={"primary_key": self.id})
