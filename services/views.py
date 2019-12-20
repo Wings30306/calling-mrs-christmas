@@ -29,15 +29,15 @@ def service_list_by_category_view(request, category):
     return render(request, template_name=template_name, context=context)
 
 
-def service_detail_view(request, pk):
+def service_detail_view(request, primary_key):
     """Shows details for a specific service"""
     template_name = 'services/service-detail.html'
     try:
-        obj = Service.objects.get(pk=pk)
+        obj = Service.objects.get(pk=primary_key)
         context = {
             "object": obj
         }
     except ServiceCategory.DoesNotExist:
-        messages.error(request, 'No service with this id: ' + pk + '</em>.')
+        messages.error(request, 'No service with this id: ' + primary_key + '</em>.')
         return redirect("services:services_list")
     return render(request, template_name=template_name, context=context)

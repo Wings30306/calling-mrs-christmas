@@ -5,5 +5,5 @@ app_name = "services"
 urlpatterns = [
     path('', ServiceCategoryListView.as_view(), name="services_list"),
     path('<slug:category>', service_list_by_category_view, name="services_list_by_cat"),
-    path('detail/<int:pk>', service_detail_view, name="service_detail"),
+    path('detail/<int:primary_key>', service_detail_view, name="service_detail"),
 ]

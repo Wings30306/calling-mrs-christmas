@@ -5,6 +5,7 @@ from .models import CaseStudy
 
 # Create your views here.
 def index_view(request):
+    """ Render index page with case study as success story """
     template_name = "main.html"
     queryset = CaseStudy.objects.all()
     context = {
@@ -13,6 +14,7 @@ def index_view(request):
     return render(request, template_name, context)
 
 def about_view(request):
+    """ Render About Us page with a list of staff members """
     template_name = "about.html"
     object_list = User.objects.filter(is_staff=True)
     context = {
@@ -21,6 +23,9 @@ def about_view(request):
     return render(request, template_name, context)
 
 def detail_view(request, user):
+    """ Render profile page for staff member.
+    If no staff member by that username, return user to About page,
+    show user an error message "no staff member with this username". """
     template_name = "staffmember.html"
     try:
         obj = User.objects.get(username=user)
@@ -36,15 +41,3 @@ def detail_view(request, user):
         messages.error(request, 'No staff member with the username <em>' + user + '</em>.')
         return redirect("about:about_list")
     return render(request, template_name, context)
-    
-def create_employee_profile(request):
-    pass
-
-def update_employee_profile(request):
-    pass
-
-def create_casestudy(request):
-    pass
-
-def update_casestudy(request):
-    pass
