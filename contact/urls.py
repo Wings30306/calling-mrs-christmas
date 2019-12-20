@@ -1,6 +1,9 @@
-from django.contrib import admin
 from django.urls import path
-from .views import LocationListView, LocationDetailView, LocationCreateView, LocationUpdateView, LocationDeleteView
+from .views import (LocationListView,
+                    LocationDetailView,
+                    LocationCreateView,
+                    LocationUpdateView,
+                    LocationDeleteView)
 
 app_name = "contact"
 urlpatterns = [
