@@ -26,13 +26,18 @@
         <div class="bg-faded p-5 rounded">
           {{ instance.brief_description|linebreaks }}
           <h5>Cost: £{{ instance.price }}</h5>
-          <a href="{{ instance.get_absolute_url }}" class="btn btn-success btn-lg"
-            ><i class="fas fa-cart"></i> Book now</a
-          >
+          <form action="{% url 'add_to_cart' instance.id %}" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity">
+              <span class="input-group-btn">
+                <button class="btn btn-lg btn-success" type="submit">Add</button>
+              </span>
+            </div>
+          </form>
           <a href="{{ instance.get_absolute_url }}" class="btn btn-primary btn-lg"
             ><i class="fas fa-open-book"></i> Read more</a
           >
-          <a class="btn btn-danger btn-lg" href="/services"> Back</a>
         </div>
       </div>
     </div>
@@ -61,13 +66,18 @@
         <div class="bg-faded p-5 rounded">
           {{ instance.brief_description|linebreaks }}
           <h5>Cost: £{{ instance.price }}</h5>
-          <a class="btn btn-success btn-lg"
-            ><i class="fas fa-cart"></i> Book now</a
-          >
+          <form action="{% url 'add_to_cart' instance.id %}" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+              <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity">
+              <span class="input-group-btn">
+                <button class="btn btn-lg btn-success" type="submit">Add</button>
+              </span>
+            </div>
+          </form>
           <a class="btn btn-primary btn-lg" href="{{ instance.get_absolute_url }}"
             ><i class="fas fa-open-book"></i> Read more</a
           >
-          <a class="btn btn-danger btn-lg" href="/services">Back</a>
         </div>
       </div>
     </div>
@@ -82,4 +92,6 @@
     <span class="section-heading-lower">Please check back soon</span>
   </h2>
 </div>
-{% endfor %} {% endblock %}
+{% endfor %}
+<a class="btn btn-danger btn-lg" href="/services">Back</a>
+{% endblock %}

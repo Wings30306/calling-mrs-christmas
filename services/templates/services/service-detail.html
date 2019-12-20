@@ -17,8 +17,15 @@
             <p>
               {{ object.detailed_description }}
             </p>
-            <h5>£ {{ object.price }}</h5>
-            <a href="">Book now</a>
+            <h5>£ {{ object.price }}</h5><form action="{% url 'add_to_cart' instance.id %}" method="post">
+              {% csrf_token %}
+              <div class="input-group">
+                <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity">
+                <span class="input-group-btn">
+                  <button class="btn btn-lg btn-success" type="submit">Add</button>
+                </span>
+              </div>
+            </form>
           </div>
         </div>
       </div>
