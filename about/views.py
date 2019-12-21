@@ -4,6 +4,8 @@ from django.contrib import messages
 from .models import CaseStudy
 
 # Create your views here.
+
+
 def index_view(request):
     """ Render index page with case study as success story """
     template_name = "main.html"
@@ -13,14 +15,16 @@ def index_view(request):
     }
     return render(request, template_name, context)
 
+
 def about_view(request):
     """ Render About Us page with a list of staff members """
     template_name = "about.html"
     object_list = User.objects.filter(is_staff=True)
     context = {
         "object_list": object_list
-        }
+    }
     return render(request, template_name, context)
+
 
 def detail_view(request, user):
     """ Render profile page for staff member.
@@ -35,9 +39,11 @@ def detail_view(request, user):
                 "obj": obj
             }
         else:
-            messages.error(request, 'No staff member with the username <em>' + user + '</em>.')
+            messages.error(
+                request, 'No staff member with the username <em>' + user + '</em>.')
             return redirect("about:about_list")
     except User.DoesNotExist:
-        messages.error(request, 'No staff member with the username <em>' + user + '</em>.')
+        messages.error(
+            request, 'No staff member with the username <em>' + user + '</em>.')
         return redirect("about:about_list")
     return render(request, template_name, context)
