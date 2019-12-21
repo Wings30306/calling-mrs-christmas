@@ -1,0 +1,52 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="page-section">
+  <div class="container">
+    <div class="product-item">
+      {% for item in cart.cart_items %}
+      <div class="product-item-title d-flex">
+        <div class="bg-faded p-5 d-flex ml-auto rounded">
+          <h2 class="section-heading mb-0">
+            <span class="section-heading-upper">{{ item.service.tagline }}</span>
+            <span class="section-heading-lower">{{ item.service.title }}</span>
+          </h2>
+        </div>
+      </div>
+      <a href="{{ item.service.get_absolute_url }}">
+        <img
+          class="product-item-img mx-auto d-flex rounded img-fluid mb-3 mb-lg-0"
+          src="{% static 'img/service-images/' %}{{ item.service.img_name }}.jpg"
+          alt="{{ item.img_alt }}"
+        />
+      </a>
+      <div class="product-item-description d-flex mr-auto">
+        <div class="bg-faded p-5 rounded">
+          {{ item.service.brief_description|linebreaks }}
+          <h5>Cost: £{{ item.service.price }}</h5>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="input-group">
+              <input
+                type="number"
+                name="quantity"
+                min="1"
+                max="999"
+                value="{{ item.quantity }}"
+                class="form-control"
+              />
+              <span class="input-group-btn">
+                <button class="btn btn-lg btn-success" type="submit">
+                  Adjust
+                </button>
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+      {% empty %}
+      <p>You haven't saved any items yet.</p>
+      {% endfor%}
+    </div>
+  </div>
+</section>
+
+{% endblock %}
