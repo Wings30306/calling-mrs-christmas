@@ -12,19 +12,22 @@ def view_cart(request):
 
 def add_to_cart(request, primary_key):
     """Add a quantity of the specified product to the cart"""
-    quantity = int(request.POST.get("quantity"))
-
-    new_cart_item = (primary_key, quantity)
-    print(new_cart_item)
-    request.session["cart"] = cart_contents(request)
     cart = request.session.get("cart")
     print(cart)
+    quantity = request.POST.get("quantity")
+    print(quantity)
+    print(primary_key)
+
+    new_cart_item = {"primary_key": primary_key, "quantity": quantity}
+    print(new_cart_item)
+    cart['cart_items'].append(new_cart_item)
+    cart_contents(request)
     return redirect(reverse('cart:view_cart'))
 
 
 def adjust_cart(request, primary_key):
     """Adjust the quantity of the specified product to the specified amount"""
-    quantity = int(request.POST.get('quantity'))
+    quantity = request.POST.get('quantity')
     cart = request.session.get('cart', {})
 
     if quantity > 0:
