@@ -21,7 +21,9 @@ def cart_contents(request):
             img = service.img_name
             alt = service.img_alt
             url = service.get_absolute_url()
-            total += quantity * price
+            description = service.brief_description
+            item_total = quantity * price
+            total += item_total
             count += quantity
             cart_items.append({"primary_key": primary_key,
                                "title": title,
@@ -29,7 +31,10 @@ def cart_contents(request):
                                "img": img,
                                "alt": alt,
                                "url": url,
-                               "quantity": quantity})
+                               "quantity": quantity,
+                               "description": description,
+                               "item_total": item_total
+                               })
     cart = {"cart_items": cart_items, "total": total, "count": count}
     request.session["cart"] = cart
     return cart
