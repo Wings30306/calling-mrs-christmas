@@ -14,12 +14,22 @@ def cart_contents(request):
     if len(cart['cart_items']) > 0:
         for item in cart['cart_items']:
             primary_key = item['primary_key']
-            quantity = int(item['quantity'])
+            quantity = item['quantity']
             service = get_object_or_404(Service, pk=primary_key)
-            price = int(service.price)
+            price = float(service.price)
+            title = service.title
+            img = service.img_name
+            alt = service.img_alt
+            url = service.get_absolute_url()
             total += quantity * price
             count += quantity
-            cart_items.append({"primary_key": primary_key, "quantity": quantity})
+            cart_items.append({"primary_key": primary_key,
+                               "title": title,
+                               "price": price,
+                               "img": img,
+                               "alt": alt,
+                               "url": url,
+                               "quantity": quantity})
     cart = {"cart_items": cart_items, "total": total, "count": count}
     request.session["cart"] = cart
     return cart
