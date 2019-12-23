@@ -15,7 +15,7 @@
               <span class="section-heading-lower">{{ object.title }}</span>
             </h2>
             <p>
-              {{ object.detailed_description }}
+              {{ object.detailed_description|linebreaks }}
             </p>
             <h5>£ {{ object.price }}</h5><form action="{% url 'cart:add_to_cart' object.id %}" method="post">
               {% csrf_token %}
