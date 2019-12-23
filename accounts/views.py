@@ -1,8 +1,9 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
-from accounts.forms import UserLoginForm, UserRegistrationForm
 from django.contrib.auth.models import User
+from accounts.forms import UserLoginForm, UserRegistrationForm
+
 
 # Create your views here.
 
@@ -18,12 +19,12 @@ def logout(request):
 def register(request):
     """Allow new user to create account"""
     if request.user.is_authenticated:
-        """"Prevent logged in user from going back to login page"""
+        #Prevent logged in user from going back to login page
         messages.success(request, request.user.first_name +
                          ", you are already signed in!")
         return redirect(reverse('index'))
     if request.method == "POST":
-        """Register the user using form data"""
+        #Register the user using form data
         registration_form = UserRegistrationForm(request.POST)
         if registration_form.is_valid():
             registration_form.save()
@@ -54,12 +55,12 @@ def register(request):
 def login(request):
     """Return Login page"""
     if request.user.is_authenticated:
-        """"Prevent logged in user from going back to login page"""
+        #Prevent logged in user from going back to login page
         messages.success(request, request.user.first_name +
                          ", you are already signed in!")
         return redirect(reverse('accounts:profile'))
     if request.method == "POST":
-        """Log in the user using form data"""
+        #Log in the user using form data
         form = UserLoginForm(request.POST)
 
         if form.is_valid():
@@ -99,7 +100,7 @@ def user_profile(request):
 
 
 @login_required
-def edit_profile(request, username):
+def edit_profile(request):
     """Allow user to edit their profile info"""
     form = UserRegistrationForm
     context = {
