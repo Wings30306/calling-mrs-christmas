@@ -123,7 +123,7 @@ In addition, if it is not obvious, you should also describe how to run your code
     - Decorating (service category): [Photo by Toni Cuenca from Pexels](https://www.pexels.com/photo/green-christmas-tree-688573/)
     - Brown paper packages tied up with string (service): [Photo by Ylanite Koppens from Pexels](https://www.pexels.com/photo/photo-of-two-brown-wrapped-gifts-on-wooden-table-1693650/)
     - Wrapping gifts for adults (service): [Photo by Pixabay from Pexels](https://www.pexels.com/photo/advent-balls-celebration-christmas-264742/)
-    - Wrapping gifts for children (service): https://www.pexels.com/photo/girl-with-a-red-and-white-striped-gift-box-3154344/
+    - Wrapping gifts for children (service): [Photo by cottonbro from Pexels](https://www.pexels.com/photo/photo-of-girl-sitting-on-white-sofa-with-her-legs-crossed-holding-present-3154345/)
     - Tree Delivery: [Photo by Dids from Pexels](https://www.pexels.com/photo/shallow-focus-photography-of-green-coniferous-tree-2456348/)
     - Tree Decorating: [Photo by cottonbro from Pexels](https://www.pexels.com/photo/two-girls-putting-decorations-on-a-christmas-tree-3154322/)
     - Decorations for Rent: [Photo By Paola L from Pexels](https://www.pexels.com/photo/gray-blue-and-gold-colored-baubles-790155/)
