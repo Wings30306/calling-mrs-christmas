@@ -5,6 +5,10 @@ img {
   margin: 2em auto;
 }
 
+img.product-item-img {
+  margin: 0;
+}
+
 
 .navbar-brand img {
   width: 50vw;
