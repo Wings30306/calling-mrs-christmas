@@ -1,57 +1,58 @@
 {% extends 'base.html' %} {% load static %} {% block content %}
 <section class="page-section">
-  <div class="container bg-faded p-5 d-flex mx-auto rounded">
     {% for item in cart_items %}
-      <div class="row">
-        <div class="col-12 col-sm-6">
-          <h4>
-            <span class="section-heading-lower">{{ item.title }}</span>
-          </h4>
-        </div>
-        <div class="col-6">
-          <h5>Cost: £ {{ item.price }}</h5>
-          <h5>Subtotal: £ {{ item.item_total }}</h5>
-          <form action="" method="post">
-            {% csrf_token %}
-            <div class="input-group">
-              <input
-                type="number"
-                name="quantity"
-                min="1"
-                max="999"
-                value="{{ item.quantity }}"
-                class="form-control"
-              />
-              <span class="input-group-btn">
-                <button class="btn btn-lg btn-success" type="submit">
-                  Adjust
-                </button>
-              </span>
-            </div>
-          </form>
-        </div>
-        <div class="col-6">
-          <a href="{{ item.url }}">
-            <img
-              class="product-item-img mx-auto d-flex rounded img-fluid"
-              src="{% static 'img/service-images/' %}{{ item.img }}.jpg"
-              alt="{{ item.alt }}"
-            />
-          </a>
-        </div>
-        <div class="d-none d-sm-block col-sm-6">
-          {{ item.description|linebreaks}}
-        </div>
+    <div class="container bg-faded p-5 d-flex mx-auto rounded">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <h4>
+          <span class="section-heading-lower">{{ item.title }}</span>
+        </h4>
       </div>
-      {% empty %}
-      <p>You haven't saved any items yet.</p>
-      {% endfor%}
-      
+      <div class="col-6">
+        <h5>Cost: £ {{ item.price }}</h5>
+        <h5>Subtotal: £ {{ item.item_total }}</h5>
+        <form action="" method="post">
+          {% csrf_token %}
+          <div class="input-group">
+            <input
+              type="number"
+              name="quantity"
+              min="1"
+              max="999"
+              value="{{ item.quantity }}"
+              class="form-control"
+            />
+            <span class="input-group-btn">
+              <button class="btn btn-lg btn-success" type="submit">
+                Adjust
+              </button>
+            </span>
+          </div>
+        </form>
+      </div>
+      <div class="col-6">
+        <a href="{{ item.url }}">
+          <img
+            class="product-item-img mx-auto d-flex rounded img-fluid"
+            src="{% static 'img/service-images/' %}{{ item.img }}.jpg"
+            alt="{{ item.alt }}"
+          />
+        </a>
+      </div>
+      <div class="d-none d-sm-block col-sm-6">
+        {{ item.description|linebreaks}}
+      </div>
     </div>
   </div>
+    {% empty %}
+    <div class="container bg-faded p-5 d-flex mx-auto rounded">
+    <p>You haven't saved any items yet.</p>
+    </div>
+    {% endfor%}
+  
   <div class="cta">
     <div class="cta-inner">
-      <h5>Total: £ {{ total}} </h5>
+      <h5>Total: £ {{ total}}</h5>
       <p><em>Number of items in your cart: {{ count }}</em></p>
     </div>
   </div>
