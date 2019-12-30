@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load currency_tags %} {% block content %}
 <section class="page-section">
     {% for item in cart_items %}
     <div class="container bg-faded p-5 d-flex mx-auto rounded">
@@ -9,8 +9,8 @@
         </h4>
       </div>
       <div class="col-6">
-        <h5>Cost: £ {{ item.price }}</h5>
-        <h5>Subtotal: £ {{ item.item_total }}</h5>
+        <h5>Cost: {% currency item.price %}</h5>
+        <h5>Subtotal: {% currency item.item_total %}</h5>
         <form action="" method="post">
           {% csrf_token %}
           <div class="input-group">
@@ -52,7 +52,7 @@
   
   <div class="cta">
     <div class="cta-inner">
-      <h5>Total: £ {{ total}}</h5>
+      <h5>Total: {% currency total %}</h5>
       <p><em>Number of items in your cart: {{ count }}</em></p>
     </div>
   </div>
