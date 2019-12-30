@@ -13,13 +13,18 @@ def view_cart(request):
 def add_to_cart(request, primary_key):
     """Add a quantity of the specified product to the cart"""
     cart = request.session.get("cart")
-    print(cart)
     quantity = request.POST.get("quantity")
-    print(quantity)
-    print(primary_key)
-
     new_cart_item = {"primary_key": primary_key, "quantity": quantity}
     print(new_cart_item)
+    for item in cart["cart_items"]:
+        index = 0
+        if item["primary_key"] == new_cart_item["primary_key"]:
+            quantity = int(item["quantity"])
+            quantity += int(new_cart_item["quantity"])
+            request.session["cart"]["cart_items"][index]["quantity"] = quantity
+            cart_contents(request)
+            index += 1
+            return redirect(reverse('cart:view_cart'))
     cart['cart_items'].append(new_cart_item)
     cart_contents(request)
     return redirect(reverse('cart:view_cart'))
