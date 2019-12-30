@@ -16,7 +16,7 @@ def cart_contents(request):
             primary_key = item['primary_key']
             quantity = item['quantity']
             service = get_object_or_404(Service, pk=primary_key)
-            price = float(service.price)
+            price = service.price_in_p
             title = service.title
             img = service.img_name
             alt = service.img_alt
