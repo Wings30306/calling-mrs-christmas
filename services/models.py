@@ -30,7 +30,7 @@ class Service(models.Model):
     detailed_description = models.TextField()
     img_name = models.CharField(max_length=100)
     img_alt = models.CharField(max_length=100)
-    price = models.DecimalField(decimal_places=2, max_digits=9, default=4.99)
+    price_in_p = models.IntegerField()
     available = models.BooleanField(default=True)
 
     def __str__(self):
