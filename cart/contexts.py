@@ -11,10 +11,11 @@ def cart_contents(request):
     count = 0
     cart = request.session.get(
         "cart", {"cart_items": cart_items, "total": total, "count": count})
+    print(cart)
     if len(cart['cart_items']) > 0:
         for item in cart['cart_items']:
             primary_key = item['primary_key']
-            quantity = item['quantity']
+            quantity = int(item['quantity'])
             service = get_object_or_404(Service, pk=primary_key)
             price = service.price_in_p
             title = service.title
