@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} {% load currency_tags %} {% load static %} {% block content %}
 <h2 class="section-heading text-center text-white d-none d-lg-block">
   <span class="section-heading-upper text-success mb-0">Our services</span>
   <span class="section-heading-lower text-danger">{{ obj.title }}</span>
@@ -25,7 +25,7 @@
       <div class="product-item-description d-flex mr-auto">
         <div class="bg-faded p-5 rounded">
           {{ instance.brief_description|linebreaks }}
-          <h5>Cost: £{{ instance.price }}</h5>
+          <h5>Cost: {% currency instance.price_in_p %}</h5>
           <form action="{% url 'cart:add_to_cart' instance.id %}" method="post">
             {% csrf_token %}
             <div class="input-group">
@@ -65,7 +65,7 @@
       <div class="product-item-description d-flex ml-auto">
         <div class="bg-faded p-5 rounded">
           {{ instance.brief_description|linebreaks }}
-          <h5>Cost: £{{ instance.price }}</h5>
+          <h5>Cost: {% currency instance.price_in_p %}</h5>
           <form action="{% url 'cart:add_to_cart' instance.id %}" method="post">
             {% csrf_token %}
             <div class="input-group">
