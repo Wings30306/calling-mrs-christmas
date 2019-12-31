@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% load currency_tags %} {% load static %} {% block content %}
+{% extends "base.html" %} {% load currency_tags %} {% load static %} {% block
+content %}
 <section class="page-section about-heading">
   <div class="container">
     <img
@@ -17,12 +18,22 @@
             <p>
               {{ object.detailed_description|linebreaks }}
             </p>
-            <h5>{% currency object.price_in_p %}</h5><form action="{% url 'cart:add_to_cart' object.id %}" method="post">
+            <h5>{% currency object.price_in_p %}</h5>
+            <form action="{% url 'cart:add_to_cart' object.id %}" method="post">
               {% csrf_token %}
               <div class="input-group">
-                <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity">
+                <input
+                  type="number"
+                  name="quantity"
+                  min="1"
+                  max="999"
+                  class="form-control"
+                  placeholder="Quantity"
+                />
                 <span class="input-group-btn">
-                  <button class="btn btn-lg btn-success" type="submit">Add</button>
+                  <button class="btn btn-lg btn-success" type="submit">
+                    Add
+                  </button>
                 </span>
               </div>
             </form>
