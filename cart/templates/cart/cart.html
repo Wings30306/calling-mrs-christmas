@@ -11,7 +11,7 @@
       <div class="col-6">
         <h5>Cost: {% currency item.price %}</h5>
         <h5>Subtotal: {% currency item.item_total %}</h5>
-        <form action="" method="post">
+        <form action="{% url 'cart:adjust_cart' item.primary_key %}" method="post">
           {% csrf_token %}
           <div class="input-group">
             <input
