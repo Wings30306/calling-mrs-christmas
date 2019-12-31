@@ -39,7 +39,10 @@ def adjust_cart(request, primary_key):
     index = 0
     for item in cart["cart_items"]:
         if item["primary_key"] == new_cart_item["primary_key"]:
-            quantity = new_cart_item["quantity"]
+            if int(new_cart_item["quantity"]) == 0:
+                request.session["cart"]["cart_items"].pop(index)
+            else:
+                quantity = new_cart_item["quantity"]
             request.session["cart"]["cart_items"][index]["quantity"] = quantity
         index += 1
     cart_contents(request)
