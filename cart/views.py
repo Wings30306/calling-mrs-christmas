@@ -43,7 +43,7 @@ def adjust_cart(request, primary_key):
                 request.session["cart"]["cart_items"].pop(index)
             else:
                 quantity = new_cart_item["quantity"]
-            request.session["cart"]["cart_items"][index]["quantity"] = quantity
+                request.session["cart"]["cart_items"][index]["quantity"] = quantity
         index += 1
     cart_contents(request)
     return redirect(reverse('cart:view_cart'))
