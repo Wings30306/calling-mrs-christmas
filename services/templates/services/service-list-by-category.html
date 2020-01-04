@@ -29,7 +29,7 @@
           <form action="{% url 'cart:add_to_cart' instance.id %}" method="post">
             {% csrf_token %}
             <div class="input-group">
-              <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity">
+              <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity" required>
               <span class="input-group-btn">
                 <button class="btn btn-lg btn-success" type="submit">Add</button>
               </span>
@@ -69,7 +69,7 @@
           <form action="{% url 'cart:add_to_cart' instance.id %}" method="post">
             {% csrf_token %}
             <div class="input-group">
-              <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity">
+              <input type="number" name="quantity" min=1 max=999 class="form-control" placeholder="Quantity" required>
               <span class="input-group-btn">
                 <button class="btn btn-lg btn-success" type="submit">Add</button>
               </span>
