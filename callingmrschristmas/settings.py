@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # IMPORTED LIBRARIES
+    'django_forms_bootstrap',
 
     # OWN APPS
     'about',
@@ -47,6 +49,7 @@ INSTALLED_APPS = [
     'services',
     'contact',
     'cart',
+    'checkout',
 
 ]
 
@@ -166,3 +169,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = os.getenv("EMAIL_ADDRESS")
 EMAIL_HOST_PASSWORD = os.getenv("EMAIL_PASSWORD")
 EMAIL_PORT = 587
+
+STRIPE_PUBLISHABLE = os.getenv("STRIPE_PUBLISHABLE_KEY")
+STRIPE_SECRET = os.getenv("STRIPE_SECRET_KEY")
