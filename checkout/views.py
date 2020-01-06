@@ -27,9 +27,10 @@ def checkout(request):
 
             cart = request.session.get('cart', {})
             total = 0
-            for primary_key, quantity in cart.items():
-                service = get_object_or_404(Service, pk=primary_key)
-                total += quantity * service.price
+            for item in cart["cart_items"]:
+                service = get_object_or_404(Service, pk=item["primary_key"])
+                quantity = item["quantity"]
+                total += quantity * service.price_in_p
                 order_line_item = OrderLineItem(
                     order=order,
                     service=service,
@@ -39,8 +40,8 @@ def checkout(request):
 
             try:
                 customer = stripe.Charge.create(
-                    amount=int(total * 100),
-                    currency="EUR",
+                    amount=int(total),
+                    currency="GBP",
                     description=request.user.email,
                     card=payment_form.cleaned_data['stripe_id']
                 )
@@ -50,7 +51,7 @@ def checkout(request):
             if customer.paid:
                 messages.success(request, "You have successfully paid.")
                 request.session['cart'] = {}
-                return redirect(reverse('services'))
+                return redirect(reverse('index'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
