@@ -5,7 +5,7 @@ from .models import Order
 class MakePaymentForm(forms.Form):
 
     MONTH_CHOICES = [(i, i) for i in range(1, 12+1)]
-    YEAR_CHOICES = [(i, i) for i in range(2019, 2038)]
+    YEAR_CHOICES = [(i, i) for i in range(2020, 2038)]
 
     credit_card_number = forms.CharField(
         label="Credit card number", required=False)
@@ -20,5 +20,5 @@ class MakePaymentForm(forms.Form):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'phone_number', 'country', 'postcode',
-                  'town_or_city', 'street_address1', 'street_address2', 'county')
+        fields = ('full_name', 'phone_number', 'street_address1', 'street_address2',
+                  'town_or_city', 'county', 'country', 'postcode', 'country')
