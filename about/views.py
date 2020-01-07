@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -9,9 +10,9 @@ from .models import CaseStudy
 def index_view(request):
     """ Render index page with case study as success story """
     template_name = "main.html"
-    queryset = CaseStudy.objects.all()
+    obj = random.choice(CaseStudy.objects.all())
     context = {
-        "queryset": queryset
+        "object": obj
     }
     return render(request, template_name, context)
 
@@ -46,4 +47,13 @@ def detail_view(request, user):
         messages.error(
             request, 'No staff member with the username <em>' + user + '</em>.')
         return redirect("about:about_list")
+    return render(request, template_name, context)
+
+def casestudy_list_view(request):
+    """ Render index page with case study as success story """
+    template_name = "casestudies.html"
+    queryset = CaseStudy.objects.all()
+    context = {
+        "queryset": queryset
+    }
     return render(request, template_name, context)
