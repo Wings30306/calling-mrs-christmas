@@ -38,7 +38,9 @@
           <h2 class="section-heading mb-4">
             <span class="section-heading-upper">Our Promise</span>
             <span class="section-heading-lower">
-              To You{% if user.is_authenticated %}, {{ user.first_name }}
+              To You
+              {% if user.is_authenticated %}
+              , {{ user.first_name }} 
               {% endif %}
             </span>
           </h2>
@@ -57,33 +59,33 @@
 
 <section class="page-section clearfix">
   <div class="container">
-    {% for casestudy in queryset %}
     <div class="success-stories">
       <div class="left-0 text-center bg-faded p-5 rounded">
         <h2 class="section-heading mb-4">
           <span class="section-heading-upper"
-            >Success story: {{ casestudy.client_first_name}} 
-            {{casestudy.client_last_name_initial}}</span
-          >
-          <span class="section-heading-lower">{{ casestudy.title }}</span>
+            >Success story: {{ object.client_first_name}} 
+            {% if object.client_last_name_initial %}
+            {{object.client_last_name_initial}}
+            {% endif %}
+            {% if object.client_company %}
+             - {{ object.client_company }} 
+            {% endif %}
+            </span>
+          <span class="section-heading-lower">{{ object.title }}</span>
         </h2>
-        {{ casestudy.description|linebreaks }}
-        <div class="row">
-          {% for image in casestudy.images.all %}
-          <div class="col-6">
-            <img src="{{ MEDIA_URL }}{{ image.image }}" alt="{{ image.alt }}" />
-          </div>
-          {% endfor %}
-        </div>
+        {{ object.description|linebreaks }}
         <div class="intro-button mx-auto">
-          <a class="btn btn-success btn-xl" href="/services">Book Today!</a>
-          <a class="btn btn-info btn-xl" href="/about/success-stories"
+          <a
+            class="btn btn-success btn-xl"
+            href="{% url 'services:services_list' %}"
+            >Book Today!</a
+          >
+          <a class="btn btn-info btn-xl" href="{% url 'about:casestudies' %}"
             >More Like this</a
           >
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
 </section>
 {% endblock %}
