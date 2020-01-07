@@ -1,0 +1,33 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<section class="page-section clearfix">
+    <div class="container">
+      {% for casestudy in queryset %}
+      <div class="success-stories">
+        <div class="left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4">
+            <span class="section-heading-upper"
+              >Success story: {{ casestudy.client_first_name}} 
+              {% if casestudy.client_last_name_initial %}
+              {{casestudy.client_last_name_initial}}
+              {% endif %}
+              {% if casestudy.client_company %}
+               - {{ casestudy.client_company }}
+              {% endif %}
+               </span
+            >
+            <span class="section-heading-lower">{{ casestudy.title }}</span>
+          </h2>
+          {{ casestudy.description|linebreaks }}
+          
+          <div class="intro-button mx-auto">
+            <a class="btn btn-success btn-xl" href="/services">Book Today!</a>
+            <a class="btn btn-info btn-xl" href="/"
+              >Back</a
+            >
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endblock %}
