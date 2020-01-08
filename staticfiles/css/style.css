@@ -1,3 +1,34 @@
+* {
+  margin: 0
+}
+
+.container {
+  margin-top: 2em;
+}
+
+#mainNav,
+footer {
+  background-color: darkgreen;
+  border: 5px dotted whitesmoke;
+  padding: 0;
+}
+
+#mainNav .container{
+  margin-top: 0
+}
+
+#mainNav .navbar-nav .nav-item .nav-link{
+  color: red;
+  border: 5px solid darkgreen;
+}
+
+#mainNav .navbar-nav .nav-item .nav-link:hover{
+  color: red;
+  background-color: green;
+  text-shadow: whitesmoke 1px 0 10px;
+  border-radius: 15px;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -16,17 +47,37 @@ img.product-item-img {
   border-radius: 0;
 }
 
-#mainNav,
 .footer {
-  background-color: #013006;
+  background-color: darkgreen;
+  padding: 0;
+  margin: 0;
+}
+
+.section-heading .section-heading-upper {
+  color: darkgreen
 }
 
 .section-heading .section-heading-lower {
   font-size: 2rem;
+  color: red;
+  text-shadow: black 1px 0 10px;
 }
 
 body {
   background-position: right;
+}
+
+a:hover {
+  color: darkgreen;
+  text-shadow: 3px 3px red;
+  text-decoration: none;
+  border: 5px solid red
+}
+
+a {
+  color: green;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 .cta {
@@ -63,10 +114,10 @@ body {
 }
 
 .site-heading {
+  text-shadow: whitesmoke 1px 0 10px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin: 0;
-  background-color: rgba(255,255,255,.25);
 }
 
 @media screen and (min-width: 481px) {
