@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.conf import settings
 from django.utils import timezone
@@ -14,8 +13,7 @@ import stripe
 stripe.api_key = settings.STRIPE_SECRET
 
 
-@login_required
-def checkout(request):
+def checkout_view(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
@@ -63,4 +61,4 @@ def checkout(request):
         order_form = OrderForm()
     return render(request, "checkout.html", {"payment_form": payment_form,
                                              "order_form": order_form,
-                                             'publishable': settings.STRIPE_PUBLISHABLE})
+                                             "publishable": settings.STRIPE_PUBLISHABLE})
