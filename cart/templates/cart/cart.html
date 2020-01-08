@@ -46,16 +46,29 @@
   </div>
     {% empty %}
     <div class="container bg-faded p-5 d-flex mx-auto rounded">
-    <p>You haven't saved any items yet.</p>
+      <p>You haven't added any services to your cart yet. </p>
+    <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Shop now</a>
     </div>
     {% endfor%}
   
+  {% if count > 0 %}
   <div class="cta">
     <div class="cta-inner">
-      <h5>Total: {% currency total %}</h5>
-      <p><em>Number of items in your cart: {{ count }}</em></p>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-9">
+            <h5>Total: {% currency total %}</h5>
+            <p><em>Number of items in your cart: {{ count }}</em></p>
+          </div>
+          <div class="col-md-3">
+            <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Continue shopping</a> 
+            <a href="{% url 'checkout' %}" class="btn btn-lg btn-success">Check out now</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+  {% endif %}
 </section>
 
 {% endblock %}
