@@ -114,10 +114,15 @@ a {
 }
 
 .site-heading {
-  text-shadow: whitesmoke 1px 0 10px;
+  text-shadow: whitesmoke 1px 0 2px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin: 0;
+}
+
+.page-title .section-heading .section-heading-upper,
+.page-title .section-heading .section-heading-lower {
+  text-shadow: whitesmoke 1px 0 2px;
 }
 
 @media screen and (min-width: 481px) {
@@ -127,8 +132,20 @@ a {
 }
 
 @media screen and (min-width: 769px) {
+  .page-title .section-heading .section-heading-lower {
+    font-size: 4rem;
+  }
+
+  .page-title .section-heading .section-heading-upper {
+    font-size: 2rem;
+  }
+
   .section-heading .section-heading-lower {
     font-size: 3rem;
+  }
+
+  .section-heading .section-heading-upper {
+    font-size: 1.5rem;
   }
 }
 
