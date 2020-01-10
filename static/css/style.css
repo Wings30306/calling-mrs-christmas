@@ -45,6 +45,7 @@ img.product-item-img {
   width: 50vw;
   height: auto;
   border-radius: 0;
+  margin: 0;
 }
 
 .footer {
