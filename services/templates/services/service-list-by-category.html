@@ -1,8 +1,10 @@
 {% extends "base.html" %} {% load currency_tags %} {% load static %} {% block content %}
-<h2 class="section-heading text-center text-white d-none d-lg-block">
-  <span class="section-heading-upper text-success mb-0">Our services</span>
-  <span class="section-heading-lower text-danger">{{ obj.title }}</span>
-</h2>
+<section class="page-title">
+  <h2 class="section-heading text-center d-none d-lg-block">
+    <span class="section-heading-upper text-success mb-0">Our services</span>
+    <span class="section-heading-lower text-danger">{{ obj.title }}</span>
+  </h2>
+</section>
 {% for instance in queryset %} {% if forloop.counter|divisibleby:2 %}
 <section class="page-section">
   <div class="container">
