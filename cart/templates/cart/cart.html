@@ -1,13 +1,12 @@
 {% extends 'base.html' %} {% load static %} {% load currency_tags %} 
 {% block content %}
-<section class="page-title mt-5">
-  <h2 class="section-heading text-center">
-    <span class="section-heading-upper">shopping cart</span
-    ><span class="section-heading-lower">your selected services</span>
-  </h2>
-</section>
-<section class="page-section">
-  
+<section class="page-section my-5">
+  <header class="page-title">
+    <h2 class="section-heading text-center">
+      <span class="section-heading-upper">shopping cart</span
+      ><span class="section-heading-lower">your selected services</span>
+    </h2>
+  </header>
   {% for item in cart_items %}
   <div class="container bg-faded p-5 d-flex mx-auto rounded">
     <div class="row">
@@ -87,5 +86,4 @@
   </div>
   {% endif %}
 </section>
-
 {% endblock %}
