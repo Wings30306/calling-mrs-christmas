@@ -11,6 +11,12 @@ def cart_contents(request):
         try:
             cart_instance = Cart.objects.get(user=request.user)
             print(cart_instance)
+            if cart_instance.cart == {}:
+                empty_cart = {"cart_items": [], "total": 0, "count": 0}
+                Cart.objects.filter(user=request.user).update(
+                    user=request.user,
+                    cart=empty_cart)
+                cart_instance = Cart.objects.get(user=request.user)
             cart = cart_instance.cart
             request.session["cart"] = cart
         except Cart.DoesNotExist:
@@ -58,6 +64,9 @@ def cart_contents(request):
                                    "item_total": item_total
                                    })
             index += 1
-    cart = {"cart_items": cart_items, "total": total, "count": count}
+        cart = {"cart_items": cart_items, "total": total, "count": count}
+    else:
+        cart = {"cart_items": [], "total": 0, "count": 0}
+    
     request.session["cart"] = cart
     return cart
