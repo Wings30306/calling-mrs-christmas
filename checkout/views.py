@@ -5,6 +5,7 @@ from django.utils import timezone
 from services.models import Service
 from checkout.models import OrderLineItem
 from checkout.forms import OrderForm, MakePaymentForm
+from cart.models import Cart
 import stripe
 
 
@@ -48,7 +49,11 @@ def checkout_view(request):
 
             if customer.paid:
                 messages.success(request, "You have successfully paid.")
-                request.session['cart'] = {}
+                request.session['cart'] = {"cart_items": [], "total": 0, "count": 0}
+                if request.user.is_authenticated:
+                    Cart.objects.filter(user=request.user).update(
+                        user=request.user,
+                        cart=request.session["cart"])
                 return redirect(reverse('index'))
             else:
                 messages.error(request, "Unable to take payment")
