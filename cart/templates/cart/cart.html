@@ -1,7 +1,15 @@
-{% extends 'base.html' %} {% load static %} {% load currency_tags %} {% block content %}
+{% extends 'base.html' %} {% load static %} {% load currency_tags %} 
+{% block content %}
+<section class="page-title mt-5">
+  <h2 class="section-heading text-center">
+    <span class="section-heading-upper">shopping cart</span
+    ><span class="section-heading-lower">your selected services</span>
+  </h2>
+</section>
 <section class="page-section">
-    {% for item in cart_items %}
-    <div class="container bg-faded p-5 d-flex mx-auto rounded">
+  
+  {% for item in cart_items %}
+  <div class="container bg-faded p-5 d-flex mx-auto rounded">
     <div class="row">
       <div class="col-12 col-sm-6">
         <h4>
@@ -11,7 +19,10 @@
       <div class="col-6">
         <h5>Cost: {% currency item.price %}</h5>
         <h5>Subtotal: {% currency item.item_total %}</h5>
-        <form action="{% url 'cart:adjust_cart' item.primary_key %}" method="post">
+        <form
+          action="{% url 'cart:adjust_cart' item.primary_key %}"
+          method="post"
+        >
           {% csrf_token %}
           <div class="input-group">
             <input
@@ -44,14 +55,14 @@
       </div>
     </div>
   </div>
-    {% empty %}
-    <div class="container bg-faded p-5 d-flex mx-auto rounded">
-      <p>You haven't added any services to your cart yet. </p>
-    <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Shop now</a>
-    </div>
-    {% endfor%}
-  
-  {% if count > 0 %}
+  {% empty %}
+  <div class="container bg-faded p-5 d-flex mx-auto rounded">
+    <p>You haven't added any services to your cart yet.</p>
+    <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger"
+      >Shop now</a
+    >
+  </div>
+  {% endfor%} {% if count > 0 %}
   <div class="cta">
     <div class="cta-inner">
       <div class="container-fluid">
@@ -61,8 +72,14 @@
             <p><em>Number of items in your cart: {{ count }}</em></p>
           </div>
           <div class="col-md-3">
-            <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Continue shopping</a> 
-            <a href="{% url 'checkout' %}" class="btn btn-lg btn-success">Check out now</a>
+            <a
+              href="{% url 'services:services_list' %}"
+              class="btn btn-lg btn-danger"
+              >Continue shopping</a
+            >
+            <a href="{% url 'checkout' %}" class="btn btn-lg btn-success"
+              >Check out now</a
+            >
           </div>
         </div>
       </div>
