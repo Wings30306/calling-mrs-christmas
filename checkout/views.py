@@ -2,11 +2,12 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
 from django.utils import timezone
+import stripe
 from services.models import Service
 from checkout.models import OrderLineItem
 from checkout.forms import OrderForm, MakePaymentForm
 from cart.models import Cart
-import stripe
+
 
 
 # Create your views here.
