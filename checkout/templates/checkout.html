@@ -17,14 +17,9 @@
     {% for item in cart_items %}
 
     <div
-      class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 card border border-success rounded-lg m-3 p-3"
+      class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4"
     >
-      <div
-        class="service"
-        style="background-image: url('static/img/service-images/{{ item.img }}')"
-      ></div>
-
-      <div class="caption">
+      <div class="card border border-success rounded-lg m-3 p-3">
         <h3>{{ item.title }}</h3>
         <p class="service-description">{{ item.description }}</p>
         <p>Quantity: {{ item.quantity }}</p>
