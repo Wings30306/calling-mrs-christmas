@@ -45,7 +45,7 @@ def add_to_cart(request, primary_key):
         index += 1
     cart['cart_items'].append(new_cart_item)
     if request.user.is_authenticated:
-        Cart.objects.filter(user=request.user).update_or_create(
+        Cart.objects.filter(user=request.user).update(
             user=request.user,
             cart=request.session["cart"])
     cart_contents(request)
