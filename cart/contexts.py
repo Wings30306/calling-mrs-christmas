@@ -67,6 +67,5 @@ def cart_contents(request):
         cart = {"cart_items": cart_items, "total": total, "count": count}
     else:
         cart = {"cart_items": [], "total": 0, "count": 0}
-    
     request.session["cart"] = cart
     return cart
