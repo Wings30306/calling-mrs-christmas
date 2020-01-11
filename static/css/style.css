@@ -68,6 +68,10 @@ img.product-item-img {
   margin: 0;
 }
 
+.site-heading .site-heading-upper {
+  color: green
+}
+
 .section-heading .section-heading-upper {
   color: darkgreen
 }
@@ -86,7 +90,31 @@ a:hover {
   color: darkgreen;
   text-shadow: 3px 3px red;
   text-decoration: none;
-  border: 5px solid red
+}
+
+a.btn-success:hover {
+  text-shadow: none;
+  background-color: green;
+  border: 1px ridge red
+}
+
+a.btn-danger:hover {
+  text-shadow: none;
+  color: darkgreen;
+  border: 1px ridge darkgreen
+}
+
+a.btn-info {
+  background-color: snow;
+  color: darkgreen;
+  border-color: darkgreen;
+}
+
+a.btn-info:hover {
+  text-shadow: none;
+  color: snow;
+  background-color: red;
+  border: 1px ridge darkgreen;
 }
 
 a {
