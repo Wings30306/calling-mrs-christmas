@@ -59,7 +59,7 @@
         {{ order_form|as_bootstrap }}
         {% if request.user.is_authenticated %}
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="save-details">
+          <input class="form-check-input" type="checkbox" name="save-details" id="save-details">
           <label class="form-check-label" for="defaultCheck1">
             Save your contact details.
           </label>
