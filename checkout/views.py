@@ -9,7 +9,6 @@ from checkout.forms import OrderForm, MakePaymentForm
 from cart.models import Cart
 
 
-
 # Create your views here.
 
 stripe.api_key = settings.STRIPE_SECRET
@@ -21,10 +20,8 @@ def checkout_view(request):
         payment_form = MakePaymentForm(request.POST)
         print(payment_form)
         if order_form.is_valid() and payment_form.is_valid():
-            
             cart = request.session.get('cart', {})
             total = cart["total"]
-            
             try:
                 customer = stripe.Charge.create(
                     amount=int(total),
@@ -42,7 +39,8 @@ def checkout_view(request):
                 order.date = timezone.now()
                 order.save()
                 for item in cart["cart_items"]:
-                    service = get_object_or_404(Service, pk=item["primary_key"])
+                    service = get_object_or_404(
+                        Service, pk=item["primary_key"])
                     quantity = item["quantity"]
                     total += quantity * service.price_in_p
                     order_line_item = OrderLineItem(
@@ -52,7 +50,8 @@ def checkout_view(request):
                     )
                     order_line_item.save()
 
-                request.session['cart'] = {"cart_items": [], "total": 0, "count": 0}
+                request.session['cart'] = {
+                    "cart_items": [], "total": 0, "count": 0}
                 if request.user.is_authenticated:
                     Cart.objects.filter(user=request.user).update(
                         user=request.user,
