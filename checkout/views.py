@@ -18,10 +18,12 @@ def checkout_view(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         payment_form = MakePaymentForm(request.POST)
-        print(payment_form)
+        save_details = request.POST.get("save-details")
+        print("Save details checkbox: ", save_details)
         if order_form.is_valid() and payment_form.is_valid():
             cart = request.session.get('cart', {})
             total = cart["total"]
+            customer = None
             try:
                 customer = stripe.Charge.create(
                     amount=int(total),
@@ -33,30 +35,31 @@ def checkout_view(request):
                 messages.error(request, "Your card was declined!")
                 return redirect(reverse("checkout"))
 
-            if customer.paid:
-                messages.success(request, "You have successfully paid.")
-                order = order_form.save(commit=False)
-                order.date = timezone.now()
-                order.save()
-                for item in cart["cart_items"]:
-                    service = get_object_or_404(
-                        Service, pk=item["primary_key"])
-                    quantity = item["quantity"]
-                    total += quantity * service.price_in_p
-                    order_line_item = OrderLineItem(
-                        order=order,
-                        service=service,
-                        quantity=quantity
-                    )
-                    order_line_item.save()
+            if customer is not None:
+                if customer.paid:
+                    messages.success(request, "You have successfully paid.")
+                    order = order_form.save(commit=False)
+                    order.date = timezone.now()
+                    order.save()
+                    for item in cart["cart_items"]:
+                        service = get_object_or_404(
+                            Service, pk=item["primary_key"])
+                        quantity = item["quantity"]
+                        total += quantity * service.price_in_p
+                        order_line_item = OrderLineItem(
+                            order=order,
+                            service=service,
+                            quantity=quantity
+                        )
+                        order_line_item.save()
 
-                request.session['cart'] = {
-                    "cart_items": [], "total": 0, "count": 0}
-                if request.user.is_authenticated:
-                    Cart.objects.filter(user=request.user).update(
-                        user=request.user,
-                        cart=request.session["cart"])
-                return redirect(reverse('index'))
+                    request.session['cart'] = {
+                        "cart_items": [], "total": 0, "count": 0}
+                    if request.user.is_authenticated:
+                        Cart.objects.filter(user=request.user).update(
+                            user=request.user,
+                            cart=request.session["cart"])
+                    return redirect(reverse('index'))
             else:
                 messages.error(request, "Unable to take payment")
         else:
