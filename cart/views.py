@@ -12,7 +12,8 @@ def helper_check_user_cart(request):
             cart = cart_instance.cart
             request.session["cart"] = cart
         except Cart.DoesNotExist:
-            cart = {"cart_items": [], "total": 0, "count": 0}
+            cart = request.session["cart"]
+            Cart.objects.create(user=request.user, cart=cart)
         finally:
             request.session["cart"] = cart
     else:
