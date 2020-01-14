@@ -17,9 +17,18 @@ stripe.api_key = settings.STRIPE_SECRET
 def checkout_view(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
+        order_dict = order_form.__dict__
         payment_form = MakePaymentForm(request.POST)
         save_details = request.POST.get("save-details")
-        print("Save details checkbox: ", save_details)
+        if save_details == "on":
+            phone = order_dict["data"]["phone_number"]
+            street1 = order_dict["data"]["street_address1"]
+            street2 = order_dict["data"]["street_address2"]
+            town = order_dict["data"]["town_or_city"]
+            postcode = order_dict["data"]["postcode"]
+            county = order_dict["data"]["county"]
+            country = order_dict["data"]["country"]
+            print(phone, street1, street2, town, postcode, county, country)
         if order_form.is_valid() and payment_form.is_valid():
             cart = request.session.get('cart', {})
             total = cart["total"]
