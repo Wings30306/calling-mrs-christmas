@@ -1,12 +1,9 @@
-{% extends "base.html" %} {% load currency_tags %} {% load static %} 
+{% extends "base.html" %} {% load currency_tags %} {% load static %}
 {% block content %}
 <section class="page-section about-heading">
   <div class="container">
-    <img
-      src="{% static 'img/service-images/' %}{{ object.img_name }}.jpg"
-      alt="{{ object.img_alt }}"
-      class="about-heading-img service-detail-image"
-    />
+    <img src="{% static 'img/service-images/' %}{{ object.img_name }}.jpg" alt="{{ object.img_alt }}"
+      class="about-heading-img service-detail-image" />
     <div class="about-heading-content">
       <div class="row">
         <div class="col-xl-9 col-lg-10 ml-auto">
@@ -22,14 +19,7 @@
             <form action="{% url 'cart:add_to_cart' object.id %}" method="post">
               {% csrf_token %}
               <div class="input-group">
-                <input
-                  type="number"
-                  name="quantity"
-                  min="1"
-                  max="999"
-                  class="form-control"
-                  placeholder="Quantity"
-                />
+                <input type="number" name="quantity" min="1" max="999" class="form-control" placeholder="Quantity" />
                 <span class="input-group-btn">
                   <button class="btn btn-lg btn-success" type="submit">
                     Add
