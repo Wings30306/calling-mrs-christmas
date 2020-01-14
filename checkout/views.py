@@ -4,7 +4,7 @@ from django.conf import settings
 from django.utils import timezone
 import stripe
 from services.models import Service
-from checkout.models import OrderLineItem
+from checkout.models import OrderLineItem, ContactDetails
 from checkout.forms import OrderForm, MakePaymentForm
 from cart.models import Cart
 
@@ -29,6 +29,31 @@ def checkout_view(request):
             county = order_dict["data"]["county"]
             country = order_dict["data"]["country"]
             print(phone, street1, street2, town, postcode, county, country)
+            if request.user.is_authenticated:
+                try:
+                    ContactDetails.objects.get(user=request.user)
+                    ContactDetails.objects.filter(user=request.user).update(
+                        user=request.user,
+                        phone_number=phone,
+                        street_address1=street1,
+                        street_address2=street2,
+                        town_or_city=town,
+                        postcode=postcode,
+                        county=county,
+                        country=country)
+                    print("updating instance")
+                except ContactDetails.DoesNotExist:
+                    print("creating instance")
+                    ContactDetails.objects.create(
+                        user=request.user,
+                        phone_number=phone,
+                        street_address1=street1,
+                        street_address2=street2,
+                        town_or_city=town,
+                        postcode=postcode,
+                        county=county,
+                        country=country)
+                print(ContactDetails.objects.get(user=request.user))
         if order_form.is_valid() and payment_form.is_valid():
             cart = request.session.get('cart', {})
             total = cart["total"]
