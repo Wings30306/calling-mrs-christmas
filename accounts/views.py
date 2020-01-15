@@ -19,12 +19,12 @@ def logout(request):
 def register(request):
     """Allow new user to create account"""
     if request.user.is_authenticated:
-        #Prevent logged in user from going back to login page
+        # Prevent logged in user from going back to login page
         messages.success(request, request.user.first_name +
                          ", you are already signed in!")
         return redirect(reverse('index'))
     if request.method == "POST":
-        #Register the user using form data
+        # Register the user using form data
         registration_form = UserRegistrationForm(request.POST)
         if registration_form.is_valid():
             registration_form.save()
@@ -44,7 +44,8 @@ def register(request):
         registration_form = UserRegistrationForm
     context = {
         "form": registration_form,
-        "form_title": "Create a new account",
+        "form_title_upper": "Create a new account",
+        "form_title_lower": "Register now!",
         "button_text": "Create account",
         "wrong_page_redirect": "<p>Do you already have an account? " +
                                "You can <a href='/accounts/login'>sign in</a> instead.</p>"
@@ -55,12 +56,12 @@ def register(request):
 def login(request):
     """Return Login page"""
     if request.user.is_authenticated:
-        #Prevent logged in user from going back to login page
+        # Prevent logged in user from going back to login page
         messages.success(request, request.user.first_name +
                          ", you are already signed in!")
         return redirect(reverse('accounts:profile'))
     if request.method == "POST":
-        #Log in the user using form data
+        # Log in the user using form data
         form = UserLoginForm(request.POST)
 
         if form.is_valid():
@@ -77,7 +78,8 @@ def login(request):
         form = UserLoginForm
     context = {
         "form": form,
-        "form_title": "Log In",
+        "form_title_upper": "Welcome back!",
+        "form_title_lower": "Please log in",
         "button_text": "Log me in",
         "wrong_page_redirect": "<p><strong>If you were redirected here after password reset, " +
                                "please sign in again with your new password.</strong></p>" +
