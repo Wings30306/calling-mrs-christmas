@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <title>Calling Mrs Christmas</title>
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon/favicon.ico' %}"/>
+  <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon/favicon.ico' %}" />
   <!-- Custom styles for this template -->
   <link href="{% static 'css/business-casual.min.css' %}" rel="stylesheet" />
 
@@ -82,15 +82,18 @@
   </nav>
   {% if messages %}
   <div class="alert text-center cta" role="alert">
-    <div class="cta-inner">
-      {% for message in messages %}
-      <p>
-        {{ message|safe }}
-      </p>
-      {% endfor %}
+    <div class="container">
+      <div class="cta-inner">
+        {% for message in messages %}
+        <p>
+          {{ message|safe }}
+        </p>
+        {% endfor %}
+      </div>
     </div>
+    {% endif %}
   </div>
-  {% endif %}
+
   {% block content %} {% endblock %}
   <footer class="footer text-faded text-center">
     <div class="container-fluid">
