@@ -7,46 +7,54 @@
         services</span>
     </h2>
   </header>
-  {% for item in cart_items %}
-  <div class="container bg-faded p-5 d-flex mx-auto rounded">
-    <div class="row">
-      <div class="col-12 col-sm-6">
-        <h4>
-          <span class="section-heading-lower">{{ item.title }}</span>
-        </h4>
-      </div>
-      <div class="col-6">
-        <h5>Cost: {% currency item.price %}</h5>
-        <h5>Subtotal: {% currency item.item_total %}</h5>
-        <form action="{% url 'cart:adjust_cart' item.primary_key %}" method="post">
-          {% csrf_token %}
-          <div class="input-group">
-            <input type="number" name="quantity" min="0" max="999" value="{{ item.quantity }}" class="form-control" />
-            <span class="input-group-btn">
-              <button class="btn btn-lg btn-success" type="submit">
-                Adjust
-              </button>
-            </span>
+  <div class="row">
+    {% for item in cart_items %}
+    <div class="col-sm-6 col-md-4">
+      <div class="container bg-faded d-flex mx-auto rounded">
+        <div class="row">
+          <div class="col-12">
+            <h4 class="section-heading">
+              <span class="section-heading-upper small-heading">{{ item.title }}</span>
+            </h4>
           </div>
-        </form>
-      </div>
-      <div class="col-6">
-        <a href="{{ item.url }}">
-          <img class="product-item-img mx-auto d-flex rounded img-fluid"
-            src="{% static 'img/service-images/' %}{{ item.img }}.jpg" alt="{{ item.alt }}" />
-        </a>
-      </div>
-      <div class="d-none d-sm-block col-sm-6">
-        {{ item.description|linebreaks}}
+          <div class="col-6">
+            <h5>Cost: {% currency item.price %}</h5>
+            <h5>Subtotal: {% currency item.item_total %}</h5>
+            <form action="{% url 'cart:adjust_cart' item.primary_key %}" method="post">
+              {% csrf_token %}
+              <div class="input-group">
+                <p>
+                  <input type="number" name="quantity" min="0" max="999" value="{{ item.quantity }}"
+                  class="form-control" />
+                </p>
+                <div class="input-group-btn">
+                  <button class="btn btn-lg btn-success" type="submit">
+                    Adjust
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-6">
+            <a href="{{ item.url }}">
+              <img class="product-item-img mx-auto d-flex rounded img-fluid"
+                src="{% static 'img/service-images/' %}{{ item.img }}.jpg" alt="{{ item.alt }}" />
+            </a>
+          </div>
+          <div class="d-none d-sm-block col-sm-12">
+            {{ item.description|linebreaks}}
+          </div>
+        </div>
       </div>
     </div>
+    {% empty %}
+    <div class="container bg-faded p-5 d-flex mx-auto rounded">
+      <p>You haven't added any services to your cart yet.</p>
+      <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Shop now</a>
+    </div>
+    {% endfor%}
   </div>
-  {% empty %}
-  <div class="container bg-faded p-5 d-flex mx-auto rounded">
-    <p>You haven't added any services to your cart yet.</p>
-    <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Shop now</a>
-  </div>
-  {% endfor%} {% if count > 0 %}
+  {% if count > 0 %}
   <div class="cta">
     <div class="container">
       <div class="cta-inner">
