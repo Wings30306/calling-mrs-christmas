@@ -168,6 +168,18 @@ a {
   text-shadow: whitesmoke 1px 0 2px;
 }
 
+.section-heading .section-heading-upper.small-heading {
+  font-size: 1.3rem;
+}
+
+.btn-fluid {
+  width: 100%
+}
+
+form table input {
+  width: 100%;
+}
+
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
