@@ -1,18 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container bg-faded my-3 p-3 rounded">
-    <h2>{{ form_title }}</h2>
-    <form method="post">
-        {% csrf_token %}
-        <table>
-          {{ form.as_table }}  
-        </table>
-        
-        <button type="submit">{{ button_text }}</button>
+<section class="page-title mt-5">
+  <h2 class="section-heading text-center">
+    <span class="section-heading-upper">{{ form_title_upper }}</span>
+    <span class="section-heading-lower">{{ form_title_lower }}</span>
+  </h2>
+  <div class="container bg-faded my-3 p-3 rounded">
+    <form method="post" class="container mx-auto">
+      {% csrf_token %}
+      <table class="mx-auto">
+        {{ form.as_table }}
+      </table>
+      <button class="btn btn-lg btn-success btn-fluid"type="submit">{{ button_text }}</button>
     </form>
     <hr>
     {{ wrong_page_redirect|safe }}
-</div>
+  </div>
+</section>
+
 
 {% endblock %}
