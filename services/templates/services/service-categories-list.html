@@ -19,7 +19,7 @@
       <div class="product-item-description d-flex mr-auto">
         <div class="bg-faded p-5 rounded">
           {{ instance.description|linebreaks }}
-          <a href="{{ instance.get_absolute_url }}">Explore</a>
+          <a class="btn btn-large btn-success btn-fluid" href="{{ instance.get_absolute_url }}">See all services for {{ instance.name }}</a>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
       <div class="product-item-description d-flex ml-auto">
         <div class="bg-faded p-5 rounded">
           {{ instance.description|linebreaks }}
-          <a href="{{ instance.get_absolute_url }}">Explore</a>
+          <a class="btn btn-large btn-success btn-fluid" href="{{ instance.get_absolute_url }}">See all services for {{ instance.name }}</a>
         </div>
       </div>
     </div>

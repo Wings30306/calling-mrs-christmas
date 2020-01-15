@@ -172,6 +172,10 @@ a {
   font-size: 1.3rem;
 }
 
+.btn-fluid {
+  width: 100%
+}
+
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
