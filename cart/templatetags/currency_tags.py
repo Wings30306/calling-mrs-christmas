@@ -6,5 +6,5 @@ register = template.Library()
 def currency(value):
     """Custom template tag for displaying currency"""
     value_decimal = value / 100
-    currency_string = "£ " + f'{value_decimal:.2f}'
+    currency_string = "£\u00A0" + f'{value_decimal:.2f}'
     return currency_string
