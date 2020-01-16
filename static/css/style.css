@@ -213,6 +213,17 @@ span.helptext {
 }
 
 @media (min-width: 992px) {
+  .product-item-title div {
+    width: 60%
+  }
+
+  .product-item .product-item-img {
+      position: relative;
+      z-index: 0;
+      max-width: 40%;
+  }
+
+
   .about-heading .about-heading-content {
     margin-top: -30rem;
     margin-bottom: 10rem;
