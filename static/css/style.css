@@ -180,6 +180,10 @@ form table input {
   width: 100%;
 }
 
+span.helptext {
+  font-size: x-small;
+}
+
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
