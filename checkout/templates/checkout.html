@@ -1,5 +1,8 @@
-{% extends "base.html" %} {% load static %} {% load bootstrap_tags %} 
-{% load currency_tags %} {% block custom_scripts_js %}
+{% extends "base.html" %}
+{% load static %}
+{% load bootstrap_tags %} 
+{% load currency_tags %}
+{% block custom_scripts_js %}
 <script src="https://js.stripe.com/v2"></script>
 <script>
   //<![CDATA[
@@ -7,7 +10,8 @@
   //]]
 </script>
 <script src="{% static 'js/stripe.js' %}"></script>
-{% endblock %} {% block content %}
+{% endblock %}
+{% block content %}
 <div class="container bg-faded rounded pt-3">
   <h3 class="section-heading text-center">
     <span class="section-heading-upper">Services in your cart</span>

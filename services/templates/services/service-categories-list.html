@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 {% for instance in object_list %}
 {% if forloop.counter|divisibleby:2 %}
 <section class="page-section">

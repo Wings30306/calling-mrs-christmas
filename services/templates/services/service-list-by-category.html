@@ -1,11 +1,15 @@
-{% extends "base.html" %} {% load currency_tags %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load currency_tags %}
+{% load static %}
+{% block content %}
 <section class="page-title mt-5">
   <h2 class="section-heading text-center">
     <span class="section-heading-upper text-success mb-0">Our services</span>
     <span class="section-heading-lower text-danger">{{ obj.title }}</span>
   </h2>
 </section>
-{% for instance in queryset %} {% if forloop.counter|divisibleby:2 %}
+{% for instance in queryset %}
+{% if forloop.counter|divisibleby:2 %}
 <section class="page-section">
   <div class="container">
     <div class="product-item">
@@ -85,7 +89,8 @@
     </div>
   </div>
 </section>
-{% endif %} {% empty %}
+{% endif %}
+{% empty %}
 <div class="container bg-faded p-5 d-flex my-3 rounded">
   <h2 class="section-heading my-3">
     <span class="section-heading-upper"

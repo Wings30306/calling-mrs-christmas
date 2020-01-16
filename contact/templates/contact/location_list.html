@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
 <div class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Contact form</h2>
   <form action="" method="post">
@@ -10,7 +12,8 @@
 <div class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Visit our office{% if object_list|length > 1 %}s{% endif %}!</h2>
   <div class="row">
-    {% for instance in object_list %} {% if object_list|length == 1 %}
+    {% for instance in object_list %}
+{% if object_list|length == 1 %}
     <div class="col-12">
       {% elif object_list|length > 1 %}
       <div class="col-md-6">
