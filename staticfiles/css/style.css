@@ -79,7 +79,6 @@ img.product-item-img {
 .section-heading .section-heading-lower {
   font-size: 2rem;
   color: red;
-  text-shadow: black 1px 0 10px;
 }
 
 body {
@@ -88,7 +87,7 @@ body {
 
 a:hover {
   color: darkgreen;
-  text-shadow: 3px 3px red;
+  text-shadow: 1px 1px 2px green;
   text-decoration: none;
 }
 
@@ -180,6 +179,10 @@ form table input {
   width: 100%;
 }
 
+span.helptext {
+  font-size: x-small;
+}
+
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
@@ -209,20 +212,26 @@ form table input {
 }
 
 @media (min-width: 992px) {
+  .product-item-title div {
+    width: 60%
+  }
+
+  .product-item .product-item-img {
+      position: relative;
+      z-index: 0;
+      max-width: 40%;
+  }
+
+
   .about-heading .about-heading-content {
-    margin-top: -30rem;
-    margin-bottom: 10rem;
+    margin-top: -20rem;
     position: relative;
     z-index: 1;
   }
 
-  .about-heading .about-heading-img {
-    margin-bottom: 10rem;
-  }
-
   .staff-image,
   .service-detail-image {
-    width: 60%;
+    width: 35%;
     height: auto;
   }
 }
