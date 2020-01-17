@@ -79,7 +79,6 @@ img.product-item-img {
 .section-heading .section-heading-lower {
   font-size: 2rem;
   color: red;
-  text-shadow: black 1px 0 10px;
 }
 
 body {
@@ -88,7 +87,7 @@ body {
 
 a:hover {
   color: darkgreen;
-  text-shadow: 3px 3px red;
+  text-shadow: 1px 1px 2px green;
   text-decoration: none;
 }
 
@@ -225,7 +224,7 @@ span.helptext {
 
 
   .about-heading .about-heading-content {
-    margin-top: -30rem;
+    margin-top: -20rem;
     position: relative;
     z-index: 1;
   }
