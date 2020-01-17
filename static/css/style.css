@@ -226,13 +226,8 @@ span.helptext {
 
   .about-heading .about-heading-content {
     margin-top: -30rem;
-    margin-bottom: 10rem;
     position: relative;
     z-index: 1;
-  }
-
-  .about-heading .about-heading-img {
-    margin-bottom: 10rem;
   }
 
   .staff-image,
