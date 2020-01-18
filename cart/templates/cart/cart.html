@@ -26,7 +26,7 @@
               {% csrf_token %}
               <div class="input-group">
                 <p>
-                  <input type="number" name="quantity" min="0" max="999" value="{{ item.quantity }}"
+                  <input type="number" name="quantity" aria-label="Adjust quantity. Current quantity is {{ item.quantity }}" min="0" max="999" value="{{ item.quantity }}"
                   class="form-control" />
                 </p>
                 <div class="input-group-btn">
