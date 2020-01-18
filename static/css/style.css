@@ -31,12 +31,12 @@ footer {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
-  color: #92002A;
+  color: #B43858;
   border: 5px solid #477D55;
 }
 
 #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
-  color: #92002A;
+  color: #B43858;
   font-weight: bold;
   background-color: #5E8C6A;
   text-shadow: #FEFDFB 1px 0 10px;
@@ -72,7 +72,7 @@ img.product-item-img {
 }
 
 .site-heading .site-heading-lower {
-  color: #92002A;
+  color: #B43858;
 }
 
 .section-heading .section-heading-upper {
@@ -81,7 +81,7 @@ img.product-item-img {
 
 .section-heading .section-heading-lower {
   font-size: 2rem;
-  color: #92002A;
+  color: #B43858;
 }
 
 body {
@@ -111,7 +111,7 @@ a.btn-success:hover {
 
 .btn-danger,
 a.btn-danger {
-  background-color: #92002A;
+  background-color: #B43858;
 }
 
 .btn-danger:hover
@@ -129,15 +129,15 @@ a.btn-info {
 btn-info:hover,
 a.btn-info:hover {
   color: #FEFDFB;
-  background-color: #92002A;
+  background-color: #B43858;
 }
 
 .cta {
-  background-color: #92002A95;
+  background-color: #B4385895;
 }
 
 .cta-inner {
-  border: .25rem double #92002A95;
+  border: .25rem double #B4385895;
 }
 
 .card.team-member {
@@ -204,7 +204,7 @@ div#xcd3248 {
 }
 div#xcd3248 div {
   font-weight: bold;
-  color: #92002A;
+  color: #B43858;
   position: absolute;
   left: 0;
   width: 100%;
