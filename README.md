@@ -4,6 +4,8 @@ Calling Mrs Christmas! You haven't got the time or the energy for Christmas this
 
 Cassie and her mischievous little elves have been working hard to make their clients' Christmases magical since 2013, from getting those beloved baubles down from the attic to lavish holidays to Lapland, the home of Santa himself, including a visit to the world-famous Ice Hotel. Want to see what we have to offer? Find out more at [Calling Mrs Christmas](https://callingmrschristmas.herokuapp.com)!
 
+Current build continuous integration status: ![alt text](https://travis-ci.com/Wings30306/callingmrschristmas.svg?branch=master "Build status")
+
 ## UX
 
 This website is for the (fictional) company Calling Mrs Christmas, a startup which offers Christmas-related services to its customers. The company is based in Hemel Hampstead, UK and run by Cassie Smith and her partner Jim.
