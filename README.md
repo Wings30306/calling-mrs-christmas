@@ -40,7 +40,7 @@ This website is for the (fictional) company Calling Mrs Christmas, a startup whi
 ##### Past customer
 
 - As a user, I want to leave a review for Cassie and her team.
-  
+
 <!--
 
 ### Wireframes, diagrams...
@@ -107,40 +107,51 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ## Credits
 
-<!--
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+
+- The staff names and user stories were taken (and paraphrased) from the book "Calling Mrs Christmas" by Carole Matthews.
 
 ### Media
-- The photos used in this site were obtained from Pexels, specifically:
-    - Background:
-    - Intro: [Photo by Thanakorn Phanthura](https://www.pexels.com/photo/man-and-woman-standing-beside-christmas-tree-3183385/)
-    - About: [Photo by Oleg Magni](https://www.pexels.com/photo/green-christmas-tree-with-baubles-1762887/)
-    - Team: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
-    - Placeholder image "Image to be added" edited from [Photo by Tirachard Kumtanom](https://www.pexels.com/photo/black-and-silver-film-camera-on-brown-wooden-surface-733853/)
-    - Dog sledding (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by Lars Ley](https://www.pexels.com/photo/sled-pulled-by-dogs-2531014/)
-    - Wrapping (service category): [Photo by Pixabay from Pexels](https://www.pexels.com/photo/gift-wrap-paper-wrapping-paper-gift-present-12553/)
-    - Catering (service category): [Photo by picjumbo.com from Pexels](https://www.pexels.com/photo/blur-bokeh-candle-christmas-decoration-196648/)
-    - Gift-shopping (service category): [Photo by freestocks.org from Pexels](https://www.pexels.com/photo/paper-bags-near-wall-749353/)
-    - Decorating (service category): [Photo by Toni Cuenca from Pexels](https://www.pexels.com/photo/green-christmas-tree-688573/)
-    - Brown paper packages tied up with string (service): [Photo by Ylanite Koppens from Pexels](https://www.pexels.com/photo/photo-of-two-brown-wrapped-gifts-on-wooden-table-1693650/)
-    - Wrapping gifts for adults (service): [Photo by Pixabay from Pexels](https://www.pexels.com/photo/advent-balls-celebration-christmas-264742/)
-    - Wrapping gifts for children (service): [Photo by cottonbro from Pexels](https://www.pexels.com/photo/photo-of-girl-sitting-on-white-sofa-with-her-legs-crossed-holding-present-3154345/)
-    - Tree Delivery: [Photo by Dids from Pexels](https://www.pexels.com/photo/shallow-focus-photography-of-green-coniferous-tree-2456348/)
-    - Tree Decorating: [Photo by cottonbro from Pexels](https://www.pexels.com/photo/two-girls-putting-decorations-on-a-christmas-tree-3154322/)
-    - Decorations for Rent: [Photo By Paola L from Pexels](https://www.pexels.com/photo/gray-blue-and-gold-colored-baubles-790155/)
 
-    Images not from Pexels:
-    - Staff profile images created on [Cartoonify](https://www.cartoonify.de/)
-    - A room at the Ice Hotel (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by By Stephan Herz (User:Stephan_Herz) - Own work, CC BY 2.5 on Wikipedia](https://commons.wikimedia.org/w/index.php?curid=485145)
-    - Telephone horn in logo found on [PNG Guru](https://www.pngguru.com/free-transparent-background-png-clipart-vhzzo)
+- The following images were obtained from Pexels:
 
--->
+  - Background:
+  - Intro: [Photo by Thanakorn Phanthura](https://www.pexels.com/photo/man-and-woman-standing-beside-christmas-tree-3183385/)
+  - About: [Photo by Oleg Magni](https://www.pexels.com/photo/green-christmas-tree-with-baubles-1762887/)
+  - Team: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
+  - Dog sledding (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by Lars Ley](https://www.pexels.com/photo/sled-pulled-by-dogs-2531014/)
+  - Wrapping (service category): [Photo by Pixabay](https://www.pexels.com/photo/gift-wrap-paper-wrapping-paper-gift-present-12553/)
+  - Catering (service category): [Photo by picjumbo.com](https://www.pexels.com/photo/blur-bokeh-candle-christmas-decoration-196648/)
+  - Gift-shopping (service category): [Photo by freestocks.org](https://www.pexels.com/photo/paper-bags-near-wall-749353/)
+  - Decorating (service category): [Photo by Toni Cuenca](https://www.pexels.com/photo/green-christmas-tree-688573/)
+  - Brown paper packages tied up with string (service): [Photo by Ylanite Koppens](https://www.pexels.com/photo/photo-of-two-brown-wrapped-gifts-on-wooden-table-1693650/)
+  - Wrapping gifts for adults (service): [Photo by Pixabay](https://www.pexels.com/photo/advent-balls-celebration-christmas-264742/)
+  - Wrapping gifts for children (service): [Photo by cottonbro](https://www.pexels.com/photo/photo-of-girl-sitting-on-white-sofa-with-her-legs-crossed-holding-present-3154345/)
+  - Tree Delivery: [Photo by Dids](https://www.pexels.com/photo/shallow-focus-photography-of-green-coniferous-tree-2456348/)
+  - Tree Decorating: [Photo by cottonbro](https://www.pexels.com/photo/two-girls-putting-decorations-on-a-christmas-tree-3154322/)
+  - Decorations for Rent: [Photo By Paola L](https://www.pexels.com/photo/gray-blue-and-gold-colored-baubles-790155/)
+
+- Images not from Pexels:
+
+  - Staff profile images created on [Cartoonify](https://www.cartoonify.de/)
+  - A room at the Ice Hotel (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by By Stephan Herz (User:Stephan_Herz) - Own work, CC BY 2.5 on Wikipedia](https://commons.wikimedia.org/w/index.php?curid=485145)
+  - Telephone horn in logo found on [PNG Guru](https://www.pngguru.com/free-transparent-background-png-clipart-vhzzo)
 
 ### Code-related acknowledgements
 
-- Christmas countdown clock obtained from [Days Until Christmas](https://www.days-until-christmas.co.uk/website-xmas-countdown.htm). Clock style 2 was used as it's much smaller and less obtrusive so best suiter for use in the footer.
+- Christmas countdown clock adjusted from [Days Until Christmas](https://www.days-until-christmas.co.uk/website-xmas-countdown.htm). Clock style 1 was used for a combination of relatively small size to fit into footer and readability/accessibility. Originally, I had chosen clock style 1, but it turned out that was hard to read for people with green/red colour blindness. Pointed out by [Bim Williams](https://github.com/MrBim)
+- Code used or adapted from Code Institute lessons:
+  - Stripe.js used as shown in e-commerce mini project for (test) payment functionality
+  - .travis.yml file used as shown in e-commerce mini-project for TravisCI.
+- Code from other tutorials:
+  - [Django 2 Tutorial by codingforentrepreneurs](https://www.youtube.com/watch?v=F5mRW0jo-U4) was used to learn about the differences between Django 1 (shown in Code Institute lessons) and the current long-term support version of Django 2. Main differences I learned about through this tutorial:
+    - urls.py now uses path instead of url and no longer needs regex build-up of urls
+    - classbased views can help speed up development, but may need overriding of template names, success urls etc.
 
 ### Acknowledgements
 
 - Thank you to the fabulous [Carole Matthews](https://www.carolematthews.com/), author of the book [Calling Mrs Christmas](https://www.carolematthews.com/books/calling-mrs-christmas/), without whose wonderful story and kind permission this project would not have happened.
+- Thank you to my amazing mentor and friend [Simen Daehlin](https://github.com/Eventyret) aka Yoda. Your padawan is now a jedi.  Couldn't have got here without you, mate! Thanks for putting up with my panic moments, too!
+- Thank you to the CodeBantz crew (you know who you are) for the encouragement, the pinpoints in the right direction when I felt lost, and the laughs we had along the way!
+- Thank you to the Code Institute staff and Slack community, new and old. Final project! This is what makes all the struggles worthwhile!
+- To everyone I forgot to mention (we all know what my memory is like), I'm sorry and thank you!
