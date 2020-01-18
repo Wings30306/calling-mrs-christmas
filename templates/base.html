@@ -30,7 +30,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
     <div class="container-fluid">
       <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'index' %}"><img
-          src="{% static 'img/callingmrschristmas.png'%}" alt="Calling Mrs Christmas logo: a red telephone horn with a speech bubble" /></a>
+          src="{% static 'img/callingmrschristmas.png'%}"
+          alt="Calling Mrs Christmas logo: a red telephone horn with a speech bubble" /></a>
 
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -97,19 +98,20 @@
   {% block content %}
   {% endblock %}
   <footer class="footer text-faded text-center">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-6 px-auto">
+    <div class="container-fluid p-0">
+      <div class="row m-0">
+        <div class="col-6">
           <p class="m-0 small">Copyright &copy; Calling Mrs Christmas 2019</p>
         </div>
-        <div class="col-6 px-auto">
-          <!--Christmas countdown clocks obtained from https://www.days-until-christmas.co.uk/website-xmas-countdown.htm-->
-          <!--Small clock for mobiles-->
-          <div id="xcd3249" onclick="window.open('https://www.days-until-christmas.co.uk');">
-            <a href="https://www.days-until-christmas.co.uk" id="xcda3249" target="_blank">Days Until Christmas</a>
-            <script src="https://www.days-until-christmas.co.uk/webcounts/xcd3249.js"></script>
+        <div class="col-6 p-0">
+          <!--Christmas countdown clock adapted from from
+          https://www.days-until-christmas.co.uk/website-xmas-countdown.htm-->
+          <div id="xcd3248" class="ml-auto">
+            <a href="https://www.days-until-christmas.co.uk" id="xcda3248" target="_blank"></a>
+            <script src="{% static 'js/christmas-countdown.js' %}"></script>
           </div>
         </div>
+        
       </div>
     </div>
   </footer>
