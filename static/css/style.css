@@ -32,7 +32,6 @@ footer {
   font-family: "Raleway", sans-serif;
   font-weight: normal;
   color: #92002A;
-  text-shadow: 1px 1px 3px #FEFDFB;
   border: 5px solid #477D55;
 }
 
@@ -74,7 +73,6 @@ img.product-item-img {
 
 .site-heading .site-heading-lower {
   color: #92002A;
-  text-shadow: 1px 1px 2px #FEFDFB;
 }
 
 .section-heading .section-heading-upper {
@@ -84,7 +82,6 @@ img.product-item-img {
 .section-heading .section-heading-lower {
   font-size: 2rem;
   color: #92002A;
-  text-shadow: 1px 1px 2px #9c193f;
 }
 
 body {
@@ -99,7 +96,6 @@ a {
 
 a:hover {
   color: #477D55;
-  text-shadow: 1px 1px 2px #5E8C6A;
   text-decoration: none;
 }
 
@@ -110,7 +106,6 @@ a.btn-success {
 
 .btn-success:hover,
 a.btn-success:hover {
-  text-shadow: none;
   background-color: #5E8C6A;
 }
 
@@ -121,7 +116,6 @@ a.btn-danger {
 
 .btn-danger:hover
 a.btn-danger:hover {
-  text-shadow: none;
   background-color: #9c193f;
 }
 
@@ -132,12 +126,10 @@ a.btn-info {
   border: 1px solid #477D55;
 }
 
-btn-info,
+btn-info:hover,
 a.btn-info:hover {
-  text-shadow: none;
   color: #FEFDFB;
   background-color: #92002A;
-  border: 1px ridge #477D55;
 }
 
 .cta {
@@ -146,10 +138,6 @@ a.btn-info:hover {
 
 .cta-inner {
   border: .25rem double #92002A95;
-}
-
-.rounded {
-  border-radius: 1rem;
 }
 
 .card.team-member {
@@ -178,15 +166,9 @@ a.btn-info:hover {
 }
 
 .site-heading {
-  text-shadow: #FEFDFB 1px 0 2px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin: 0;
-}
-
-.page-title .section-heading .section-heading-upper,
-.page-title .section-heading .section-heading-lower {
-  text-shadow: #FEFDFB 1px 0 2px;
 }
 
 .section-heading .section-heading-upper.small-heading {
@@ -205,33 +187,6 @@ span.helptext {
   font-size: x-small;
 }
 
-@media screen and (min-width: 481px) {
-  .section-heading .section-heading-lower {
-    font-size: 2.5rem;
-  }
-}
-
-@media screen and (min-width: 769px) {
-  #mainNav .container-fluid .navbar-nav .nav-item .nav-link {
-    font-size: 2em;
-  }
-
-  .page-title .section-heading .section-heading-lower {
-    font-size: 4rem;
-  }
-
-  .page-title .section-heading .section-heading-upper {
-    font-size: 2rem;
-  }
-
-  .section-heading .section-heading-lower {
-    font-size: 3rem;
-  }
-
-  .section-heading .section-heading-upper {
-    font-size: 1.5rem;
-  }
-}
 
 /* Christmas Countdown styles
 adapted from inline styles in 
@@ -262,6 +217,35 @@ div#xcd3248 a {
   color: transparent;
 }
 /* End of Christmas Countdown styles */
+
+@media screen and (min-width: 481px) {
+  .section-heading .section-heading-lower {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  #mainNav .container-fluid .navbar-nav .nav-item .nav-link {
+    font-size: 2em;
+  }
+
+  .page-title .section-heading .section-heading-lower {
+    font-size: 4rem;
+  }
+
+  .page-title .section-heading .section-heading-upper {
+    font-size: 2rem;
+  }
+
+  .section-heading .section-heading-lower {
+    font-size: 3rem;
+  }
+
+  .section-heading .section-heading-upper {
+    font-size: 1.5rem;
+  }
+}
+
 
 @media (min-width: 992px) {
   .product-item-title div {
