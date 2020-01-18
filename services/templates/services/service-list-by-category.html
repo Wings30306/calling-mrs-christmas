@@ -4,8 +4,8 @@
 {% block content %}
 <section class="page-title mt-5">
   <h2 class="section-heading text-center">
-    <span class="section-heading-upper text-success mb-0">Our services</span>
-    <span class="section-heading-lower text-danger">{{ obj.title }}</span>
+    <span class="section-heading-upper mb-0">Our services</span>
+    <span class="section-heading-lower">{{ obj.title }}</span>
   </h2>
 </section>
 {% for instance in queryset %}
@@ -41,7 +41,7 @@
               </span>
             </div>
           </form>
-          <a href="{{ instance.get_absolute_url }}" class="btn btn-primary btn-lg"
+          <a href="{{ instance.get_absolute_url }}" class="btn btn-info btn-lg"
             ><i class="fas fa-open-book"></i> Read more</a
           >
         </div>
@@ -81,7 +81,7 @@
               </span>
             </div>
           </form>
-          <a class="btn btn-primary btn-lg" href="{{ instance.get_absolute_url }}"
+          <a class="btn btn-info btn-lg" href="{{ instance.get_absolute_url }}"
             ><i class="fas fa-open-book"></i> Read more</a
           >
         </div>
