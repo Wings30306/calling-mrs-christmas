@@ -97,11 +97,13 @@
 
   {% block content %}
   {% endblock %}
-  <footer class="footer text-faded text-center">
+  <footer class="footer text-white text-center">
     <div class="container-fluid p-0">
       <div class="row m-0">
-        <div class="col-6">
-          <p class="m-0 small">Copyright &copy; Calling Mrs Christmas 2019</p>
+        <div class="col-6 my-auto">
+          <p class="m-0 small">Copyright &copy; Calling Mrs Christmas 2013-<script>
+            document.write(new Date().getFullYear());
+          </script></p>
         </div>
         <div class="col-6 p-0">
           <!--Christmas countdown clock adapted from from
