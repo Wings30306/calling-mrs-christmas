@@ -7,7 +7,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <meta name=description content="Website for fictional company Calling Mrs Christmas, based on the book of the same name by Carole Matthews">
+  <meta name=description
+    content="Website for fictional company Calling Mrs Christmas, based on the book of the same name by Carole Matthews">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
   <title>Calling Mrs Christmas</title>
@@ -41,21 +42,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link text-uppercase text-expanded" href="/">Home
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'index' %}">Home
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase text-expanded" href="/about">About</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'about:about_list'">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase text-expanded" href="/services">Services</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'services:services_list' %}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-uppercase text-expanded" href="/contact">Contact</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'contact:contact' %}">Contact</a>
           </li>
           {% if count > 0 %}
           <li class="nav-item">
-            <a class="nav-link text-uppercase text-expanded" href="/cart"><i class="fas fa-shopping-cart"></i></a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'cart:view_cart' %}"><i
+                class="fas fa-shopping-cart"></i></a>
           </li>
           {% endif %}
           <li class="nav-item dropdown">
@@ -103,18 +105,20 @@
       <div class="row m-0">
         <div class="col-6 my-auto">
           <p class="m-0 small">Copyright &copy; Calling&nbsp;Mrs&nbsp;Christmas 2013&#8209;<script>
-            document.write(new Date().getFullYear());
-          </script></p>
+              document.write(new Date().getFullYear());
+            </script>
+          </p>
         </div>
         <div class="col-6 p-0">
           <!--Christmas countdown clock adapted from from
           https://www.days-until-christmas.co.uk/website-xmas-countdown.htm-->
           <div id="xcd3248" class="ml-auto">
-            <a href="https://www.days-until-christmas.co.uk" id="xcda3248" target="_blank" rel="noopener noreferrer">Christmas Countdown website</a>
+            <a href="https://www.days-until-christmas.co.uk" id="xcda3248" target="_blank"
+              rel="noopener noreferrer">Christmas Countdown website</a>
             <script src="{% static 'js/christmas-countdown.js' %}"></script>
           </div>
         </div>
-        
+
       </div>
     </div>
   </footer>
