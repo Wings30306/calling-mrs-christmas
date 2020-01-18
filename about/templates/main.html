@@ -4,11 +4,8 @@
 <section class="page-section clearfix">
   <div class="container">
     <div class="intro">
-      <img
-        class="intro-img img-fluid mb-3 mb-lg-0 rounded mx-auto"
-        src="{% static 'img/intro.jpg' %}"
-        alt="Getting the office ready for Christmas"
-      />
+      <img class="intro-img img-fluid mb-3 mb-lg-0 rounded mx-auto" src="{% static 'img/intro.jpg' %}"
+        alt="Getting the office ready for Christmas" />
       <div class="intro-text left-0 text-center bg-faded p-5 rounded">
         <h2 class="section-heading mb-4">
           <span class="section-heading-upper">A Holiday</span>
@@ -34,27 +31,23 @@
 
 <section class="page-section cta">
   <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <div class="cta-inner text-center rounded">
-          <h2 class="section-heading mb-4">
-            <span class="section-heading-upper">Our Promise</span>
-            <span class="section-heading-lower">
-              To You
-              {% if user.is_authenticated %}
-              , {{ user.first_name }} 
-              {% endif %}
-            </span>
-          </h2>
-          <p class="mb-0">
-            Whether you come to our premises on the High Street for a
-            face-to-face chat or order online, we are dedicated to providing you
-            with friendly planners, a welcoming atmosphere, and above all else,
-            an excellent service. If you are not satisfied, please let us know
-            and we will do whatever we can to make things right!
-          </p>
-        </div>
-      </div>
+    <div class="cta-inner text-center rounded">
+      <h2 class="section-heading mb-4">
+        <span class="section-heading-upper">Our Promise</span>
+        <span class="section-heading-lower">
+          To You
+          {% if user.is_authenticated %}
+          , {{ user.first_name }}
+          {% endif %}
+        </span>
+      </h2>
+      <p class="mb-0">
+        Whether you come to our premises on the High Street for a
+        face-to-face chat or order online, we are dedicated to providing you
+        with friendly planners, a welcoming atmosphere, and above all else,
+        an excellent service. If you are not satisfied, please let us know
+        and we will do whatever we can to make things right!
+      </p>
     </div>
   </div>
 </section>
@@ -64,27 +57,20 @@
     <div class="success-stories">
       <div class="left-0 text-center bg-faded p-5 rounded">
         <h2 class="section-heading mb-4">
-          <span class="section-heading-upper"
-            >Success story: {{ object.client_first_name}} 
+          <span class="section-heading-upper">Success story: {{ object.client_first_name}}
             {% if object.client_last_name_initial %}
             {{object.client_last_name_initial}}
             {% endif %}
             {% if object.client_company %}
-             - {{ object.client_company }} 
+            - {{ object.client_company }}
             {% endif %}
-            </span>
+          </span>
           <span class="section-heading-lower">{{ object.title }}</span>
         </h2>
         {{ object.description|linebreaks }}
         <div class="intro-button mx-auto">
-          <a
-            class="btn btn-success btn-xl"
-            href="{% url 'services:services_list' %}"
-            >Book Today!</a
-          >
-          <a class="btn btn-info btn-xl" href="{% url 'about:casestudies' %}"
-            >More Like this</a
-          >
+          <a class="btn btn-success btn-xl" href="{% url 'services:services_list' %}">Book Today!</a>
+          <a class="btn btn-info btn-xl" href="{% url 'about:casestudies' %}">More Like this</a>
         </div>
       </div>
     </div>
