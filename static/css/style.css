@@ -144,6 +144,10 @@ a.btn-info:hover {
   background-color: #92002A95;
 }
 
+.cta-inner {
+  border: .25rem double #92002A95;
+}
+
 .rounded {
   border-radius: 1rem;
 }
