@@ -1,5 +1,5 @@
 * {
-  margin: 0
+  margin: 0;
 }
 
 .container {
@@ -8,16 +8,16 @@
 
 #mainNav,
 footer {
-  background-color: darkgreen;
-  border: 5px dotted whitesmoke;
+  background-color: #477D55;
+  border: 5px dotted #FEFDFB;
   padding: 0;
 }
 
 .nav-item {
-  width: 16.6%
+  width: 16.6%;
 }
 
-#mainNav .container-fluid ul{
+#mainNav .container-fluid ul {
   align-items: center;
   justify-content: space-around;
   width: 100%;
@@ -31,15 +31,16 @@ footer {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
-  color: red;
-  border: 5px solid darkgreen;
+  color: #92002A;
+  text-shadow: 1px 1px 3px #FEFDFB;
+  border: 5px solid #477D55;
 }
 
-#mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover{
-  color: red;
+#mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
+  color: #92002A;
   font-weight: bold;
-  background-color: green;
-  text-shadow: whitesmoke 1px 0 10px;
+  background-color: #5E8C6A;
+  text-shadow: #FEFDFB 1px 0 10px;
   border-radius: 15px;
 }
 
@@ -54,7 +55,6 @@ img.product-item-img {
   margin: 0;
 }
 
-
 .navbar-brand img {
   width: 50vw;
   height: auto;
@@ -63,67 +63,85 @@ img.product-item-img {
 }
 
 .footer {
-  background-color: darkgreen;
+  background-color: #477D55;
   padding: 0;
   margin: 0;
 }
 
 .site-heading .site-heading-upper {
-  color: green
+  color: #5E8C6A;
+}
+
+.site-heading .site-heading-lower {
+  color: #92002A;
+  text-shadow: 1px 1px 2px #FEFDFB;
 }
 
 .section-heading .section-heading-upper {
-  color: darkgreen
+  color: #477D55;
 }
 
 .section-heading .section-heading-lower {
   font-size: 2rem;
-  color: red;
+  color: #92002A;
+  text-shadow: 1px 1px 2px #9c193f;
 }
 
 body {
   background-position: right;
 }
 
-a:hover {
-  color: darkgreen;
-  text-shadow: 1px 1px 2px green;
-  text-decoration: none;
-}
-
-a.btn-success:hover {
-  text-shadow: none;
-  background-color: green;
-  border: 1px ridge red
-}
-
-a.btn-danger:hover {
-  text-shadow: none;
-  color: darkgreen;
-  border: 1px ridge darkgreen
-}
-
-a.btn-info {
-  background-color: snow;
-  color: darkgreen;
-  border-color: darkgreen;
-}
-
-a.btn-info:hover {
-  text-shadow: none;
-  color: snow;
-  background-color: red;
-  border: 1px ridge darkgreen;
-}
-
 a {
-  color: green;
+  color: #5E8C6A;
   text-decoration: none;
   background-color: transparent;
 }
 
+a:hover {
+  color: #477D55;
+  text-shadow: 1px 1px 2px #5E8C6A;
+  text-decoration: none;
+}
+
+.btn-success,
+a.btn-success {
+  background-color: #477D55;
+}
+
+.btn-success:hover,
+a.btn-success:hover {
+  text-shadow: none;
+  background-color: #5E8C6A;
+}
+
+.btn-danger,
+a.btn-danger {
+  background-color: #92002A;
+}
+
+.btn-danger:hover
+a.btn-danger:hover {
+  text-shadow: none;
+  background-color: #9c193f;
+}
+
+.btn-info,
+a.btn-info {
+  background-color: #FEFDFB;
+  color: #477D55;
+  border: 1px solid #477D55;
+}
+
+btn-info,
+a.btn-info:hover {
+  text-shadow: none;
+  color: #FEFDFB;
+  background-color: #92002A;
+  border: 1px ridge #477D55;
+}
+
 .cta {
-  background-color: rgba(128, 0, 0, 0.9);
+  background-color: #92002A95;
 }
 
 .rounded {
@@ -156,7 +174,7 @@ a {
 }
 
 .site-heading {
-  text-shadow: whitesmoke 1px 0 2px;
+  text-shadow: #FEFDFB 1px 0 2px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin: 0;
@@ -164,7 +182,7 @@ a {
 
 .page-title .section-heading .section-heading-upper,
 .page-title .section-heading .section-heading-lower {
-  text-shadow: whitesmoke 1px 0 2px;
+  text-shadow: #FEFDFB 1px 0 2px;
 }
 
 .section-heading .section-heading-upper.small-heading {
@@ -172,7 +190,7 @@ a {
 }
 
 .btn-fluid {
-  width: 100%
+  width: 100%;
 }
 
 form table input {
@@ -211,17 +229,45 @@ span.helptext {
   }
 }
 
+/* Christmas Countdown styles
+adapted from inline styles in 
+https://www.days-until-christmas.co.uk/webcounts/xcd3248.js) */
+div#xcd3248 {
+  width: 180px;
+  height: 130px;
+  overflow: hidden;
+  font-family: Verdana, Arial;
+  cursor: pointer;
+  background: url(https://www.days-until-christmas.co.uk/webcounts/imgs/xcd1.jpg);
+  text-align: center;
+  line-height: normal;
+  position: relative;
+}
+div#xcd3248 div {
+  font-weight: bold;
+  color: #92002A;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+div#xcd3248 a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+}
+/* End of Christmas Countdown styles */
+
 @media (min-width: 992px) {
   .product-item-title div {
-    width: 60%
+    width: 60%;
   }
 
   .product-item .product-item-img {
-      position: relative;
-      z-index: 0;
-      max-width: 40%;
+    position: relative;
+    z-index: 0;
+    max-width: 40%;
   }
-
 
   .about-heading .about-heading-content {
     margin-top: -20rem;
