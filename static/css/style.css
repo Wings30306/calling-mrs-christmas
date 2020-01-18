@@ -187,6 +187,10 @@ span.helptext {
   font-size: x-small;
 }
 
+.btn-lg, .btn-xl {
+  font-size: 1.2rem
+}
+
 
 /* Christmas Countdown styles
 adapted from inline styles in 
@@ -269,6 +273,15 @@ div#xcd3248 a {
     width: 35%;
     height: auto;
   }
+}
+
+footer .col-lg-9 a {
+  color: #fefdfb;
+}
+
+footer .col-lg-9 a:hover {
+  color: #e4e3e1;
+  font-weight: bold;
 }
 
 @media (min-width: 1200px) {
