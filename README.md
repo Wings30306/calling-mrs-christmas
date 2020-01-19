@@ -137,6 +137,7 @@ In addition, if it is not obvious, you should also describe how to run your code
   - A room at the Ice Hotel (case study: Lavish Lapland Luxury and Little Gaddesden Gaiety): [Photo by By Stephan Herz (User:Stephan_Herz) - Own work, CC BY 2.5 on Wikipedia](https://commons.wikimedia.org/w/index.php?curid=485145)
   - Telephone horn in logo found on [PNG Guru](https://www.pngguru.com/free-transparent-background-png-clipart-vhzzo)
   - Full logo created by [Sean Murphy](https://github.com/nazarja)
+  - Favicon image created by [Guillermo Brachetta](https://github.com/GBrachetta) and converted using [Favicon Converter](https://favicon.io/favicon-converter/)
 
 ### Code-related acknowledgements
 
