@@ -9,6 +9,7 @@
 #mainNav,
 .footer {
   background-color: #477D55;
+  color: #FEFDFB;
 }
 
 #mainNav .container-fluid ul {
@@ -26,11 +27,12 @@
   font-family: "Raleway", sans-serif;
   font-weight: normal;
   border: 5px solid #477D55;
-  color: #282828
+  color: #FEFDFB
 }
 
 .navbar-nav .dropdown-menu {
   background-color: #477D55;
+  color: #FEFDFB;
   border: 0;
   text-align: center;
 }
@@ -277,7 +279,7 @@ div#xcd3248 a {
 }
 
 footer .col-lg-9 a {
-  color: #282828;
+  color: #FEFDFB;
 }
 
 footer .col-lg-9 a:hover {
