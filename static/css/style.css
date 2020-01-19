@@ -7,9 +7,8 @@
 }
 
 #mainNav,
-footer {
+.footer {
   background-color: #477D55;
-  border: 5px dotted #FEFDFB;
   padding: 0;
 }
 
@@ -31,16 +30,13 @@ footer {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
-  color: #B43858;
   border: 5px solid #477D55;
+  color: #282828
 }
 
 #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
-  color: #B43858;
-  font-weight: bold;
   background-color: #5E8C6A;
-  text-shadow: #FEFDFB 1px 0 10px;
-  border-radius: 15px;
+  border-radius: 0.25rem;
 }
 
 img {
@@ -61,10 +57,9 @@ img.product-item-img {
   margin: 0;
 }
 
-.footer {
-  background-color: #477D55;
-  padding: 0;
-  margin: 0;
+.site-heading {
+  background-color: #28282870;
+  backdrop-filter: blur(1.3px);
 }
 
 .site-heading .site-heading-upper {
@@ -276,11 +271,11 @@ div#xcd3248 a {
 }
 
 footer .col-lg-9 a {
-  color: #fefdfb;
+  color: #282828;
 }
 
 footer .col-lg-9 a:hover {
-  color: #e4e3e1;
+  color: #000000;
   font-weight: bold;
 }
 
