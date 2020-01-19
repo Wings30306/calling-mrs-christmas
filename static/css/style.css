@@ -9,11 +9,6 @@
 #mainNav,
 .footer {
   background-color: #477D55;
-  padding: 0;
-}
-
-.nav-item {
-  width: 16.6%;
 }
 
 #mainNav .container-fluid ul {
@@ -32,6 +27,12 @@
   font-weight: normal;
   border: 5px solid #477D55;
   color: #282828
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #477D55;
+  border: 0;
+  text-align: center;
 }
 
 img {
@@ -219,7 +220,8 @@ div#xcd3248 a {
 }
 
 @media screen and (min-width: 769px) {
-  #mainNav .container-fluid .navbar-nav .nav-item .nav-link {
+  #mainNav .container-fluid .navbar-nav .nav-item .nav-link,
+  .dropdown-menu {
     font-size: 2em;
   }
 
@@ -242,6 +244,10 @@ div#xcd3248 a {
 
 
 @media (min-width: 992px) {
+  .nav-item {
+    width: 16.6%;
+  }
+
   #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
     background-color: #5E8C6A;
     border-radius: 0.25rem;
