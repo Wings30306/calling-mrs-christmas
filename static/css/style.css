@@ -32,9 +32,12 @@
 
 .navbar-nav .dropdown-menu {
   background-color: #477D55;
-  color: #FEFDFB;
   border: 0;
   text-align: center;
+}
+
+.dropdown-item {
+  color: #FEFDFB;
 }
 
 img {
