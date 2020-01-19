@@ -34,11 +34,6 @@
   color: #282828
 }
 
-#mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
-  background-color: #5E8C6A;
-  border-radius: 0.25rem;
-}
-
 img {
   width: 100%;
   height: auto;
@@ -247,6 +242,11 @@ div#xcd3248 a {
 
 
 @media (min-width: 992px) {
+  #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
+    background-color: #5E8C6A;
+    border-radius: 0.25rem;
+  }
+
   .product-item-title div {
     width: 60%;
   }
