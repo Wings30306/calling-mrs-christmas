@@ -20,8 +20,8 @@
             <h5>{% currency object.price_in_p %}</h5>
             <form action="{% url 'cart:add_to_cart' object.id %}" method="post">
               {% csrf_token %}
-              <div class="input-group">nput type="number" name="quantity" aria-label="Input for quantity" min="1" max="999" class="form-control" placeholder="Quantity" />
-                <i
+              <div class="input-group">
+                <input type="number" name="quantity" aria-label="Input for quantity" min="1" max="999" class="form-control" placeholder="Quantity" />
                 <span class="input-group-btn">
                   <button class="btn btn-lg btn-success" type="submit">
                     Add
