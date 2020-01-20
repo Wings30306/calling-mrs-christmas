@@ -232,8 +232,7 @@ div#xcd3248 a {
 }
 
 @media screen and (min-width: 769px) {
-  #mainNav .container-fluid .navbar-nav .nav-item .nav-link,
-  .dropdown-menu {
+  #mainNav .container-fluid .navbar-nav .nav-item .nav-link {
     font-size: 2em;
   }
 
