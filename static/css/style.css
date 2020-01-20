@@ -268,6 +268,10 @@ div#xcd3248 a {
 
 
 @media (min-width: 992px) {
+  body {
+    padding-bottom: 10rem;
+  }
+
   .nav-item {
     width: 16.6%;
   }
