@@ -2,6 +2,11 @@
   margin: 0;
 }
 
+body {
+  min-height: 100vh;
+  padding-bottom: 7rem;
+}
+
 .container {
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -42,6 +47,7 @@
 .navbar-nav .dropdown-menu {
   background-color: #477D55;
   border: 0;
+  width: 100%;
   text-align: center;
 }
 
@@ -192,6 +198,13 @@ span.helptext {
 
 .btn-lg, .btn-xl {
   font-size: 1.2rem
+}
+
+footer.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+  z-index: 3;
 }
 
 
