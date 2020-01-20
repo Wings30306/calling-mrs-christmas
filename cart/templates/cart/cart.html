@@ -64,11 +64,11 @@
     <div class="container">
       <div class="cta-inner">
         <div class="row">
-          <div class="col-md-9">
+          <div class="col-md-6">
             <h5>Total: {% currency total %}</h5>
             <p><em>Number of items in your cart: {{ count }}</em></p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-6">
             <a href="{% url 'services:services_list' %}" class="btn btn-lg btn-danger">Continue shopping</a>
             <a href="{% url 'checkout' %}" class="btn btn-lg btn-success">Check out now</a>
           </div>
