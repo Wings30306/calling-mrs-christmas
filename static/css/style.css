@@ -4,6 +4,7 @@
 
 body {
   min-height: 100vh;
+  position: relative;
   padding-bottom: 7rem;
 }
 
@@ -202,9 +203,8 @@ span.helptext {
 
 footer.footer {
   width: 100%;
-  position: fixed;
-  bottom: 0%;
-  z-index: 3;
+  position: absolute;
+  bottom: 0;
 }
 
 
@@ -268,16 +268,8 @@ div#xcd3248 a {
 
 
 @media (min-width: 992px) {
-  body {
-    padding-bottom: 0;
-  }
-
   .nav-item {
     width: 16.6%;
-  }
-
-  footer.footer {
-    position: relative;
   }
 
   #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
