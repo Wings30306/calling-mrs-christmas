@@ -121,6 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Login_required - overriding the default
+LOGIN_URL = '/accounts/login'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
