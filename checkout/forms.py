@@ -21,5 +21,8 @@ class MakePaymentForm(forms.Form):
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ('full_name', 'phone_number', 'street_address1', 'street_address2',
+        fields = ('user', 'full_name', 'phone_number', 'street_address1', 'street_address2',
                   'town_or_city', 'postcode', 'county', 'country')
+        # next line found on StackOverflow:
+        # https://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input
+        widgets = {'user': forms.HiddenInput}
