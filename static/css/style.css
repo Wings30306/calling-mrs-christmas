@@ -3,13 +3,15 @@
 }
 
 .container {
-  margin-top: 2em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 #mainNav,
 .footer {
   background-color: #477D55;
   color: #FEFDFB;
+  margin: 0;
 }
 
 #mainNav .container-fluid ul {
@@ -137,7 +139,7 @@ a.btn-info:hover {
 }
 
 .card.team-member {
-  height: 100%;
+  text-align: center;
 }
 
 .team-member img {
@@ -155,10 +157,7 @@ a.btn-info:hover {
 }
 
 .card {
-  width: 80%;
-  height: 90%;
-  margin: 0 auto;
-  text-align: center;
+  height: 100%;
 }
 
 .site-heading {
