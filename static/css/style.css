@@ -22,8 +22,8 @@ body {
 
 #mainNav,
 .footer {
-  background-color: #477D55;
-  color: #FEFDFB;
+  background-color: #477d55;
+  color: #fefdfb;
   margin: 0;
 }
 
@@ -41,19 +41,19 @@ body {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
-  border: 5px solid #477D55;
-  color: #FEFDFB
+  border: 5px solid #477d55;
+  color: #fefdfb;
 }
 
 .navbar-nav .dropdown-menu {
-  background-color: #477D55;
+  background-color: #477d55;
   border: 0;
   width: 100%;
   text-align: center;
 }
 
 .dropdown-item {
-  color: #FEFDFB;
+  color: #fefdfb;
 }
 
 img {
@@ -81,20 +81,20 @@ img.product-item-img {
 }
 
 .site-heading .site-heading-upper {
-  color: #5E8C6A;
+  color: #5e8c6a;
 }
 
 .site-heading .site-heading-lower {
-  color: #B43858;
+  color: #b43858;
 }
 
 .section-heading .section-heading-upper {
-  color: #477D55;
+  color: #477d55;
 }
 
 .section-heading .section-heading-lower {
   font-size: 2rem;
-  color: #B43858;
+  color: #b43858;
 }
 
 body {
@@ -102,55 +102,54 @@ body {
 }
 
 a {
-  color: #5E8C6A;
+  color: #5e8c6a;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #477D55;
+  color: #477d55;
   text-decoration: none;
 }
 
 .btn-success,
 a.btn-success {
-  background-color: #477D55;
+  background-color: #477d55;
 }
 
 .btn-success:hover,
 a.btn-success:hover {
-  background-color: #5E8C6A;
+  background-color: #5e8c6a;
 }
 
 .btn-danger,
 a.btn-danger {
-  background-color: #B43858;
+  background-color: #b43858;
 }
 
-.btn-danger:hover
-a.btn-danger:hover {
+.btn-danger:hover a.btn-danger:hover {
   background-color: #9c193f;
 }
 
 .btn-info,
 a.btn-info {
-  background-color: #FEFDFB;
-  color: #477D55;
-  border: 1px solid #477D55;
+  background-color: #fefdfb;
+  color: #477d55;
+  border: 1px solid #477d55;
 }
 
 btn-info:hover,
 a.btn-info:hover {
-  color: #FEFDFB;
-  background-color: #B43858;
+  color: #fefdfb;
+  background-color: #b43858;
 }
 
 .cta {
-  background-color: #B4385895;
+  background-color: #b4385895;
 }
 
 .cta-inner {
-  border: .25rem double #B4385895;
+  border: 0.25rem double #b4385895;
 }
 
 .card.team-member {
@@ -197,8 +196,9 @@ span.helptext {
   font-size: x-small;
 }
 
-.btn-lg, .btn-xl {
-  font-size: 1.2rem
+.btn-lg,
+.btn-xl {
+  font-size: 1.2rem;
 }
 
 footer.footer {
@@ -206,7 +206,6 @@ footer.footer {
   position: absolute;
   bottom: 0;
 }
-
 
 /* Christmas Countdown styles
 adapted from inline styles in 
@@ -224,7 +223,7 @@ div#xcd3248 {
 }
 div#xcd3248 div {
   font-weight: bold;
-  color: #B43858;
+  color: #b43858;
   position: absolute;
   left: 0;
   width: 100%;
@@ -266,7 +265,6 @@ div#xcd3248 a {
   }
 }
 
-
 @media (min-width: 992px) {
   body {
     padding-bottom: 10rem;
@@ -277,7 +275,7 @@ div#xcd3248 a {
   }
 
   #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
-    background-color: #5E8C6A;
+    background-color: #5e8c6a;
     border-radius: 0.25rem;
   }
 
@@ -305,7 +303,7 @@ div#xcd3248 a {
 }
 
 footer .col-lg-9 a {
-  color: #FEFDFB;
+  color: #fefdfb;
 }
 
 footer .col-lg-9 a:hover {
