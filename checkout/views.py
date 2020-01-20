@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.utils import timezone
 import stripe
@@ -14,6 +15,7 @@ from cart.models import Cart
 stripe.api_key = settings.STRIPE_SECRET
 
 
+@login_required
 def checkout_view(request):
     if request.method == "POST":
         order_form = OrderForm(request.POST)
@@ -21,6 +23,7 @@ def checkout_view(request):
         payment_form = MakePaymentForm(request.POST)
         save_details = request.POST.get("save-details")
         if save_details == "on":
+            full_name = order_dict["data"]["full_name"]
             phone = order_dict["data"]["phone_number"]
             street1 = order_dict["data"]["street_address1"]
             street2 = order_dict["data"]["street_address2"]
@@ -29,30 +32,31 @@ def checkout_view(request):
             county = order_dict["data"]["county"]
             country = order_dict["data"]["country"]
             print(phone, street1, street2, town, postcode, county, country)
-            if request.user.is_authenticated:
-                try:
-                    ContactDetails.objects.get(user=request.user)
-                    ContactDetails.objects.filter(user=request.user).update(
-                        user=request.user,
-                        phone_number=phone,
-                        street_address1=street1,
-                        street_address2=street2,
-                        town_or_city=town,
-                        postcode=postcode,
-                        county=county,
-                        country=country)
-                    print("updating instance")
-                except ContactDetails.DoesNotExist:
-                    print("creating instance")
-                    ContactDetails.objects.create(
-                        user=request.user,
-                        phone_number=phone,
-                        street_address1=street1,
-                        street_address2=street2,
-                        town_or_city=town,
-                        postcode=postcode,
-                        county=county,
-                        country=country)
+            try:
+                ContactDetails.objects.get(user=request.user)
+                ContactDetails.objects.filter(user=request.user).update(
+                    user=request.user,
+                    full_name=full_name,
+                    phone_number=phone,
+                    street_address1=street1,
+                    street_address2=street2,
+                    town_or_city=town,
+                    postcode=postcode,
+                    county=county,
+                    country=country)
+                print("updating instance")
+            except ContactDetails.DoesNotExist:
+                print("creating instance")
+                ContactDetails.objects.create(
+                    user=request.user,
+                    full_name=full_name,
+                    phone_number=phone,
+                    street_address1=street1,
+                    street_address2=street2,
+                    town_or_city=town,
+                    postcode=postcode,
+                    county=county,
+                    country=country)
                 print(ContactDetails.objects.get(user=request.user))
         if order_form.is_valid() and payment_form.is_valid():
             cart = request.session.get('cart', {})
@@ -101,8 +105,26 @@ def checkout_view(request):
             messages.error(
                 request, "We were unable to take a payment with that card")
     else:
+        try:
+            ContactDetails.objects.get(user=request.user)
+            initial_data = {
+                "user": request.user.id,
+                "full_name": request.user.first_name + " " + request.user.last_name,
+                "phone_number": request.user.contactdetails.phone_number,
+                "street_address1": request.user.contactdetails.street_address1,
+                "street_address2": request.user.contactdetails.street_address2,
+                "town_or_city": request.user.contactdetails.town_or_city,
+                "postcode": request.user.contactdetails.postcode,
+                "county": request.user.contactdetails.county,
+                "country": request.user.contactdetails.country
+            }
+        except ContactDetails.DoesNotExist:
+            initial_data = {
+                "full_name": request.user.first_name + " " + request.user.last_name,
+            }
         payment_form = MakePaymentForm()
-        order_form = OrderForm()
+        order_form = OrderForm(request.POST or None, initial=initial_data)
     return render(request, "checkout.html", {"payment_form": payment_form,
                                              "order_form": order_form,
+                                             "initial_data": initial_data,
                                              "publishable": settings.STRIPE_PUBLISHABLE})
