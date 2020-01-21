@@ -4,7 +4,7 @@ from services.models import Service
 
 # Create your models here.
 class Order(models.Model):
-    user = user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
     postcode = models.CharField(max_length=20, blank=True)
