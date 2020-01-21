@@ -59,7 +59,9 @@
                 </div>
                 <div class="col-md-6">
                     <h3>Contact Details</h3>
-                    <p>Coming soon!</p>
+                    <table>
+                        {{ contact_details_form.as_table }}
+                    </table>
                 </div>
             </div>
             <button type="submit" class="btn btn-lg btn-success btn-fluid">Update</button>
