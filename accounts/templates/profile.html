@@ -41,23 +41,30 @@
         </div>
         <a href="{% url 'services:services_list' %}" class="btn btn-fluid btn-lg btn-info">Shop now!</a>
     </div>
+</section>
+<section>
     <div class="container bg-faded my-3 p-3 rounded">
-        <div class="row">
-            <div class="col-md-6">
-                <h3>Account Details</h3>
-                <form method="post">
+        <h3 class="section-heading text-center">
+            <span class="section-heading-upper">Tell us about you, {{ profile.first_name }}</span>
+            <span class="section-heading-lower">Your Account</span>
+        </h3>
+        <form method="post" class="w-100">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Account Details</h3>
+
                     {% csrf_token %}
                     <table>
                         {{ account_form.as_table }}
                     </table>
-                    <button type="submit" class="btn btn-lg btn-success btn-fluid">Update</button>
-                </form>
+                </div>
+                <div class="col-md-6">
+                    <h3>Contact Details</h3>
+                    <p>Coming soon!</p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <h3>Contact Details</h3>
-                <p>Coming soon!</p>
-            </div>
-        </div>
+            <button type="submit" class="btn btn-lg btn-success btn-fluid">Update</button>
+        </form>
     </div>
 </section>
 
