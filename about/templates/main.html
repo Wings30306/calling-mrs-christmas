@@ -35,9 +35,10 @@
       <h2 class="section-heading mb-4">
         <span class="section-heading-upper">Our Promise</span>
         <span class="section-heading-lower">
-          To You
           {% if user.is_authenticated %}
-          , {{ user.first_name }}
+          To You, {{ user.first_name }}
+          {% else %}
+          To You
           {% endif %}
         </span>
       </h2>
