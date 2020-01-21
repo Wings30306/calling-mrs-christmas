@@ -49,11 +49,10 @@
             <span class="section-heading-lower">Your Account</span>
         </h3>
         <form method="post" class="w-100">
+            {% csrf_token %}
             <div class="row">
                 <div class="col-md-6">
                     <h3>Account Details</h3>
-
-                    {% csrf_token %}
                     <table>
                         {{ account_form.as_table }}
                     </table>
