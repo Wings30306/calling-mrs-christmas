@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load bootstrap_tags %}
-
+{% load currency_tags %}
 {% block content %}
 <section class="page-title mt-5">
     <h2 class="section-heading mx-auto mt-3 text-center">
@@ -11,16 +11,28 @@
         <h3>Your purchases</h3>
         <div class="row">
             {% for purchase in purchases %}
-            <div class="col-md-4">
+            <div class="col-md-4 py-3">
                 <div class="card">
-                    <h4>{{ purchase.date }}</h4>
-                    <p>{{ item.orderlineitem }}</p>
+                    <h4 class="text-center">{{ purchase.date }}</h4>
+                    <h5 class="text-center">Reference: {{ purchase.id }}</h5>
+                    <ol>
+                        {% for item in purchase.orderlineitem_set.all %}
+                        <li>
+                            <em>{{ item.service.title }}</em>
+                            <ul>
+                                <li>Quantity: {{ item.quantity }}</li>
+                                <li>Price per item: {% currency item.service.price_in_p %}</li>
+                            </ul>
+                        </li>
+                        {% endfor %}
+                    </ol>
                 </div>
             </div>
             {% empty %}
             <p>You've not made any purchases yet.</p>
             {% endfor %}
         </div>
+        <a href="{% url 'services:services_list' %}" class="btn btn-fluid btn-lg btn-info">Shop now!</a>
     </div>
     <div class="container bg-faded my-3 p-3 rounded">
         <div class="row">
@@ -34,10 +46,11 @@
                     <button type="submit" class="btn btn-lg btn-success btn-fluid">Update</button>
                 </form>
             </div>
-            <div class="col-md-6"></div>
+            <div class="col-md-6">
+                <h3>Contact Details</h3>
+                <p>Coming soon!</p>
+            </div>
         </div>
-        <p class="section-heading-lower">Coming soon</p>
-        <a href="{% url 'services:services_list' %}" class="btn btn-fluid btn-lg btn-info">Shop now!</a>
     </div>
 </section>
 
