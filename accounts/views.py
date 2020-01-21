@@ -3,6 +3,7 @@ from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from accounts.forms import UserLoginForm, UserRegistrationForm
+from checkout.models import Order
 
 
 # Create your views here.
@@ -95,8 +96,13 @@ def login(request):
 def user_profile(request):
     """Render user's profile page"""
     user = User.objects.get(username=request.user.username)
+    account_form = UserRegistrationForm
+    purchases = Order.objects.filter(user=request.user)
+
     context = {
-        "profile": user
+        "profile": user,
+        "account_form": account_form,
+        "purchases": purchases
     }
     return render(request, 'profile.html', context)
 
