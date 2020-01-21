@@ -7,8 +7,14 @@
         <span class="section-heading-upper mx-auto">Profile Page for {{ profile.username }}</span>
         <span class="section-heading-lower mx-auto">Welcome, {{ profile.first_name }} {{profile.last_name}}</span>
     </h2>
+</section>
+<section>
     <div class="container bg-faded my-3 p-3 rounded">
-        <h3>Your purchases</h3>
+    <h3 class="section-heading text-center">
+        <span class="section-heading-upper">Bought and paid for</span>
+        <span class="section-heading-lower">Your purchases</span>
+    </h3>
+        <p>If you have any questions about an order you placed, please keep the reference number handy to help us look it up.</p>
         <div class="row">
             {% for purchase in purchases %}
             <div class="col-md-4 py-3">
