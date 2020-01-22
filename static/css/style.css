@@ -17,11 +17,13 @@
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background-color: transparent;
+  background-color: #fefdfb50;
   background-image: url(../img/favicon/favicon.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  box-shadow: inset 0 0 10px #477d55;
+  -webkit-box-shadow: inset 0 0 10px #477d55; 
 }
 /* End of scrollbar styles */
 
