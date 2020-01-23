@@ -45,19 +45,22 @@
 <section>
     <div class="container bg-faded my-3 p-3 rounded">
         <h3 class="section-heading text-center">
-            <span class="section-heading-upper">Tell us about you, {{ profile.first_name }}</span>
-            <span class="section-heading-lower">Your Account</span>
+            <span class="section-heading-upper">Your Account</span>
+            <span class="section-heading-lower">Tell us about you, {{ profile.first_name }}</span>
         </h3>
         <form method="post" class="w-100">
             {% csrf_token %}
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-6 w-100">
                     <h3>Account Details</h3>
-                    <table>
-                        {{ account_form.as_table }}
-                    </table>
+                    <p><strong>Username:</strong> {{ user.username }}</p>
+                    <p><strong>Email</strong>: {{ user.email }}</p>
+                    <p><strong>First name</strong>: {{ user.first_name }}</p>
+                    <p><strong>Last name</strong>: {{ user.last_name }}</p>
+                    <p><em>To change your account details, please contact <a href="mailto:jo_hannah@outlook.com">Jo</a></em></p>
+                    <<a>For security reasons, you can't change your password here. Instead, you can use this link: <a href="{% url 'accounts:password_reset' %}">Reset my password</a>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 w-100">
                     <h3>Contact Details</h3>
                     <table>
                         {{ contact_details_form.as_table }}
