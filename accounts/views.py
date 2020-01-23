@@ -97,13 +97,29 @@ def login(request):
 def user_profile(request):
     """Render user's profile page"""
     user = User.objects.get(username=request.user.username)
-    account_form = UserRegistrationForm
+    try:
+        ContactDetails.objects.get(user=request.user)
+        contact_data = {
+            "user": request.user.id,
+            "full_name": request.user.contactdetails.full_name,
+            "phone_number": request.user.contactdetails.phone_number,
+            "street_address1": request.user.contactdetails.street_address1,
+            "street_address2": request.user.contactdetails.street_address2,
+            "town_or_city": request.user.contactdetails.town_or_city,
+            "postcode": request.user.contactdetails.postcode,
+            "county": request.user.contactdetails.county,
+            "country": request.user.contactdetails.country
+        }
+    except ContactDetails.DoesNotExist:
+        contact_data = {
+            "full_name": request.user.first_name + " " + request.user.last_name,
+        }
+    contact_details = ContactDetailsForm(
+        request.POST or None, initial=contact_data)
     purchases = Order.objects.filter(user=request.user)
-
     context = {
         "profile": user,
-        "account_form": account_form,
-        "contact_details_form": ContactDetailsForm,
+        "contact_details_form": contact_details,
         "purchases": purchases
     }
     return render(request, 'profile.html', context)
