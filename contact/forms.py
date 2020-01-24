@@ -12,7 +12,4 @@ class LocationModelForm(forms.ModelForm):
             'town',
             'postcode',
             'email',
-            'image',
         ]
-            
-        
