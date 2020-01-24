@@ -20,5 +20,5 @@ class ContactMessage(models.Model):
     email = models.EmailField()
     message = models.TextField(blank=False, null=False, max_length=2000)
     date_sent = models.DateField(auto_now=True)
-    reply = models.TextField(min_length=50, max_length=1000, blank=True, null=True)
+    reply = models.TextField(max_length=2000, blank=True, null=True)
     date_replied = models.DateField(blank=True, null=True)
