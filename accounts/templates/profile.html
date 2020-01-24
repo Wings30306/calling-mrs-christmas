@@ -58,11 +58,11 @@
                     <p><strong>First name</strong>: {{ user.first_name }}</p>
                     <p><strong>Last name</strong>: {{ user.last_name }}</p>
                     <p><em>To change your account details, please contact <a href="mailto:jo_hannah@outlook.com">Jo</a></em></p>
-                    <<a>For security reasons, you can't change your password here. Instead, you can use this link: <a href="{% url 'accounts:password_reset' %}">Reset my password</a>
+                    For security reasons, you can't change your password here. Instead, you can use this link: <a href="{% url 'accounts:password_reset' %}">Reset my password</a>
                 </div>
                 <div class="col-md-6 w-100">
                     <h3>Contact Details</h3>
-                    <table>
+                    <table class="w-100">
                         {{ contact_details_form.as_table }}
                     </table>
                 </div>
