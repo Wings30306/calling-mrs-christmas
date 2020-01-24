@@ -53,10 +53,24 @@
             <div class="row">
                 <div class="col-md-6 w-100">
                     <h3>Account Details</h3>
-                    <p><strong>Username:</strong> {{ user.username }}</p>
-                    <p><strong>Email</strong>: {{ user.email }}</p>
-                    <p><strong>First name</strong>: {{ user.first_name }}</p>
-                    <p><strong>Last name</strong>: {{ user.last_name }}</p>
+                    <table class="w-100">
+                        <tr>
+                            <th>Username:</th>
+                            <td>{{ user.username }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>First name:</th>
+                            <td>{{ user.first_name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Last name</th>
+                            <td>{{ user.last_name }}</td>
+                        </tr>
+                    </table>
                     <p><em>To change your account details, please contact <a href="mailto:jo_hannah@outlook.com">Jo</a></em></p>
                     For security reasons, you can't change your password here. Instead, you can use this link: <a href="{% url 'accounts:password_reset' %}">Reset my password</a>
                 </div>
