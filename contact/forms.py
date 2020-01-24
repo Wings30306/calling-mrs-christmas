@@ -1,15 +1,11 @@
 from django import forms
 
-from .models import Location
+from .models import ContactMessage
 
 
-class LocationModelForm(forms.ModelForm):
+class ContactForm(forms.ModelForm):
     class Meta:
-        model = Location
+        model = ContactMessage
         fields = [
-            'number',
-            'street',
-            'town',
-            'postcode',
-            'email',
+            "name", "email", "message"
         ]
