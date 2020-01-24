@@ -14,3 +14,11 @@ class Location(models.Model):
 
     def __str__(self):
         return self.town
+
+class ContactMessage(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    message = models.TextField(blank=False, null=False, max_length=2000)
+    date_sent = models.DateField(auto_now=True)
+    reply = models.TextField(min_length=50, max_length=1000, blank=True, null=True)
+    date_replied = models.DateField(blank=True, null=True)
