@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Location(models.Model):
@@ -16,6 +17,7 @@ class Location(models.Model):
         return self.town
 
 class ContactMessage(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=50)
     email = models.EmailField()
     message = models.TextField(blank=False, null=False, max_length=2000)
