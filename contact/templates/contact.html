@@ -4,7 +4,8 @@
 {% block content %}
 <div class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Contact form</h2>
-  <form method="post">
+  <form method="POST">
+    {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-success btn-lg">Send</button>
   </form>
