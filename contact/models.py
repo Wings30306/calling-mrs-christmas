@@ -1,6 +1,8 @@
+from django.utils.timezone import now
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
+
 
 # Create your models here.
 class Location(models.Model):
@@ -21,6 +23,9 @@ class ContactMessage(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
     message = models.TextField(blank=False, null=False, max_length=2000)
-    date_sent = models.DateField(auto_now=True)
+    date_sent = models.DateField(default=now)
     reply = models.TextField(max_length=2000, blank=True, null=True)
     date_replied = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        return str(self.date_sent)+"-"+str(self.name)
