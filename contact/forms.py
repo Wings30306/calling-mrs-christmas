@@ -7,5 +7,6 @@ class ContactForm(forms.ModelForm):
     class Meta:
         model = ContactMessage
         fields = [
-            "name", "email", "message"
+            "user", "name", "email", "message"
         ]
+        widgets = {"user": forms.HiddenInput()}
