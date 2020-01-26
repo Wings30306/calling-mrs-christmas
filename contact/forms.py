@@ -9,4 +9,15 @@ class ContactForm(forms.ModelForm):
         fields = [
             "user", "name", "email", "message"
         ]
-        widgets = {"user": forms.HiddenInput()}
+        widgets = {"user": forms.HiddenInput(),
+                   "name": forms.TextInput(attrs={
+                       "class": "form-control"
+                   }),
+                   "email": forms.EmailInput(attrs={
+                       "class": "form-control"
+                   }),
+                   "message": forms.Textarea(attrs={
+                       "class": "form-control",
+                       "rows": 10,
+                   })
+                   }
