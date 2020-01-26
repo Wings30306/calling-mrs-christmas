@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% load bootstrap_tags %} 
+{% load bootstrap_tags %}
 {% load currency_tags %}
 {% block custom_scripts_js %}
 <script src="https://js.stripe.com/v2"></script>
@@ -20,9 +20,7 @@
   <div class="row row-flex">
     {% for item in cart_items %}
 
-    <div
-      class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 py-0"
-    >
+    <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 py-0">
       <div class="card border border-success rounded-lg p-3">
         <h3>{{ item.title }}</h3>
         <p class="service-description">{{ item.description }}</p>
@@ -46,47 +44,68 @@
     <span class="section-heading-upper">Show me the money</span>
     <span class="section-heading-lower">Payment Details</span>
   </h3>
-  <form
-    action="{% url 'checkout' %}"
-    method="post"
-    id="payment-form"
-  >
+  <form action="{% url 'checkout' %}" method="post" id="payment-form">
     <div id="credit-card-errors" style="display:none">
-      <div
-        class="alert-message blockmessage error"
-        id="stripe-error-message"
-      ></div>
+      <div class="alert-message blockmessage error" id="stripe-error-message"></div>
     </div>
     <div class="row mt-4">
       <div class="form-group col-md-6 p-3">
         <h3>Your address</h3>
-        {{ order_form|as_bootstrap }}
-        {% if request.user.is_authenticated %}
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" name="save-details" id="save-details">
-          <label class="form-check-label" for="defaultCheck1">
-            Save your contact details.
-          </label>
-        </div>
-        {% endif %}
+        <ol role="alertdialog">
+          {% if form.subject.errors %}
+          <ol role="alertdialog">
+            {% for error in form.subject.errors %}
+            <li role="alert"><strong>{{ error|escape }}</strong></li>
+            {% endfor %}
+          </ol>
+          {% endif %}
+
+          {% for field in order_form %}
+          <div class="fieldWrapper form-group"
+            aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+            {{ field }}
+            {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+          {% if request.user.is_authenticated %}
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="save-details" id="save-details">
+            <label class="form-check-label" for="checkbox">
+              Save your contact details.
+            </label>
+          </div>
+          {% endif %}
+
       </div>
 
-      <div class="form-group col-md-6">
-        <div class="border border-danger rounded-lg p-3">
+      <div class="form-group col-md-6 p-3">
           <h3>Card details</h3>
-          {{ payment_form|as_bootstrap }}
+          <ol role="alertdialog">
+            {% if form.subject.errors %}
+            <ol role="alertdialog">
+              {% for error in form.subject.errors %}
+              <li role="alert"><strong>{{ error|escape }}</strong></li>
+              {% endfor %}
+            </ol>
+            {% endif %}
+      
+            {% for field in payment_form %}
+            <div class="fieldWrapper form-group"
+              aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+              {{ field }}
+              {% if field.help_text %}
+              <p class="help">{{ field.help_text|safe }}</p>
+              {% endif %}
+            </div>
+            {% endfor %}
         </div>
       </div>
-    </div>
+    
     {% csrf_token %}
     <div class="form-group col-md-12 text-center">
-      <input
-        type="submit"
-        name="commit"
-        class="btn btn-success"
-        id="submit_payment_btn"
-        value="Submit Payment"
-      />
+      <input type="submit" name="commit" class="btn btn-success" id="submit_payment_btn" value="Submit Payment" />
     </div>
   </form>
 </div>
