@@ -31,6 +31,7 @@ This website is for the (fictional) company Calling Mrs Christmas, a startup whi
 - As a user, I want to see some case studies for past projects, so I can decide whether they're the right fit for what I need.
 - As a user, I want to see the services on order and know in advance how much they cost.
 - As a user, I want to read reviews. An average score would be helpful too in deciding whether to trust this company with my money.
+- As a user, I want to be able to contact the company, either by visiting them in person or by  filling out a contact form. I would expect to be emailed back by the company, but a record of past messages and their replies could be a nice addition in case mails get misplaced.
 
 ##### Current customer
 
@@ -143,17 +144,18 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 - Christmas countdown clock adjusted from [Days Until Christmas](https://www.days-until-christmas.co.uk/website-xmas-countdown.htm). Clock style 1 was used for a combination of relatively small size to fit into footer and readability/accessibility. Originally, I had chosen clock style 1, but it turned out that was hard to read for people with green/red colour blindness. Pointed out by [Bim Williams](https://github.com/MrBim)
 - Code used or adapted from Code Institute lessons:
-  - Stripe.js used as shown in e-commerce mini project for (test) payment functionality
-  - .travis.yml file used as shown in e-commerce mini-project for TravisCI.
+  - Stripe.js used as shown in e-commerce mini project (Code Institute) for (test) payment functionality
+  - .travis.yml file used as shown in e-commerce mini-project (Code Institute) for TravisCI.
 - Code from other tutorials:
   - [Django 2 Tutorial by codingforentrepreneurs](https://www.youtube.com/watch?v=F5mRW0jo-U4) was used to learn about the differences between Django 1 (shown in Code Institute lessons) and the current long-term support version of Django 2. Main differences I learned about through this tutorial:
     - urls.py now uses path instead of url and no longer needs regex build-up of urls
     - classbased views can help speed up development, but may need overriding of template names, success urls etc.
+  - [How To Use Bootstrap 4 in Django Forms](https://simpleit.rocks/python/django/forms/how-to-use-bootstrap-4-in-django-forms/) was recommended by [Simen Daehlin](https://github.com/Eventyret) to allow Bootstrap classes to be used on Django Forms.
 
 ### Acknowledgements
 
 - Thank you to the fabulous [Carole Matthews](https://www.carolematthews.com/), author of the book [Calling Mrs Christmas](https://www.carolematthews.com/books/calling-mrs-christmas/), without whose wonderful story and kind permission this project would not have happened.
-- Thank you to my amazing mentor and friend [Simen Daehlin](https://github.com/Eventyret) aka Yoda. Your padawan is now a jedi.  Couldn't have got here without you, mate! Thanks for putting up with my panic moments, too!
+- Thank you to my amazing mentor and friend [Simen Daehlin](https://github.com/Eventyret) aka Yoda. Your padawan is now a jedi. Couldn't have got here without you, mate! Thanks for putting up with my panic moments, too!
 - Thank you to the CodeBantz crew (you know who you are) for the encouragement, the pinpoints in the right direction when I felt lost, and the laughs we had along the way!
 - Thank you to the Code Institute staff and Slack community, new and old. Final project! This is what makes all the struggles worthwhile!
 - To everyone I forgot to mention (we all know what my memory is like), I'm sorry and thank you!
