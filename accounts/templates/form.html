@@ -9,10 +9,25 @@
   <div class="container bg-faded my-3 p-3 rounded">
     <form method="post" class="container mx-auto">
       {% csrf_token %}
-      <table class="mx-auto">
-        {{ form.as_table }}
-      </table>
-      <button class="btn btn-lg btn-success btn-fluid"type="submit">{{ button_text }}</button>
+      <ol role="alertdialog">
+        {% if form.subject.errors %}
+        <ol role="alertdialog">
+          {% for error in form.subject.errors %}
+          <li role="alert"><strong>{{ error|escape }}</strong></li>
+          {% endfor %}
+        </ol>
+        {% endif %}
+
+        {% for field in form %}
+        <div class="fieldWrapper form-group"
+          aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
+          {{ field }}
+          {% if field.help_text %}
+          <i class="far fa-question-circle"> {{ field.help_text|safe }}</i>
+          {% endif %}
+        </div>
+        {% endfor %}
+        <button class="btn btn-lg btn-success btn-fluid" type="submit">{{ button_text }}</button>
     </form>
     <hr>
     {{ wrong_page_redirect|safe }}
