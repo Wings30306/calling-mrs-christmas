@@ -8,42 +8,49 @@ class UserLoginForm(forms.Form):
     username = forms.CharField(label='Your name',
                                max_length=100,
                                widget=forms.TextInput(attrs={
-                                   'class': 'form-control'}))
+                                   'class': 'form-control',
+                                   'placeholder': 'Username'}))
     password = forms.CharField(
         widget=forms.PasswordInput(attrs={
-            'class': 'form-control'}))
+            'class': 'form-control',
+            'placeholder': 'Password'}))
 
 
 class UserRegistrationForm(UserCreationForm):
     """Form to be used to register a new user"""
     password1 = forms.CharField(
         label="Password", widget=forms.PasswordInput(attrs={
-            'class': 'form-control'}))
+            'class': 'form-control', 'placeholder': 'Choose a password'}))
     password2 = forms.CharField(label="Password Confirmation",
                                 widget=forms.PasswordInput(
-                                    attrs={'class': 'form-control'},
+                                    attrs={'class': 'form-control',
+                                    'placeholder': 'Confirm your password'},
                                     render_value=True))
 
     class Meta:
         widgets = {
             "username": forms.TextInput(
                 attrs={
-                    'class': 'form-control'
+                    'class': 'form-control',
+                    'placeholder': 'Choose a username (Letters, digits and @/./+/-/_ only.)'
                 }
             ),
             "email": forms.EmailInput(
                 attrs={
-                    'class': 'form-control'
+                    'class': 'form-control',
+                    'placeholder': 'Your email'
                 }
             ),
             "first_name": forms.TextInput(
                 attrs={
-                    'class': 'form-control'
+                    'class': 'form-control',
+                    'placeholder': 'Your first name'
                 }
             ),
             "last_name": forms.TextInput(
                 attrs={
-                    'class': 'form-control'
+                    'class': 'form-control',
+                    'placeholder': 'Your last name'
                 }
             )}
         model = User
