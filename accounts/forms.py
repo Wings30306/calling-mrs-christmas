@@ -2,20 +2,53 @@ from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 
+
 class UserLoginForm(forms.Form):
     """Form to be used to log users in"""
-    username = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
+    username = forms.CharField(label='Your name',
+                               max_length=100,
+                               widget=forms.TextInput(attrs={
+                                   'class': 'form-control'}))
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={
+            'class': 'form-control'}))
 
 
 class UserRegistrationForm(UserCreationForm):
     """Form to be used to register a new user"""
-    password1 = forms.CharField(label="Password", widget=forms.PasswordInput)
-    password2 = forms.CharField(label="Password Confirmation", widget=forms.PasswordInput)
+    password1 = forms.CharField(
+        label="Password", widget=forms.PasswordInput(attrs={
+            'class': 'form-control'}))
+    password2 = forms.CharField(label="Password Confirmation",
+                                widget=forms.PasswordInput(
+                                    attrs={'class': 'form-control'},
+                                    render_value=True))
 
     class Meta:
+        widgets = {
+            "username": forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            "email": forms.EmailInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            "first_name": forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            ),
+            "last_name": forms.TextInput(
+                attrs={
+                    'class': 'form-control'
+                }
+            )}
         model = User
-        fields = ['email', 'username', 'first_name', 'last_name', 'password1', 'password2']
+        fields = ['username', 'email', 'first_name',
+                  'last_name', 'password1', 'password2']
 
     def clean_email(self):
         email = self.cleaned_data.get('email')
@@ -23,6 +56,7 @@ class UserRegistrationForm(UserCreationForm):
         if User.objects.filter(email=email).exclude(username=username):
             raise forms.ValidationError(u'Email address must be unique.')
         return email
+
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
