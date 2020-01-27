@@ -31,7 +31,7 @@ This website is for the (fictional) company Calling Mrs Christmas, a startup whi
 - As a user, I want to see some case studies for past projects, so I can decide whether they're the right fit for what I need.
 - As a user, I want to see the services on order and know in advance how much they cost.
 - As a user, I want to read reviews. An average score would be helpful too in deciding whether to trust this company with my money.
-- As a user, I want to be able to contact the company, either by visiting them in person or by  filling out a contact form. I would expect to be emailed back by the company, but a record of past messages and their replies could be a nice addition in case mails get misplaced.
+- As a user, I want to be able to contact the company, either by visiting them in person or by filling out a contact form. I would expect to be emailed back by the company, but a record of past messages and their replies could be a nice addition in case mails get misplaced.
 
 ##### Current customer
 
@@ -42,15 +42,54 @@ This website is for the (fictional) company Calling Mrs Christmas, a startup whi
 
 - As a user, I want to leave a review for Cassie and her team.
 
+### Layout
+
+The original inspiration for the lay-out, and also part of the source code, was the [Business Casual Start Bootstrap template](https://startbootstrap.com/themes/business-casual/). As you can see in the link, this was originally made for a coffee shop, but changing to a more christmassy colour theme and replacing the images went a long way to getting the layout for this project as I wanted it.
+
+#### Why I chose to use this template
+
+1. I liked the way the content had a bit of overlay on the images.
+1. I liked the way different pages had different build-up and alternating formatting of the sections.
+1. I liked the opening hours script that marks out the current day.
+
+#### What I changed to make it mine
+
+1. As detailed above, I changed the colour scheme from dark browns and ochre yellow to red, green and white for a more christmassy look. Exact hex values used:
+   - Green: `#477d55`
+   - Dark Green: `#5e8c6a`
+   - White: `#fefdfb`
+   - Red: `#b43858`
+1. Images replaced by Christmas-themed images from Pexels and other sources, see [Media section](#media).
+1. Add a countdown to Christmas in the footer.
+1. Make the pages dynamic Django templates rather than hardcoded plain HTML pages.
+
+#### Wireframes
+
+Wireframes were created in Paint to speed up creating them.
+The following wireframes were used:
+
+##### Mobile
+
+To be added
+
+##### Tablet
+
+To be added
+
+##### Desktop
+
+1. Home page:
+![Wireframe for Home page](readme-files/wireframes/homepage-desktop.jpg "Home page")
+1. About page:
+![Wireframe for About page](readme-files/wireframes/about-desktop.jpg "about page")
+1. Services & Services by Category pages:
+![Wireframe for Services pages](readme-files/wireframes/services-desktop.jpg "Services pages")
+1. Service detail page and staffmember page:
+![Wireframe for detail page](readme-files/wireframes/detail-desktop.jpg "detail page")
+1. Home page:
+![Wireframe for Cart page](readme-files/wireframes/cart-desktop.jpg "Cart page")
 <!--
-
-### Wireframes, diagrams...
-
-_This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser._
-
 ## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
 ### Existing Features
 
@@ -103,7 +142,6 @@ In particular, you should provide all details of the differences between the dep
 - Separate git branch?
 
 In addition, if it is not obvious, you should also describe how to run your code locally.
-
 -->
 
 ## Credits
