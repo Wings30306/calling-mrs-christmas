@@ -86,21 +86,59 @@ To be added
    ![Wireframe for Services pages](readme-files/wireframes/services-desktop.jpg "Services pages")
 1. Service detail page and staffmember page:
    ![Wireframe for detail page](readme-files/wireframes/detail-desktop.jpg "detail page")
-1. Home page:
+1. Cart page:
    ![Wireframe for Cart page](readme-files/wireframes/cart-desktop.jpg "Cart page")
 
 ## Features
 
 ### Existing Features
 
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+For the sake of clarity, I've chosen to document features per app. Apps may have access to models belonging to other apps to make the site work properly, but here you'll find exactly which features, templates and general code belong to which app.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+#### Project-wide features
+
+- the [static](static) folder does exactly what it says: it holds the static files. As such it contains:
+  - images that are not uploaded by a user
+  - css files:
+    - [imported styles from the StartBootstrap template](static/css/business-casual.min.css)
+    - [custom styles for this website](static/css/style.css)
+  - js files:
+    - [stripe.js](static/js/stripe.js) which is refered to in the checkout template to provide payment functionality
+    - [christmas-countdown.js](static/js/christmas-countdown.js) is added to the bottom of the base template body. It holds the script for the Christmas Countdown in the footer as well as the one to activate the tooltips for any helptext in forms.
+- [Templates](templates) at the project's base level holds one file only: the [Base Template](templates/base.html) which is extended with all other templates. This holds the content that is visible on every single page of the website. This includes:
+
+  - the header (larger screens only)
+  - the navbar, which is fixed so it scrolls along til it gets to the top of the viewport and then stays visible. It collapses on mobile screens, showing the company logo and a burger icon to extend the menu. The sticky positioning for the navbar is done with the following CSS:
+
+  ```css
+  #mainNav {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  }
+  ```
+
+  - the footer, which contains copyright and, on bigger screens, more information to the left as well as the Christmas Countdown clock to the right. This always stays at the bottom of the page content. In case there's not enough content on a page, it stays at the bottom of the viewport using the following css:
+
+  ```css
+  body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 7rem;
+  }
+
+  footer.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  }
+  ```
+
 
 ### Features Left to Implement
 
-- Add a calendar to the bookings so customers can see which dates Calling Mrs Christmas is available and can book a date that suits them.
+- Add a calendar to the bookings so customers can see which dates Calling Mrs Christmas is available and can book a date that suits them rather than getting a call to arrange the date.
 - Add a map to the contact page so users can see where the office is located and get directions.
 - Add a way for users to leave and read reviews and ratings.
 
@@ -118,6 +156,8 @@ For some/all of your features, you may choose to reference the specific project 
   - The main language used to display content on the web, therefore also on this website. All of the templates were written in HTML.
 - [CSS](https://www.w3.org/Style/CSS/)
   - Cascading Style Sheets are where the style of the website comes alive. This is where background images are set, colour schemes and fonts are applied to different elements on the page and media queries provide further responsiveness than the standard Bootstrap Grid.
+- [Markdown](https://commonmark.org/help)
+  - This final language was used to create the very document you're reading right now. To see the actual Markdown syntax, check the [Raw version](https://raw.githubusercontent.com/Wings30306/callingmrschristmas/master/README.md)
 
 ### Frameworks
 
