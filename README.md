@@ -112,10 +112,10 @@ For the sake of clarity, I've chosen to document features per app. Apps may have
 
   ```css
   #mainNav {
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-  z-index: 3;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    z-index: 3;
   }
   ```
 
@@ -123,18 +123,44 @@ For the sake of clarity, I've chosen to document features per app. Apps may have
 
   ```css
   body {
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 7rem;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 7rem;
   }
 
   footer.footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
   }
   ```
 
+#### About
+
+This app contains everything about the company. As such, it houses the models for Employee and Case Study. It also contains the templates and views for:
+
+- the home page, which contains the company manifest with a Book Now button redirecting the user to Services, Our Promise To You and a randomly selected case study under the heading Success Story, with a More Like This button linking to the Success Stories page that lists all of them.
+- the About page, which gives the user a bit more information about the company's history and staff members. Clicking or tapping a staff member's card will bring the user to their respective introduction page.
+- the staff member introduction page. This shows a user the respective staff member's profile image, name, title and a short introduction.
+- the casestudies page which shows off all our success stories, not just the one randomly selected one on the home page.
+
+#### Accounts
+
+As the name says, this app deals with everything account-related. As such, it houses the login, register, logout and profile functionality as well as the urls and templates for password reset. Features for this app:
+
+- register: allows users to create an account. Fields on the form: - username (this has to be unique) - email (this has to be unique) - first name - last name - password - password confirmation (has to be equal to password)
+- login: allows users to log into their account with their email or username and their chosen password. Fields on the form: - Username/email - Password
+- profile: this page brings together everything related to the current user in one place: - past purchases (from Order model in checkout app) - sent messages and the replies to them - account details (listed, not editable) - contact details (editable form)
+- logout: clicking or tapping this item on the dropdown menu in the navbar will log a user out and redirect them to the main page with a message to tell them "Thank you for visiting".
+
+#### Services
+
+This is where the services are showcased. This app contains two models: Service and ServiceCategory. It also contains the templates and views for:
+
+- Services, which shows the different service categories
+- Services by category, which shows the different services within one selected category
+- Service detail, which shows the chosen service in more detail, with a longer description
+  Services can be booked by filling in quantity and clicking the Add to Cart button on both services by category and service detail pages.
 
 ### Features Left to Implement
 
