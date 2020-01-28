@@ -160,7 +160,8 @@ This is where the services are showcased. This app contains two models: Service 
 - Services, which shows the different service categories
 - Services by category, which shows the different services within one selected category
 - Service detail, which shows the chosen service in more detail, with a longer description
-  Services can be booked by filling in quantity and clicking the Add to Cart button on both services by category and service detail pages.
+
+Services can be booked by filling in quantity and clicking the Add to Cart button on both services by category and service detail pages.
 
 ### Features Left to Implement
 
