@@ -150,7 +150,7 @@ As the name says, this app deals with everything account-related. As such, it ho
 
 - register: allows users to create an account. Fields on the form: - username (this has to be unique) - email (this has to be unique) - first name - last name - password - password confirmation (has to be equal to password)
 - login: allows users to log into their account with their email or username and their chosen password. Fields on the form: - Username/email - Password
-- profile: this page brings together everything related to the current user in one place: - past purchases (from Order model in checkout app) - sent messages and the replies to them - account details (listed, not editable) - contact details (editable form)
+- profile: this page brings together everything related to the current user in one place: - past purchases (from Order model in checkout app) - sent messages and the replies to them - account details (listed, not editable) - contact details (editable form). Logging in is mandatory so users cannot change each other's details.
 - logout: clicking or tapping this item on the dropdown menu in the navbar will log a user out and redirect them to the main page with a message to tell them "Thank you for visiting".
 
 #### Services
@@ -161,7 +161,37 @@ This is where the services are showcased. This app contains two models: Service 
 - Services by category, which shows the different services within one selected category
 - Service detail, which shows the chosen service in more detail, with a longer description
 
-Services can be booked by filling in quantity and clicking the Add to Cart button on both services by category and service detail pages.
+Services can be booked by filling in quantity and clicking the Add to Cart button on the services by category page as well as the service detail page.
+
+#### Cart
+
+This app provides the Cart model which allows a signed in user to keep their cart between sessions. This is very important given that Heroku's dynos shut down after a set period of inactivity. A user who chooses not to log in, will not be able to save their cart between sessions.
+
+It only contains one page, the Cart page, where a user can review their items, adjust quantity if needed, remove an item by putting quantity to 0, see their current total and choose (by clicking a button) to either continue shopping or go to checkout.
+
+#### Checkout
+
+This app also only contains one page, the checkout page which allows the user to pay a deposit for their booked services.
+
+It also contains two models:
+
+- Order: contains the order-related data:
+  - delivery address
+  - date of booking
+- Order Line Item: contains one service booked for this order and its quantity. Multiple per order allowed.
+
+#### Contact
+
+This app contains the contact information for the company. It has two models:
+
+- Location: allows the staff to add more locations if the company expands. Currently only has one instance which is the head office.
+- Contact Message: This model will save the messages sent by users so the staff can respond to them. It's also connected to the User Profile page where a user can see their messages, provided they were logged in at the time of sending it.
+
+The contact page itself has three sections:
+
+- a contact form where the user can send their message
+- the address details for every location (currently, only the head office)
+- the opening hours with a script to mark the current day (from the original Business Casual template)
 
 ### Features Left to Implement
 
