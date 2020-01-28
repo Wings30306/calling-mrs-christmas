@@ -79,16 +79,16 @@ To be added
 ##### Desktop
 
 1. Home page:
-![Wireframe for Home page](readme-files/wireframes/homepage-desktop.jpg "Home page")
+   ![Wireframe for Home page](readme-files/wireframes/homepage-desktop.jpg "Home page")
 1. About page:
-![Wireframe for About page](readme-files/wireframes/about-desktop.jpg "about page")
+   ![Wireframe for About page](readme-files/wireframes/about-desktop.jpg "about page")
 1. Services & Services by Category pages:
-![Wireframe for Services pages](readme-files/wireframes/services-desktop.jpg "Services pages")
+   ![Wireframe for Services pages](readme-files/wireframes/services-desktop.jpg "Services pages")
 1. Service detail page and staffmember page:
-![Wireframe for detail page](readme-files/wireframes/detail-desktop.jpg "detail page")
+   ![Wireframe for detail page](readme-files/wireframes/detail-desktop.jpg "detail page")
 1. Home page:
-![Wireframe for Cart page](readme-files/wireframes/cart-desktop.jpg "Cart page")
-<!--
+   ![Wireframe for Cart page](readme-files/wireframes/cart-desktop.jpg "Cart page")
+
 ## Features
 
 ### Existing Features
@@ -98,19 +98,51 @@ To be added
 
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
-
 ### Features Left to Implement
 
-- Another feature idea
+- Add a calendar to the bookings so customers can see which dates Calling Mrs Christmas is available and can book a date that suits them.
+- Add a map to the contact page so users can see where the office is located and get directions.
+- Add a way for users to leave and read reviews and ratings.
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+### Languages
 
-- [JQuery](https://jquery.com)
-  - The project uses **JQuery** to simplify DOM manipulation.
+- [Python](https://www.python.org/)
+  - The main language used for this project is Python, in which all the backend functionality (accessing the database, rendering templates, creating models and forms) is written.
+- [JavaScript](https://www.javascript.com/)
+  - JavaScript was used for the Christmas countdown (see [Christmas Countdown script](static/js/christmas-countdown.js))
+  - JavaScript was also added in the same script file to activate Bootstrap tooltips.
+  - The Stripe payment API also works through the addition of a JS file: [stripe.js](static/js/stripe.js), as well as an embedded script in the [checkout page](checkout/templates/checkout.html) to pass the Stripe publishable key from the backend (where it's saved as an environment variable) to the frontend as a templating variable so the stripe.js file can access it.
+- [HTML](https://www.w3.org/html/)
+  - The main language used to display content on the web, therefore also on this website. All of the templates were written in HTML.
+- [CSS](https://www.w3.org/Style/CSS/)
+  - Cascading Style Sheets are where the style of the website comes alive. This is where background images are set, colour schemes and fonts are applied to different elements on the page and media queries provide further responsiveness than the standard Bootstrap Grid.
 
+### Frameworks
+
+- [Django](https://www.djangoproject.com/)
+  - The Python framework used for this project is Django. This comes with a lot of functionality out of the box, for example:
+    - user authentication: Django has user authentication out of the box. I did expand upon this to include a password confirmation check and linked it up to my own templates.
+    - admin: This allows staff (and ONLY staff) to see non-styled pages (i.e. with standard Django styling) where they can check orders, reply to messages, update their own profile, update the location information...
+- [Bootstrap](https://getbootstrap.com/):
+  - The Bootstrap framework was used to help with template layout:
+    - the Bootstrap grid is very helpful in terms of mobile-first development. One example I used in the project is to use the d-none class on the header to hide it on mobile screens so it doesn't take up unnecessary real-estate, then use d-md-block to display it on medium to large screens.
+    - Bootstrap also needed to be added for the template I used to work, as that is itself a [StartBootstrap](https://startbootstrap.com/) template which applies Bootstrap styles.
+
+### Libraries and APIs
+
+- [jQuery](https://jquery.com/)
+  - The main reason for jQuery to have been added in this project is to allow simplification of the js files and most importantly to allow the Bootstrap Javascript script to do its job
+- [Stripe API](https://stripe.com)
+  - The Stripe API was used to allow payment functionality. It's set to accept [Stripe test cards](https://stripe.com/docs/testing) only as per the requirements of the course.
+
+### Database
+
+- [PostgreSQL](https://www.postgresql.org/)
+  - PostgreSQL was used to create the database for this project, as it's available as a Heroku Plug-In. See [Deployment](#deployment) for more details.
+
+<!--
 ## Testing
 
 In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
@@ -148,7 +180,7 @@ In addition, if it is not obvious, you should also describe how to run your code
 
 ### Content
 
-- The staff names and user stories were taken (and paraphrased) from the book "Calling Mrs Christmas" by Carole Matthews.
+- The staff names and success stories were taken (and paraphrased) from the book "Calling Mrs Christmas" by Carole Matthews.
 
 ### Media
 
