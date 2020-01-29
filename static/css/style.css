@@ -10,7 +10,7 @@
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 10px #477d55;
-  -webkit-box-shadow: inset 0 0 10px #477d55; 
+  -webkit-box-shadow: inset 0 0 10px #477d55;
   background-color: #477d5570;
   border-radius: 10px;
 }
@@ -23,8 +23,9 @@
   background-size: contain;
   background-repeat: no-repeat;
   box-shadow: inset 0 0 10px #477d55;
-  -webkit-box-shadow: inset 0 0 10px #477d55; 
+  -webkit-box-shadow: inset 0 0 10px #477d55;
 }
+
 /* End of scrollbar styles */
 
 body {
@@ -39,7 +40,8 @@ body {
 }
 
 #mainNav {
-  position: -webkit-sticky; /* Safari */
+  position: -webkit-sticky;
+  /* Safari */
   position: sticky;
   top: 0;
   z-index: 3;
@@ -217,10 +219,6 @@ form table input {
   width: 100%;
 }
 
-span.helptext {
-  font-size: x-small;
-}
-
 .btn-lg,
 .btn-xl {
   font-size: 1.2rem;
@@ -246,6 +244,7 @@ div#xcd3248 {
   line-height: normal;
   position: relative;
 }
+
 div#xcd3248 div {
   font-weight: bold;
   color: #b43858;
@@ -253,6 +252,7 @@ div#xcd3248 div {
   left: 0;
   width: 100%;
 }
+
 div#xcd3248 a {
   width: 100%;
   height: 100%;
@@ -260,8 +260,11 @@ div#xcd3248 a {
   left: 0;
   color: transparent;
 }
+
 /* End of Christmas Countdown styles */
 
+
+/* Media queries */
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
