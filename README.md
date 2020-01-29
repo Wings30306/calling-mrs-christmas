@@ -104,7 +104,7 @@ For the sake of clarity, I've chosen to document features per app. Apps may have
     - [custom styles for this website](static/css/style.css)
   - js files:
     - [stripe.js](static/js/stripe.js) which is refered to in the checkout template to provide payment functionality
-    - [christmas-countdown.js](static/js/christmas-countdown.js) is added to the bottom of the base template body. It holds the script for the Christmas Countdown in the footer as well as the one to activate the tooltips for any helptext in forms.
+    - [script.js](static/js/script.js) is added to the bottom of the base template body. It holds the script for the Christmas Countdown in the footer as well as the one to activate the tooltips for any helptext in forms.
 - [Templates](templates) at the project's base level holds one file only: the [Base Template](templates/base.html) which is extended with all other templates. This holds the content that is visible on every single page of the website. This includes:
 
   - the header (larger screens only)
@@ -206,7 +206,7 @@ The contact page itself has three sections:
 - [Python](https://www.python.org/)
   - The main language used for this project is Python, in which all the backend functionality (accessing the database, rendering templates, creating models and forms) is written.
 - [JavaScript](https://www.javascript.com/)
-  - JavaScript was used for the Christmas countdown (see [Christmas Countdown script](static/js/christmas-countdown.js))
+  - JavaScript was used for the Christmas countdown (see [Christmas Countdown script](static/js/script.js))
   - JavaScript was also added in the same script file to activate Bootstrap tooltips.
   - The Stripe payment API also works through the addition of a JS file: [stripe.js](static/js/stripe.js), as well as an embedded script in the [checkout page](checkout/templates/checkout.html) to pass the Stripe publishable key from the backend (where it's saved as an environment variable) to the frontend as a templating variable so the stripe.js file can access it.
 - [HTML](https://www.w3.org/html/)
