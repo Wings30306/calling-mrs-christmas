@@ -264,19 +264,77 @@ In addition, you should mention in this section how your project looks and works
 You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
+-->
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+This project is hosted on [Heroku](heroku.com). It's been deployed using the following steps:
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
+1. In the terminal, run `python manage.py collectstatic` to collect static files for deployment on Heroku.
+1. Pip install whitenoise.
+1. Add `'whitenoise.middleware.WhiteNoiseMiddleware'` in the MIDDLEWARE section of your [settings](callingmrschristmas/settings.py) file.
+1. Sign up (new user) or sign in to Heroku account. _I already had an account from previous projects, so only needed to sign in._
+1. Click the button at the top right that says "New", select "Create new app" in the dropdown.
+1. Choose an app name. **Caution! This must be unique!**
+1. Select your region. _In my case, this is Europe._
+1. You'll be redirected to the Deploy tab of the new app.
+1. Go to Deployment method. Select your prefered deployment method. _As my code was already on Github, I chose the "Connect to Github" option. The following steps will be specific to this option._
+1. Sign in to your Github account to allow Heroku access to repositories.
+1. Search for your repo name. If you can't remember the specific spelling of the name, leave the input field blank and click "Search" to get a list of all your repos.
+1. When you've found your repo in the list, click the "Connect" button.
+1. You now have the choice to enable automatic deploys or deploy manually. _This project uses automated deployment_
+1. Your project will need to contain the following in order for Heroku to deploy it:
 
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+   - a Procfile: this specifies the commands that are executed by the app on startup. You can use a Procfile to declare a variety of process types, including:
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
--->
+     - Your app’s web server
+     - Multiple types of worker processes
+     - A singleton process, such as a clock
+     - Tasks to run before a new release is deployed.
+
+     _In the case of this project, the Procfile contains only a single line:_
+
+     ```yml
+     web: gunicorn callingmrschristmas.wsgi:application
+     ```
+
+     _To allow this to run, gunicorn was added to the [requirements](requirements.txt)_
+
+   - a requirements.txt file. This tells Heroku which dependencies need to be installed in order for the project to run. It's created by using the command `pip install` + the name of any dependencies you have (for example, Flask needs to be installed for this project) in the terminal of your prefered editor, followed by the command `pip freeze > requirements.txt` which will write the installed dependencies to a text file which Heroku then installs using `pip install requirements.txt`.
+
+1. Add a PostgreSQL database Plug-In. This will generate a database url in the Config vars
+1. Go to settings in the Heroku tab. Click "Reveal Config Vars". Add the relevant environment variables you've used in your project to the Config Vars so Heroku can access them. Specifically, for this particular project, that means the following Config Vars were added:
+   - DATABASE_URL (for PostgreSQL as detailed in the previous step)
+   - DEBUG (set to 0 to turn off Debug mode in the deployed version. Locally, in development, this variable was set to 1.)
+   - EMAIL_ADDRESS (for allowing password reset emails to be sent)
+   - EMAIL_PASSWORD (App password generated with two-step authentication)
+   - HOSTNAME (required for Django projects. Set to "0.0.0.0." for local development, "callingmrschristmas.herokuapp.com" in deployment)
+   - SECRET_KEY (required for Django projects, generated with the [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/))
+   - STRIPE_PUBLISHABLE_KEY (to be passed in to the [stripe](stripe.js) file in the [checkout template](checkout/templates/checkout.html))
+   - STRIPE_SECRET_KEY (to be passed to [checkout views](checkout/views.py))
+1. Check the activity tab. The two most recent items in the list should read "Deployed" and "Build Succeeded" in their status.
+1. Click "Open App" in the top right side if this is the case, this will take you to the live site of the [Project](https://callingmrschristmas.herokuapp.com/).
+
+### To run this project locally
+
+1. Clone the [Github repo](https://github.com/wings30306/callingmrschristmas) using the green "Clone or download" button. Several options are available here.
+1. Open the project in your prefered editor.
+1. Create a virtual environment using the command `python -m venv envname`, replacing "envname" with the name you want to give this environment. ([More information on virtual environments](https://docs.python.org/3/library/venv.html))
+1. Open the virtual environment:
+   - Windows Cmd Shell: `<envname>\Scripts\Activate`
+   - Posix/Linux bash Shell:
+     `$ source <envname>/bin/activate`
+1. Install the dependencies using the command `pip install -r requirements.txt`
+1. Set up environment variables. There are different ways to do this depending on your system and/or editor. In my editor of choice, VS Code running on Windows, you can do this in the .vscode directory that's generated for every project. This will contain a settings.json file. Add the environment variables as detailed in the Config Vars of the deployment section to the json dictionary, for example:
+
+   ```json
+   "terminal.integrated.env.windows":
+   {
+       "SECRET_KEY": "YourSecretKeyHere"
+   },
+   ```
+
+1. Run the project in your terminal using the command `python manage.py runserver` (like pip, for Unix-based systems you may need to use `python3`).
 
 ## Credits
 
