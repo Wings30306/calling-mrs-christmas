@@ -32,7 +32,7 @@ class UserRegistrationForm(UserCreationForm):
             "username": forms.TextInput(
                 attrs={
                     'class': 'form-control',
-                    'placeholder': 'Choose a username (Letters, digits and @/./+/-/_ only.)'
+                    'placeholder': 'Choose a username'
                 }
             ),
             "email": forms.EmailInput(
