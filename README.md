@@ -268,7 +268,7 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This project is hosted on [Heroku](heroku.com). It's been deployed using the following steps:
+This project is hosted on [Heroku](https://heroku.com). It's been deployed using the following steps:
 
 1. In the terminal, run `python manage.py collectstatic` to collect static files for deployment on Heroku.
 1. Pip install whitenoise.
