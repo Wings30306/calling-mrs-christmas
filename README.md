@@ -239,6 +239,11 @@ The contact page itself has three sections:
 - [PostgreSQL](https://www.postgresql.org/)
   - PostgreSQL was used to create the database for this project, as it's available as a Heroku Plug-In. See [Deployment](#deployment) for more details.
 
+### Other Resources
+
+- [Font Awesome](https://fontawesome.com/) was used for the icons in this website, for example for the cart and user in the navbar and on some of the buttons.
+- Fonts for the text in this project came from [Google Fonts](https://fonts.google.com/). The specific fonts used are [Lora](https://fonts.google.com/specimen/Lora), the main font used throughout the site, and [Raleway](https://fonts.google.com/specimen/Raleway) which is used for the larger font in the headings. Both were used in the original template and refered to in the page head - I've moved them instead to be imported in the [Business Casual CSS file](static/css/business-casual.min.css).
+
 <!--
 ## Testing
 
