@@ -105,10 +105,8 @@
       <div class="row m-0">
         <div class="col-6 col-lg-9 my-auto">
           <p class="m-0">
-            <!-- Non-breaking spaces and dash used for better display on mobile screens -->
-            Copyright &copy; Calling&nbsp;Mrs&nbsp;Christmas 2013&#8209;<script>
-              document.write(new Date().getFullYear());
-            </script>
+            <!-- Non-breaking spaces and dash used for better display on mobile screens, in order words to avoid the company name breaking up into multiple lines, and same with the years -->
+            &copy; Copyright: Calling&nbsp;Mrs&nbsp;Christmas 2013&nbsp;&#8209;&nbsp;<span id="current-year"></span>
           </p>
           <p class="d-none d-lg-block mb-0">Site created by <a href="https://github.com/Wings30306" rel="noreferrer noopener"
               target="_blank"><i class="fab fa-github"></i> Jo Heyndels</a></p>
@@ -123,7 +121,6 @@
           <div id="xcd3248" class="ml-auto">
             <a href="https://www.days-until-christmas.co.uk" id="xcda3248" target="_blank"
               rel="noopener noreferrer">Christmas Countdown website</a>
-            <script src="{% static 'js/christmas-countdown.js' %}"></script>
           </div>
         </div>
 
@@ -133,6 +130,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script src="{% static 'js/script.js' %}"></script>
   {% block custom_scripts_js %}
   {% endblock %}
 </body>
