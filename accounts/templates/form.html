@@ -23,7 +23,7 @@
           aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
           {{ field }}
           {% if field.help_text %}
-          <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="{{field.helptext}}"></i>
+          <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="{{field.help_text}}"></i>
           {% endif %}
         </div>
         {% endfor %}
