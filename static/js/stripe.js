@@ -1,3 +1,6 @@
+/**
+ *  As shown in e-commerce mini project (Code Institute) for (test) payment functionality
+ */
 $(function(){
     $("#payment-form").submit(function(){
         var form = this;
