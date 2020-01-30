@@ -57,7 +57,10 @@
           {% if count > 0 %}
           <li class="nav-item">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'cart:view_cart' %}"><i
-                class="fas fa-shopping-cart"></i></a>
+                class="fas fa-shopping-cart"></i>
+                {% if count > 0 %}
+              <span class="badge badge-pill badge-warning">{{ count }}</span>
+              {% endif %}</a>
           </li>
           {% endif %}
           <li class="nav-item dropdown">
@@ -108,8 +111,8 @@
             <!-- Non-breaking spaces and dash used for better display on mobile screens, in order words to avoid the company name breaking up into multiple lines, and same with the years -->
             &copy; Copyright: Calling&nbsp;Mrs&nbsp;Christmas 2013&nbsp;&#8209;&nbsp;<span id="current-year"></span>
           </p>
-          <p class="d-none d-lg-block mb-0">Site created by <a href="https://github.com/Wings30306" rel="noreferrer noopener"
-              target="_blank"><i class="fab fa-github"></i> Jo Heyndels</a></p>
+          <p class="d-none d-lg-block mb-0">Site created by <a href="https://github.com/Wings30306"
+              rel="noreferrer noopener" target="_blank"><i class="fab fa-github"></i> Jo Heyndels</a></p>
           <p class="d-none d-lg-block mb-0">Characters and story borrowed with kind permission from the book <a
               href="https://www.carolematthews.com/books/calling-mrs-christmas/" target="_blank"
               rel="noopener noreferrer">Calling Mrs Christmas</a> by the wonderful <a
