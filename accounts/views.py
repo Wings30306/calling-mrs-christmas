@@ -96,32 +96,71 @@ def login(request):
 @login_required
 def user_profile(request):
     """Render user's profile page"""
-    user = User.objects.get(username=request.user.username)
-    try:
-        ContactDetails.objects.get(user=request.user)
-        contact_data = {
-            "user": request.user.id,
-            "full_name": request.user.contactdetails.full_name,
-            "phone_number": request.user.contactdetails.phone_number,
-            "street_address1": request.user.contactdetails.street_address1,
-            "street_address2": request.user.contactdetails.street_address2,
-            "town_or_city": request.user.contactdetails.town_or_city,
-            "postcode": request.user.contactdetails.postcode,
-            "county": request.user.contactdetails.county,
-            "country": request.user.contactdetails.country
+    if request.method == "POST":
+        contact_details_form = ContactDetailsForm(request.POST)
+        form_dict = contact_details_form.__dict__
+        full_name = form_dict["data"]["full_name"]
+        phone = form_dict["data"]["phone_number"]
+        street1 = form_dict["data"]["street_address1"]
+        street2 = form_dict["data"]["street_address2"]
+        town = form_dict["data"]["town_or_city"]
+        postcode = form_dict["data"]["postcode"]
+        county = form_dict["data"]["county"]
+        country = form_dict["data"]["country"]
+        try:
+            ContactDetails.objects.get(user=request.user)
+            ContactDetails.objects.filter(user=request.user).update(
+                user=request.user,
+                full_name=full_name,
+                phone_number=phone,
+                street_address1=street1,
+                street_address2=street2,
+                town_or_city=town,
+                postcode=postcode,
+                county=county,
+                country=country)
+            print("updating instance")
+        except ContactDetails.DoesNotExist:
+            print("creating instance")
+            ContactDetails.objects.create(
+                user=request.user,
+                full_name=full_name,
+                phone_number=phone,
+                street_address1=street1,
+                street_address2=street2,
+                town_or_city=town,
+                postcode=postcode,
+                county=county,
+                country=country)
+            print(ContactDetails.objects.get(user=request.user))
+        return redirect(reverse("accounts:profile"))
+    else:
+        user = User.objects.get(username=request.user.username)
+        try:
+            ContactDetails.objects.get(user=request.user)
+            contact_data = {
+                "user": request.user.id,
+                "full_name": request.user.contactdetails.full_name,
+                "phone_number": request.user.contactdetails.phone_number,
+                "street_address1": request.user.contactdetails.street_address1,
+                "street_address2": request.user.contactdetails.street_address2,
+                "town_or_city": request.user.contactdetails.town_or_city,
+                "postcode": request.user.contactdetails.postcode,
+                "county": request.user.contactdetails.county,
+                "country": request.user.contactdetails.country
+            }
+        except ContactDetails.DoesNotExist:
+            contact_data = {
+                "full_name": request.user.first_name + " " + request.user.last_name,
+            }
+        contact_details = ContactDetailsForm(
+            request.POST or None, initial=contact_data)
+        purchases = Order.objects.filter(user=request.user)
+        context = {
+            "profile": user,
+            "contact_details_form": contact_details,
+            "purchases": purchases
         }
-    except ContactDetails.DoesNotExist:
-        contact_data = {
-            "full_name": request.user.first_name + " " + request.user.last_name,
-        }
-    contact_details = ContactDetailsForm(
-        request.POST or None, initial=contact_data)
-    purchases = Order.objects.filter(user=request.user)
-    context = {
-        "profile": user,
-        "contact_details_form": contact_details,
-        "purchases": purchases
-    }
     return render(request, 'profile.html', context)
 
 
