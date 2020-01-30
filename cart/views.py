@@ -70,7 +70,7 @@ def adjust_cart(request, primary_key):
                 request.session["cart"]["cart_items"].pop(index)
                 new_cart = request.session["cart"]
             else:
-                quantity = new_cart_item["quantity"]
+                item["quantity"] = new_cart_item["quantity"]
                 new_cart = request.session["cart"]
         index += 1
     request.session["cart"] = new_cart
