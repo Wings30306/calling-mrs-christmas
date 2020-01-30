@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, reverse
+from django.contrib import messages
 from .contexts import cart_contents
 from .models import Cart
 
@@ -23,6 +24,9 @@ def helper_check_user_cart(request):
 def view_cart(request):
     """ A view that renders the cart contents page """
     template_name = "cart/cart.html"
+    if request.session["cart"]["cart_items"] == []:
+        messages.success(request, "No items in your cart. Continue shopping")
+        return redirect(reverse("services:services_list"))
     return render(request, template_name=template_name)
 
 
