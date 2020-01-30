@@ -109,7 +109,7 @@ def checkout_view(request):
             ContactDetails.objects.get(user=request.user)
             initial_data = {
                 "user": request.user.id,
-                "full_name": request.user.first_name + " " + request.user.last_name,
+                "full_name": request.user.contactdetails.full_name,
                 "phone_number": request.user.contactdetails.phone_number,
                 "street_address1": request.user.contactdetails.street_address1,
                 "street_address2": request.user.contactdetails.street_address2,
@@ -126,5 +126,4 @@ def checkout_view(request):
         order_form = OrderForm(request.POST or None, initial=initial_data)
     return render(request, "checkout.html", {"payment_form": payment_form,
                                              "order_form": order_form,
-                                             "initial_data": initial_data,
                                              "publishable": settings.STRIPE_PUBLISHABLE})
