@@ -52,9 +52,9 @@
       <div class="form-group col-md-6 p-3">
         <h3>Your address</h3>
         <ol role="alertdialog">
-          {% if form.subject.errors %}
+          {% if order_form.subject.errors %}
           <ol role="alertdialog">
-            {% for error in form.subject.errors %}
+            {% for error in order_form.subject.errors %}
             <li role="alert"><strong>{{ error|escape }}</strong></li>
             {% endfor %}
           </ol>
@@ -70,7 +70,7 @@
           </div>
           {% endfor %}
           {% if request.user.is_authenticated %}
-          <div class="form-check">
+          <div class="form-check" aria-required="false">
             <input class="form-check-input" type="checkbox" name="save-details" id="save-details">
             <label class="form-check-label" for="checkbox">
               Save your contact details.
