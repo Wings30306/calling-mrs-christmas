@@ -9,15 +9,25 @@
   <div class="container bg-faded my-3 p-3 rounded">
     <form method="post" class="container mx-auto">
       {% csrf_token %}
-      <!-- Error message code from https://stackoverflow.com/questions/14647723/django-forms-if-not-valid-show-form-with-error-message -->
-      {% if form.errors %}
+      <!-- Error message code adapted from https://stackoverflow.com/questions/14647723/django-forms-if-not-valid-show-form-with-error-message -->
+      
       {% for field in form %}
+      <div class="fieldWrapper form-group"
+        aria-required="{% if field.field.required %}true{% else %}false{% endif %}">
+        {{ field }}
+        {% if field.help_text %}
+        <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="{{field.help_text}}"></i>
+        {% endif %}
+      </div>
+      {% if field.errors %}
       {% for error in field.errors %}
       <div class="alert alert-danger">
         <strong>{{ error|escape }}</strong>
       </div>
       {% endfor %}
+      {% endif %}
       {% endfor %}
+      {% if form.non_field_errors %}
       {% for error in form.non_field_errors %}
       <div class="alert alert-danger">
         <strong>{{ error|escape }}</strong>
@@ -26,15 +36,6 @@
 
       {% endif %}
       <!-- End of error message code -->
-      {% for field in form %}
-      <div class="fieldWrapper form-group"
-        aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-        {{ field }}
-        {% if field.help_text %}
-        <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="{{field.help_text}}"></i>
-        {% endif %}
-      </div>
-      {% endfor %}
       <button class="btn btn-lg btn-success btn-fluid" type="submit">{{ button_text }}</button>
     </form>
     <hr>
