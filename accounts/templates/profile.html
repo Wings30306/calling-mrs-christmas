@@ -74,14 +74,36 @@
                         </tr>
                     </table>
                     <p>For security reasons, you can't change your password here. Instead, you can use this link: <a
-                        href="{% url 'accounts:password_reset' %}">Reset my password</a></p>
-                    
+                            href="{% url 'accounts:password_reset' %}">Reset my password</a></p>
+
                 </div>
                 <div class="col-md-6 w-100">
                     <h3>Contact Details</h3>
-                    <table class="w-100">
-                        {{ contact_details_form.as_table }}
-                    </table>
+                    {% for field in contact_details_form %}
+                    <div class="fieldWrapper form-group"
+                        aria-required="{% if field.field.required %}true{% else %}false{% endif %}">
+                        {{ field }}
+                        {% if field.help_text %}
+                        <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top"
+                            title="{{field.help_text}}"></i>
+                        {% endif %}
+                    </div>
+                    {% if field.errors %}
+                    {% for error in field.errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                    {% endfor %}
+                    {% endif %}
+                    {% endfor %}
+                    {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger">
+                        <strong>{{ error|escape }}</strong>
+                    </div>
+                    {% endfor %}
+
+                    {% endif %}
                 </div>
             </div>
             <button type="submit" class="btn btn-lg btn-success btn-fluid">Update</button>
