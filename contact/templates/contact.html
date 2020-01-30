@@ -6,25 +6,29 @@
   <h2>Contact form</h2>
   <form method="POST">
     {% csrf_token %}
-    <ol role="alertdialog">
-      {% if form.subject.errors %}
-      <ol role="alertdialog">
-        {% for error in form.subject.errors %}
-        <li role="alert"><strong>{{ error|escape }}</strong></li>
-        {% endfor %}
-      </ol>
+    {% for field in form %}
+    <div class="fieldWrapper form-group" aria-required="{% if field.field.required %}true{% else %}false{% endif %}">
+      {{ field }}
+      {% if field.help_text %}
+      <i class="fas fa-question-circle" data-toggle="tooltip" data-placement="top" title="{{field.help_text}}"></i>
       {% endif %}
-
-      {% for field in form %}
-      <div class="fieldWrapper form-group"
-        aria-required={% if field.field.required %}"true"{% else %}"false"{% endif %}>
-        {{ field }}
-        {% if field.help_text %}
-        <p class="help">{{ field.help_text|safe }}</p>
-        {% endif %}
-      </div>
-      {% endfor %}
-      <button type="submit" class="btn btn-success btn-lg">Send</button>
+    </div>
+    {% if field.errors %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+      <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+    {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+    <div class="alert alert-danger">
+      <strong>{{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <button type="submit" class="btn btn-success btn-lg">Send</button>
   </form>
 </div>
 <hr />
