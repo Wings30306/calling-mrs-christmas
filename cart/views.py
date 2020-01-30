@@ -64,10 +64,13 @@ def adjust_cart(request, primary_key):
         if item["primary_key"] == new_cart_item["primary_key"]:
             if int(new_cart_item["quantity"]) == 0:
                 request.session["cart"]["cart_items"].pop(index)
+                new_cart = request.session["cart"]
             else:
                 quantity = new_cart_item["quantity"]
-                request.session["cart"]["cart_items"][index]["quantity"] = quantity
+                new_cart = request.session["cart"]
         index += 1
+    request.session["cart"] = new_cart
+    print(request.session["cart"])
     if request.user.is_authenticated:
         Cart.objects.filter(user=request.user).update(cart=request.session["cart"])
     return redirect(reverse('cart:view_cart'))
