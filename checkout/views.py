@@ -120,6 +120,7 @@ def checkout_view(request):
             }
         except ContactDetails.DoesNotExist:
             initial_data = {
+                "user": request.user.id,
                 "full_name": request.user.first_name + " " + request.user.last_name,
             }
         payment_form = MakePaymentForm()
