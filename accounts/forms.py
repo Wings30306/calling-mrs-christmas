@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from .models import ContactDetails
 
 
 class UserLoginForm(forms.Form):
@@ -74,3 +75,54 @@ class UserRegistrationForm(UserCreationForm):
         if password2 != password1:
             raise forms.ValidationError("Passwords must match")
         return password2
+
+class ContactDetailsForm(forms.ModelForm):
+    class Meta:
+        model = ContactDetails
+        fields = ('user', 'full_name', 'phone_number', 'street_address1', 'street_address2',
+                  'town_or_city', 'postcode', 'county', 'country')
+        # next line found on StackOverflow:
+        # https://stackoverflow.com/questions/15795869/django-modelform-to-have-a-hidden-input
+        widgets = {'user': forms.HiddenInput(),
+                   'full_name': forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Your name",
+                       "placeholder": "Your name"
+                   }),
+                   "phone_number": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Your phone number",
+                       "placeholder": "Your phone number"
+                   }),
+                   "street_address1": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Address line 1",
+                       "placeholder": "Address line 1"
+                   }),
+                   "street_address2": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Address line 2",
+                       "placeholder": "Address line 2"
+                   }),
+                   "town_or_city": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Town or city",
+                       "placeholder": "Town or city"
+                   }),
+                   "postcode": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Postcode",
+                       "placeholder": "Postcode"
+                   }),
+                   "county": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "County",
+                       "placeholder": "County"
+                   }),
+                   "country": forms.TextInput(attrs={
+                       "class": "form-control",
+                       "aria-label": "Country",
+                       "placeholder": "Country",
+                       "default": "United Kingdom"
+                   }),
+                   }
