@@ -1,3 +1,4 @@
+<!-- Custom error page for 500 Server Error -->
 {% extends 'base.html' %}
 {% load static from staticfiles %}
 {% block page_title %}500 error{% endblock %}
@@ -9,7 +10,11 @@
                 <span class="section-heading-upper">Oops! Something went wrong...</span>
                 <span class="section-heading-lower">Let Santa help you get back home!</span>
             </h2>
-            <p class="text-white">You may also leave a <a href="{% url 'contact' %}">message</a> so we can fix it. Let us know what you were trying to do and we'll fix the error and give you a discount on your next order. Thank you for your help!</p>
+            <p class="text-white">You may also leave a
+                <a href="{% url 'contact:contact' %}">message</a>
+                so we can fix it. Let us know what you were trying to do and we'll fix the error and give you a discount
+                on your next order. Thank you for your help!
+            </p>
         </div>
         <div class="col-md-4">
             <a href="{% url 'index' %}">
