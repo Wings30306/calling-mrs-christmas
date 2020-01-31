@@ -2,7 +2,7 @@
 {% load static %}
 {% load bootstrap_tags %}
 {% block content %}
-<div class="container bg-faded rounded my-3 p-3 text-center">
+<section class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Contact form</h2>
   <form method="POST">
     {% csrf_token %}
@@ -30,9 +30,54 @@
     {% endif %}
     <button type="submit" class="btn btn-success btn-lg">Send</button>
   </form>
-</div>
-<hr />
-<div class="container bg-faded rounded my-3 p-3 text-center">
+</section>
+<!-- Opening hours section from Business Casual StartBootstrap template-->
+<section class="page-section cta">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-9 mx-auto">
+        <div class="cta-inner text-center rounded">
+          <h2 class="section-heading mb-5">
+            <span class="section-heading-upper">Come On In</span>
+            <span class="section-heading-lower">We're Open</span>
+          </h2>
+          <ul class="list-unstyled list-hours mb-5 text-left mx-auto">
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Monday
+              <span class="ml-auto">7:00 AM to 8:00 PM</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Tuesday
+              <span class="ml-auto">7:00 AM to 8:00 PM</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Wednesday
+              <span class="ml-auto">7:00 AM to 8:00 PM</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Thursday
+              <span class="ml-auto">7:00 AM to 8:00 PM</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Friday
+              <span class="ml-auto">7:00 AM to 8:00 PM</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Saturday
+              <span class="ml-auto">9:00 AM to 5:00 PM</span>
+            </li>
+            <li class="list-unstyled-item list-hours-item d-flex">
+              Sunday
+              <span class="ml-auto">Closed</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End of copied code from template -->
+<section class="container bg-faded rounded my-3 p-3 text-center">
   <h2>Visit our office{% if locations|length > 1 %}s{% endif %}!</h2>
   <div class="row">
     {% for location in locations %}
@@ -69,4 +114,5 @@
       </div>
     </div>
   </div>
+</section>
   {% endblock %}
