@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.staticfiles.urls import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.urls import path, include
+from django.urls import path, include, reverse_lazy
+from django.contrib.auth.views import PasswordResetConfirmView
 from about.views import index_view
 from . import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,6 +31,9 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('cart/', include('cart.urls')),
     path('checkout/', include('checkout.urls')),
+    path('accounts/password-reset/<uidb64>/<token>', PasswordResetConfirmView.as_view(
+        success_url=reverse_lazy('accounts:login'), template_name="password_reset_confirm.html"),
+         name='password_reset_confirm'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()
