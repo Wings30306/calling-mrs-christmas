@@ -1,5 +1,7 @@
 # Calling Mrs Christmas ![alt text](https://travis-ci.com/Wings30306/callingmrschristmas.svg?branch=master "Build status")
 
+![View of website on different devices](wireframes/readme-img.png "Home page on three devices")
+
 Calling Mrs Christmas! You haven't got the time or the energy for Christmas this year but still want to enjoy a nicely decorated tree? You want to have a Christmas party for your office, family or friends but don't know where to start? You want a lavish getaway with the people closest to you? We can help!
 
 Cassie and her mischievous little elves have been working hard to make their clients' Christmases magical since 2013, from getting those beloved baubles down from the attic to lavish holidays to Lapland, the home of Santa himself, including a visit to the world-famous Ice Hotel. Want to see what we have to offer? Find out more at [Calling Mrs Christmas](https://callingmrschristmas.herokuapp.com)!
