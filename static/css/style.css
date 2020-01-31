@@ -223,6 +223,15 @@ footer.footer {
   bottom: 0;
 }
 
+.list-hours .list-hours-item {
+  font-family: Raleway, sans-serif;
+  font-style: normal;
+}
+
+.list-hours .list-hours-item.today {
+  color: #477d55;
+}
+
 /* Christmas Countdown styles
 adapted from inline styles in 
 https://www.days-until-christmas.co.uk/webcounts/xcd3248.js) */
