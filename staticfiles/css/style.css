@@ -1,20 +1,50 @@
 * {
-  margin: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Scrollbar styling: adapted from https://css-tricks.com/custom-scrollbars-in-webkit/ */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px #477d55;
+  -webkit-box-shadow: inset 0 0 10px #477d55;
+  background-color: #477d5570;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: #477d55;
+}
+
+/* End of scrollbar styles */
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 7rem;
 }
 
 .container {
-  margin-top: 2em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#mainNav {
+  position: -webkit-sticky;
+  /* Safari */
+  position: sticky;
+  top: 0;
+  z-index: 3;
 }
 
 #mainNav,
-footer {
-  background-color: #477D55;
-  border: 5px dotted #FEFDFB;
-  padding: 0;
-}
-
-.nav-item {
-  width: 16.6%;
+.footer {
+  background-color: #477d55;
+  color: #fefdfb;
+  margin: 0;
 }
 
 #mainNav .container-fluid ul {
@@ -31,17 +61,19 @@ footer {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
-  color: #92002A;
-  text-shadow: 1px 1px 3px #FEFDFB;
-  border: 5px solid #477D55;
+  border: 5px solid #477d55;
+  color: #fefdfb;
 }
 
-#mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
-  color: #92002A;
-  font-weight: bold;
-  background-color: #5E8C6A;
-  text-shadow: #FEFDFB 1px 0 10px;
-  border-radius: 15px;
+.navbar-nav .dropdown-menu {
+  background-color: #477d55;
+  border: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.dropdown-item {
+  color: #fefdfb;
 }
 
 img {
@@ -62,29 +94,27 @@ img.product-item-img {
   margin: 0;
 }
 
-.footer {
-  background-color: #477D55;
-  padding: 0;
-  margin: 0;
+.site-heading,
+.page-title {
+  background-color: #28282870;
+  backdrop-filter: blur(1.3px);
 }
 
 .site-heading .site-heading-upper {
-  color: #5E8C6A;
+  color: #5e8c6a;
 }
 
 .site-heading .site-heading-lower {
-  color: #92002A;
-  text-shadow: 1px 1px 2px #FEFDFB;
+  color: #b43858;
 }
 
 .section-heading .section-heading-upper {
-  color: #477D55;
+  color: #477d55;
 }
 
 .section-heading .section-heading-lower {
   font-size: 2rem;
-  color: #92002A;
-  text-shadow: 1px 1px 2px #9c193f;
+  color: #b43858;
 }
 
 body {
@@ -92,64 +122,58 @@ body {
 }
 
 a {
-  color: #5E8C6A;
+  color: #5e8c6a;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #477D55;
-  text-shadow: 1px 1px 2px #5E8C6A;
+  color: #477d55;
   text-decoration: none;
 }
 
 .btn-success,
 a.btn-success {
-  background-color: #477D55;
+  background-color: #477d55;
 }
 
 .btn-success:hover,
 a.btn-success:hover {
-  text-shadow: none;
-  background-color: #5E8C6A;
+  background-color: #5e8c6a;
 }
 
 .btn-danger,
 a.btn-danger {
-  background-color: #92002A;
+  background-color: #b43858;
 }
 
-.btn-danger:hover
-a.btn-danger:hover {
-  text-shadow: none;
+.btn-danger:hover a.btn-danger:hover {
   background-color: #9c193f;
 }
 
 .btn-info,
 a.btn-info {
-  background-color: #FEFDFB;
-  color: #477D55;
-  border: 1px solid #477D55;
+  background-color: #fefdfb;
+  color: #477d55;
+  border: 1px solid #477d55;
 }
 
-btn-info,
+btn-info:hover,
 a.btn-info:hover {
-  text-shadow: none;
-  color: #FEFDFB;
-  background-color: #92002A;
-  border: 1px ridge #477D55;
+  color: #fefdfb;
+  background-color: #b43858;
 }
 
 .cta {
-  background-color: #92002A95;
+  background-color: #b4385895;
 }
 
-.rounded {
-  border-radius: 1rem;
+.cta-inner {
+  border: 0.25rem double #b4385895;
 }
 
 .card.team-member {
-  height: 100%;
+  text-align: center;
 }
 
 .team-member img {
@@ -167,22 +191,13 @@ a.btn-info:hover {
 }
 
 .card {
-  width: 80%;
-  height: 90%;
-  margin: 0 auto;
-  text-align: center;
+  height: 100%;
 }
 
 .site-heading {
-  text-shadow: #FEFDFB 1px 0 2px;
   padding-top: 5rem;
   padding-bottom: 5rem;
   margin: 0;
-}
-
-.page-title .section-heading .section-heading-upper,
-.page-title .section-heading .section-heading-lower {
-  text-shadow: #FEFDFB 1px 0 2px;
 }
 
 .section-heading .section-heading-upper.small-heading {
@@ -197,10 +212,52 @@ form table input {
   width: 100%;
 }
 
-span.helptext {
-  font-size: x-small;
+.btn-lg,
+.btn-xl {
+  font-size: 1.2rem;
 }
 
+footer.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Christmas Countdown styles
+adapted from inline styles in 
+https://www.days-until-christmas.co.uk/webcounts/xcd3248.js) */
+div#xcd3248 {
+  width: 180px;
+  height: 130px;
+  overflow: hidden;
+  font-family: Verdana, Arial;
+  cursor: pointer;
+  background: url(https://www.days-until-christmas.co.uk/webcounts/imgs/xcd1.jpg);
+  text-align: center;
+  line-height: normal;
+  position: relative;
+}
+
+div#xcd3248 div {
+  font-weight: bold;
+  color: #b43858;
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+div#xcd3248 a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  color: transparent;
+}
+
+/* End of Christmas Countdown styles */
+
+
+/* Media queries */
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
@@ -229,36 +286,20 @@ span.helptext {
   }
 }
 
-/* Christmas Countdown styles
-adapted from inline styles in 
-https://www.days-until-christmas.co.uk/webcounts/xcd3248.js) */
-div#xcd3248 {
-  width: 180px;
-  height: 130px;
-  overflow: hidden;
-  font-family: Verdana, Arial;
-  cursor: pointer;
-  background: url(https://www.days-until-christmas.co.uk/webcounts/imgs/xcd1.jpg);
-  text-align: center;
-  line-height: normal;
-  position: relative;
-}
-div#xcd3248 div {
-  font-weight: bold;
-  color: #92002A;
-  position: absolute;
-  left: 0;
-  width: 100%;
-}
-div#xcd3248 a {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 0;
-}
-/* End of Christmas Countdown styles */
-
 @media (min-width: 992px) {
+  body {
+    padding-bottom: 10rem;
+  }
+
+  .nav-item {
+    width: 16.6%;
+  }
+
+  #mainNav .container-fluid .navbar-nav .nav-item .nav-link:hover {
+    background-color: #5e8c6a;
+    border-radius: 0.25rem;
+  }
+
   .product-item-title div {
     width: 60%;
   }
@@ -280,6 +321,15 @@ div#xcd3248 a {
     width: 35%;
     height: auto;
   }
+}
+
+footer .col-lg-9 a {
+  color: #fefdfb;
+}
+
+footer .col-lg-9 a:hover {
+  color: #000000;
+  font-weight: bold;
 }
 
 @media (min-width: 1200px) {
