@@ -44,7 +44,7 @@
     <span class="section-heading-upper">Show me the money</span>
     <span class="section-heading-lower">Payment Details</span>
   </h3>
-  <form action="{% url 'checkout' %}" method="post" id="payment-form">
+  <form action="{% url 'checkout:checkout' %}" method="post" id="payment-form">
     <div id="credit-card-errors" style="display:none">
       <div class="alert-message blockmessage error" id="stripe-error-message"></div>
     </div>
