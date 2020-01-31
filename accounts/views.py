@@ -2,9 +2,9 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from accounts.forms import UserLoginForm, UserRegistrationForm
-from checkout.models import Order, ContactDetails
-from checkout.forms import ContactDetailsForm
+from checkout.models import Order
+from .forms import UserLoginForm, UserRegistrationForm, ContactDetailsForm
+from .models import ContactDetails
 
 
 # Create your views here.

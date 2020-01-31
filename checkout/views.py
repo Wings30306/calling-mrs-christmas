@@ -5,10 +5,10 @@ from django.conf import settings
 from django.utils import timezone
 import stripe
 from services.models import Service
-from checkout.models import OrderLineItem, ContactDetails
-from checkout.forms import OrderForm, MakePaymentForm
+from accounts.models import ContactDetails
 from cart.models import Cart
-
+from .models import OrderLineItem
+from .forms import OrderForm, MakePaymentForm
 
 # Create your views here.
 
