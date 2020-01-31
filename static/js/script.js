@@ -37,3 +37,15 @@ $("[data-toggle='tooltip']").tooltip();
  * Get current year for copyright statement in footer 
  */
 document.getElementById("current-year").innerHTML = new Date().getFullYear()
+
+/**
+ * Highlight current day in contact page - opening hours.
+ * Script adapted from: 
+ * https://github.com/BlackrockDigital/startbootstrap-business-casual/blob/master/store.html
+ * Changed to make sure Monday is index 0, Sunday is index 6. Original table started at Sunday.
+ */
+today = new Date().getDay() - 1
+if (today === -1) {
+  today = 6
+}
+$('.list-hours li').eq(today).addClass('today');
