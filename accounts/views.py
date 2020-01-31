@@ -133,6 +133,8 @@ def user_profile(request):
                 county=county,
                 country=country)
             print(ContactDetails.objects.get(user=request.user))
+        messages.success(
+            request, "Your contact details have been updated, " + request.user.first_name + ".")
         return redirect(reverse("accounts:profile"))
     else:
         user = User.objects.get(username=request.user.username)
