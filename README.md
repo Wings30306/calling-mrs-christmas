@@ -250,7 +250,26 @@ The contact page itself has three sections:
 
 ## Testing
 
-1. To view the default Django admin pages (only accessible to staffmembers), please log in to [ADMIN area](https://callingmrschristmas.herokuapp.com/admin/) as __rozzer__ with password __merryXmas__. (Permissions backstory: Andrew is a staffmember who isn't quite confident around computers, so he can only view items in the admin but not edit or delete them. This account can therefore be used for viewing the instances in models by a tester or an assessor while still preserving the defensive programming that's in place.)
+1. This project does not have automated testing.
+1. The build for the project is tested by [Travis CI](http://travis-ci.org/) automatically after each push.
+1. Most of the testing was done manually by myself during development: build a feature, test it.
+1. Before submitting, this project was also posted in the Slack workspace for Code Institute, in the Peer Code Review channel. If you have access to it, you're welcome to check the [thread](https://code-institute-room.slack.com/archives/CGWQJQKC5/p1580334173051400). A huge thanks to testers [Duncan](https://github.com/ddeveloper72/), [Libby](http://github.com/LibbyH52), [Edel](https://github.com/coderbeez), [Paul](https://github.com/Spagettileg) and [Anthony](https://github.com/auxfuse) for taking the time to help me with this. Bugs found and fixed thanks to their help:
+
+    1. Deleting an item from cart did not work for non-logged in users. This was due to the session cart not being updated, only the Cart instance for logged in users.
+    1. Fixing the above bug meant items could get deleted from cart, but it caused a bug with updating the quantity. This affected all users. It was caused by an oversight with the new_cart variable used to update the cart after removing the item in the "if quantity == 0" part of the function.
+    1. Message after updating contact details wasn't showing. This was because I simply forgot to add it. It has been added now for a better user experience.
+    1. Missing error pages. Hadn't noticed because debug had been left on accidentally. Debug is now turned off and custom error pages have been added. Let Santa help you get back home! [Demo for 404 page](https://callingmrschristmas.herokuapp.com/404)
+    1. Misaligned paragraph showing if a user didn't have orders yet. This was due to the row not having any padding. Padding has been added, it now lines up nicely with the paragraph above.
+
+1. To view the default Django admin pages (only accessible to staffmembers) and check whether a new instance to a model has been added through the forms, please log in to [ADMIN area](https://callingmrschristmas.herokuapp.com/admin/) as **rozzer** with password **merryXmas**. (Permissions backstory: Andrew is a staffmember who isn't quite confident around computers, so he can only view items in the admin but not edit or delete them. This account can therefore be used for viewing the instances in models by a tester or an assessor while still preserving the defensive programming that's in place.)
+
+### Known Bugs
+
+The following bugs were found by fellow students in Code Institute's Slack workspace (see previous section) during testing but not fixed due to lack of time:
+
+- Phone field accepts all characters. This is because the model saves it as a CharField. Django does not have a built-in form field for phone numbers. To be corrected later with a PyPI library (there are a few options but I've not yet found one I could get to work in the time I had left). A suggestion was to make it an IntegerField instead, but I thought it better to save as a string in case a user wants to use special characters or spaces to match their local phone number format.
+- The redirect to profile after registering doesn't appear to work on certain mobiles, notably Samsung Galaxy S8+.
+- The non-breaking dash between the copyright years in the footer looks like an underscore on certain mobiles, notably a Motorola MotoG4. It's also fairly low on a Sony Experia, but not quite as low as an underscore.
 
 ## Deployment
 
