@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static from staticfiles %}
+{% block page_title %}404 error{% endblock %}
+{% block content %}
+<section class="container mt-5 text-center">         
+    <div class="row">
+        <div class="col-sm-12">
+                <a href="{% url 'index' %}"><img class="img-fluid" src="{% static 'img/error.jpg' %}" alt="404 page not found"></a>
+        </div>
+        <div class="col-sm-12 mt-3">
+                <h2 class="section-heading">
+                    <span class="section-heading-upper">The page you were looking for does not exist.</span>
+                    <span class="section-heading-lower">Let Santa help you get back home!</span>
+                </h2>
+        </div>
+    </div>
+</section>
+{% endblock content %}
