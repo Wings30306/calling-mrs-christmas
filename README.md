@@ -97,18 +97,18 @@ For the sake of clarity, I've chosen to document features per app. Apps may have
 
 #### Project-wide features
 
-- the [static](static) folder does exactly what it says: it holds the static files. As such it contains:
-  - images that are not uploaded by a user
-  - css files:
-    - [imported styles from the StartBootstrap template](static/css/business-casual.min.css)
-    - [custom styles for this website](static/css/style.css)
-  - js files:
-    - [stripe.js](static/js/stripe.js) which is refered to in the checkout template to provide payment functionality
-    - [script.js](static/js/script.js) is added to the bottom of the base template body. It holds the script for the Christmas Countdown in the footer as well as the one to activate the tooltips for any helptext in forms.
+- The [static](static) folder does exactly what it says: it holds the static files. As such it contains:
+  - Images that are not uploaded by a user
+  - CSS files:
+    - [Imported styles from the StartBootstrap template](static/css/business-casual.min.css)
+    - [Custom styles for this website](static/css/style.css)
+  - JavaScript files:
+    - [Stripe.js](static/js/stripe.js) which is refered to in the checkout template to provide payment functionality
+    - [Script.js](static/js/script.js) is added to the bottom of the base template body. It holds the script for the Christmas Countdown in the footer as well as the one to activate the tooltips for any helptext in forms.
 - [Templates](templates) at the project's base level holds one file only: the [Base Template](templates/base.html) which is extended with all other templates. This holds the content that is visible on every single page of the website. This includes:
 
-  - the header (larger screens only)
-  - the navbar, which is fixed so it scrolls along til it gets to the top of the viewport and then stays visible. It collapses on mobile screens, showing the company logo and a burger icon to extend the menu. The sticky positioning for the navbar is done with the following CSS:
+  - The header (larger screens only)
+  - The navbar, which is fixed so it scrolls along til it gets to the top of the viewport and then stays visible. It collapses on mobile screens, showing the company logo and a burger icon to extend the menu. The sticky positioning for the navbar is done with the following CSS:
 
   ```css
   #mainNav {
@@ -119,7 +119,7 @@ For the sake of clarity, I've chosen to document features per app. Apps may have
   }
   ```
 
-  - the footer, which contains copyright and, on bigger screens, more information to the left as well as the Christmas Countdown clock to the right. This always stays at the bottom of the page content. In case there's not enough content on a page, it stays at the bottom of the viewport using the following css:
+  - The footer, which contains copyright and, on bigger screens, more information to the left as well as the Christmas Countdown clock to the right. This always stays at the bottom of the page content. In case there's not enough content on a page, it stays at the bottom of the viewport using the following css:
 
   ```css
   body {
@@ -139,19 +139,22 @@ For the sake of clarity, I've chosen to document features per app. Apps may have
 
 This app contains everything about the company. As such, it houses the models for Employee and Case Study. It also contains the templates and views for:
 
-- the home page, which contains the company manifest with a Book Now button redirecting the user to Services, Our Promise To You and a randomly selected case study under the heading Success Story, with a More Like This button linking to the Success Stories page that lists all of them.
-- the About page, which gives the user a bit more information about the company's history and staff members. Clicking or tapping a staff member's card will bring the user to their respective introduction page.
-- the staff member introduction page. This shows a user the respective staff member's profile image, name, title and a short introduction.
-- the casestudies page which shows off all our success stories, not just the one randomly selected one on the home page.
+- The Home page, which contains the company manifest with a Book Now button redirecting the user to Services, Our Promise To You and a randomly selected case study under the heading Success Story, with a More Like This button linking to the Success Stories page that lists all of them.
+- The About page, which gives the user a bit more information about the company's history and staff members. Clicking or tapping a staff member's card will bring the user to their respective introduction page.
+- The Staffmember Introduction page. This shows a user the respective staff member's profile image, name, title and a short introduction.
+- The Casestudies page which shows off all our success stories, not just the one randomly selected one on the home page.
 
 #### Accounts
 
 As the name says, this app deals with everything account-related. As such, it houses the login, register, logout and profile functionality as well as the urls and templates for password reset. Features for this app:
 
-- register: allows users to create an account. Fields on the form: - username (this has to be unique) - email (this has to be unique) - first name - last name - password - password confirmation (has to be equal to password)
-- login: allows users to log into their account with their email or username and their chosen password. Fields on the form: - Username/email - Password
-- profile: this page brings together everything related to the current user in one place: - past purchases (from Order model in checkout app) - sent messages and the replies to them - account details (listed, not editable) - contact details (editable form). Logging in is mandatory so users cannot change each other's details.
-- logout: clicking or tapping this item on the dropdown menu in the navbar will log a user out and redirect them to the main page with a message to tell them "Thank you for visiting".
+- Register: allows users to create an account. Fields on the form: - username (this has to be unique) - email (this has to be unique) - first name - last name - password - password confirmation (has to be equal to password)
+- Login: allows users to log into their account with their email or username and their chosen password. Fields on the form: - Username/email - Password
+- Profile: this page brings together everything related to the current user in one place: - past purchases (from Order model in checkout app) - sent messages and the replies to them - account details (listed, not editable) - contact details (editable form). Logging in is mandatory so users cannot change each other's details.
+- Logout: clicking or tapping this item on the dropdown menu in the navbar will log a user out and redirect them to the main page with a message to tell them "Thank you for visiting".
+- Password reset functionality (built into Django, but I've extended the templates to match the rest of the site)
+
+It's also where the model for Contact Details and the accompanying form are housed so contact details can be saved by a user.
 
 #### Services
 
@@ -176,22 +179,22 @@ This app also only contains one page, the checkout page which allows the user to
 It also contains two models:
 
 - Order: contains the order-related data:
-  - delivery address
-  - date of booking
+  - Delivery address
+  - Date of booking
 - Order Line Item: contains one service booked for this order and its quantity. Multiple per order allowed.
 
 #### Contact
 
 This app contains the contact information for the company. It has two models:
 
-- Location: allows the staff to add more locations if the company expands. Currently only has one instance which is the head office.
+- Location: allows the staff to add more locations if the company expands. Currently only has one instance which is the head office. In case the head office instance accidentally gets deleted, this info is set to load as default when creating a new instance of the model.
 - Contact Message: This model will save the messages sent by users so the staff can respond to them. It's also connected to the User Profile page where a user can see their messages, provided they were logged in at the time of sending it.
 
 The contact page itself has three sections:
 
-- a contact form where the user can send their message
-- the address details for every location (currently, only the head office)
-- the opening hours with a script to mark the current day (from the original Business Casual template)
+- A contact form where the user can send their message
+- The address details for every location (currently, only the head office)
+- The opening hours with a script to mark the current day (adapted from the original Business Casual template)
 
 ### Features Left to Implement
 
@@ -220,8 +223,9 @@ The contact page itself has three sections:
 
 - [Django](https://www.djangoproject.com/)
   - The Python framework used for this project is Django. This comes with a lot of functionality out of the box, for example:
-    - user authentication: Django has user authentication out of the box. I did expand upon this to include a password confirmation check and linked it up to my own templates.
-    - admin: This allows staff (and ONLY staff) to see non-styled pages (i.e. with standard Django styling) where they can check orders, reply to messages, update their own profile, update the location information...
+    - User authentication: Django has user authentication out of the box. I did expand upon this to include a password confirmation check and linked it up to my own templates.
+    - Password reset
+    - Admin: This allows staff (and ONLY staff) to see non-styled pages (i.e. with standard Django styling) where they can check orders, reply to messages, update their own profile, update the location information...
 - [Bootstrap](https://getbootstrap.com/):
   - The Bootstrap framework was used to help with template layout:
     - the Bootstrap grid is very helpful in terms of mobile-first development. One example I used in the project is to use the d-none class on the header to hide it on mobile screens so it doesn't take up unnecessary real-estate, then use d-md-block to display it on medium to large screens.
@@ -244,27 +248,9 @@ The contact page itself has three sections:
 - [Font Awesome](https://fontawesome.com/) was used for the icons in this website, for example for the cart and user in the navbar and on some of the buttons.
 - Fonts for the text in this project came from [Google Fonts](https://fonts.google.com/). The specific fonts used are [Lora](https://fonts.google.com/specimen/Lora), the main font used throughout the site, and [Raleway](https://fonts.google.com/specimen/Raleway) which is used for the larger font in the headings. Both were used in the original template and refered to in the page head - I've moved them instead to be imported in the [Business Casual CSS file](static/css/business-casual.min.css).
 
-<!--
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
-
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
-
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-   1. Go to the "Contact Us" page
-   2. Try to submit the empty form and verify that an error message about the required fields appears
-   3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-   4. Try to submit the form with all inputs valid and verify that a success message appears.
-
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
-
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
-
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
--->
+1. To view the default Django admin pages (only accessible to staffmembers), please log in to [ADMIN area](https://callingmrschristmas.herokuapp.com/admin/) as __rozzer__ with password __merryXmas__. (Permissions backstory: Andrew is a staffmember who isn't quite confident around computers, so he can only view items in the admin but not edit or delete them. This account can therefore be used for viewing the instances in models by a tester or an assessor while still preserving the defensive programming that's in place.)
 
 ## Deployment
 
@@ -285,7 +271,7 @@ This project is hosted on [Heroku](https://heroku.com). It's been deployed using
 1. You now have the choice to enable automatic deploys or deploy manually. _This project uses automated deployment_
 1. Your project will need to contain the following in order for Heroku to deploy it:
 
-   - a Procfile: this specifies the commands that are executed by the app on startup. You can use a Procfile to declare a variety of process types, including:
+   - A Procfile: this specifies the commands that are executed by the app on startup. You can use a Procfile to declare a variety of process types, including:
 
      - Your app’s web server
      - Multiple types of worker processes
@@ -300,9 +286,9 @@ This project is hosted on [Heroku](https://heroku.com). It's been deployed using
 
      _To allow this to run, gunicorn was added to the [requirements](requirements.txt)_
 
-   - a requirements.txt file. This tells Heroku which dependencies need to be installed in order for the project to run. It's created by using the command `pip install` + the name of any dependencies you have (for example, Flask needs to be installed for this project) in the terminal of your prefered editor, followed by the command `pip freeze > requirements.txt` which will write the installed dependencies to a text file which Heroku then installs using `pip install requirements.txt`.
+   - A requirements.txt file. This tells Heroku which dependencies need to be installed in order for the project to run. It's created by using the command `pip install` + the name of any dependencies you have (for example, Flask needs to be installed for this project) in the terminal of your prefered editor, followed by the command `pip freeze > requirements.txt` which will write the installed dependencies to a text file which Heroku then installs using `pip install requirements.txt`.
 
-1. Add a PostgreSQL database Plug-In. This will generate a database url in the Config vars
+1. Add a PostgreSQL database Plug-In. This will generate a database url in the Config vars.
 1. Go to settings in the Heroku tab. Click "Reveal Config Vars". Add the relevant environment variables you've used in your project to the Config Vars so Heroku can access them. Specifically, for this particular project, that means the following Config Vars were added:
    - DATABASE_URL (for PostgreSQL as detailed in the previous step)
    - DEBUG (set to 0 to turn off Debug mode in the deployed version. Locally, in development, this variable was set to 1.)
@@ -346,7 +332,7 @@ This project is hosted on [Heroku](https://heroku.com). It's been deployed using
 
 - The following images were obtained from Pexels:
 
-  - Background:
+  - Background: [Photo by Giftpundits.com](https://www.pexels.com/photo/red-white-and-brown-gift-boxes-1303081/)
   - Intro: [Photo by Thanakorn Phanthura](https://www.pexels.com/photo/man-and-woman-standing-beside-christmas-tree-3183385/)
   - About: [Photo by Oleg Magni](https://www.pexels.com/photo/green-christmas-tree-with-baubles-1762887/)
   - Team: [Photo by fauxels](https://www.pexels.com/photo/photo-of-people-leaning-on-wooden-table-3184325/)
@@ -361,6 +347,7 @@ This project is hosted on [Heroku](https://heroku.com). It's been deployed using
   - Tree Delivery: [Photo by Dids](https://www.pexels.com/photo/shallow-focus-photography-of-green-coniferous-tree-2456348/)
   - Tree Decorating: [Photo by cottonbro](https://www.pexels.com/photo/two-girls-putting-decorations-on-a-christmas-tree-3154322/)
   - Decorations for Rent: [Photo By Paola L](https://www.pexels.com/photo/gray-blue-and-gold-colored-baubles-790155/)
+  - Error page image: [Photo by bruce mars](https://www.pexels.com/photo/man-in-santa-claus-costume-716658/)
 
 - Images not from Pexels:
 
