@@ -1,8 +1,11 @@
+<!-- Base page.
+  This holds all the elements that are present on each and every page
+ -->
 {% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
-
+<!-- Head (with metadata and CSS-links) -->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,14 +23,13 @@
   <!-- Custom styles for this site-->
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 </head>
-
+<!-- end of head -->
 <body>
-
+  <!-- header only shows on large screens -->
   <h1 class="site-heading text-center text-white d-none d-lg-block">
     <span class="site-heading-upper mb-3">Your one-stop-shop for Christmas help</span>
     <span class="site-heading-lower">Calling Mrs Christmas</span>
   </h1>
-
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
     <div class="container-fluid">
@@ -89,22 +91,20 @@
       </div>
     </div>
   </nav>
+  <!-- This code shows messages to user if any exist -->
   {% if messages %}
-  <div class="alert text-center cta" role="alert">
-    <div class="container">
-      <div class="cta-inner">
-        {% for message in messages %}
-        <p>
-          {{ message|safe }}
-        </p>
-        {% endfor %}
-      </div>
-    </div>
-    {% endif %}
+  <div class="alert alert-success text-center" role="alert">
+    {% for message in messages %}
+    <p>
+    {{ message|safe }}
+    </p>
+    {% endfor %}
   </div>
-
+  {% endif %}
+  <!-- This is where the page content will be shown -->
   {% block content %}
   {% endblock %}
+  <!-- Footer -->
   <footer class="footer text-center">
     <div class="container-fluid p-0">
       <div class="row m-0">
@@ -132,12 +132,15 @@
       </div>
     </div>
   </footer>
+  <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
   <script src="{% static 'js/script.js' %}"></script>
+  <!-- custom scripts for a specific template -->
   {% block custom_scripts_js %}
   {% endblock %}
+  <!-- END OF PAGE-->
 </body>
 
 </html>
