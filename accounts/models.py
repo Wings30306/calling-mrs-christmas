@@ -14,4 +14,4 @@ class ContactDetails(models.Model):
     country = models.CharField(max_length=40, blank=False)
 
     def __str__(self):
-        return str(self.user) + " - " + self.full_name
+        return self.user.username + " - " + self.full_name
