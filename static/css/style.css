@@ -1,6 +1,17 @@
+/* override default left and right margins */
 * {
   margin-left: 0;
   margin-right: 0;
+}
+
+/* Body styles */
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 7rem;
+  background-color: #28282810;
+  backdrop-filter: blur(1.6px);
+  background-position: right;
 }
 
 /* Scrollbar styling: adapted from https://css-tricks.com/custom-scrollbars-in-webkit/ */
@@ -19,21 +30,22 @@
   background-color: #477d55;
 }
 
-/* End of scrollbar styles */
-
-body {
-  min-height: 100vh;
-  position: relative;
-  padding-bottom: 7rem;
-  background-color: #28282810;
-  backdrop-filter: blur(1.3px);
+/* Header styles */
+.site-heading {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  margin: 0;
 }
 
-.container {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+.site-heading .site-heading-upper {
+  color: #5e8c6a;
 }
 
+.site-heading .site-heading-lower {
+  color: #b43858;
+}
+
+/* Navbar styles */
 #mainNav {
   position: -webkit-sticky;
   /* Safari */
@@ -74,8 +86,21 @@ body {
   text-align: center;
 }
 
-.dropdown-item {
+.navbar-nav .dropdown-menu .dropdown-item {
   color: #fefdfb;
+}
+
+.navbar-brand img {
+  width: 60vw;
+  height: auto;
+  border-radius: 0;
+  margin: 0;
+}
+
+/* General styles to be applied on every page */
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 img {
@@ -89,21 +114,7 @@ img.product-item-img {
   margin: 0;
 }
 
-.navbar-brand img {
-  width: 50vw;
-  height: auto;
-  border-radius: 0;
-  margin: 0;
-}
-
-.site-heading .site-heading-upper {
-  color: #5e8c6a;
-}
-
-.site-heading .site-heading-lower {
-  color: #b43858;
-}
-
+/* Section heading */
 .section-heading .section-heading-upper {
   color: #477d55;
 }
@@ -113,10 +124,7 @@ img.product-item-img {
   color: #b43858;
 }
 
-body {
-  background-position: right;
-}
-
+/* Links */
 a {
   color: #5e8c6a;
   text-decoration: none;
@@ -128,6 +136,7 @@ a:hover {
   text-decoration: none;
 }
 
+/* Buttons */
 .btn-success,
 a.btn-success {
   background-color: #477d55;
@@ -160,6 +169,16 @@ a.btn-info:hover {
   background-color: #b43858;
 }
 
+.btn-fluid {
+  width: 100%;
+}
+
+.btn-lg,
+.btn-xl {
+  font-size: 1.2rem;
+}
+
+/* Call To Action */
 .cta {
   background-color: #b4385895;
 }
@@ -168,6 +187,7 @@ a.btn-info:hover {
   border: 0.25rem double #b4385895;
 }
 
+/* Team member profiles */
 .card.team-member {
   text-align: center;
 }
@@ -190,35 +210,11 @@ a.btn-info:hover {
   height: 100%;
 }
 
-.site-heading {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  margin: 0;
-}
-
 .section-heading .section-heading-upper.small-heading {
   font-size: 1.3rem;
 }
 
-.btn-fluid {
-  width: 100%;
-}
-
-form table input {
-  width: 100%;
-}
-
-.btn-lg,
-.btn-xl {
-  font-size: 1.2rem;
-}
-
-footer.footer {
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-}
-
+/* Contact page opening hours */
 .list-hours .list-hours-item {
   font-family: Raleway, sans-serif;
   font-style: normal;
@@ -226,6 +222,13 @@ footer.footer {
 
 .list-hours .list-hours-item.today {
   color: #477d55;
+}
+
+
+footer.footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 
 /* Christmas Countdown styles
@@ -259,16 +262,15 @@ div#xcd3248 a {
   color: transparent;
 }
 
-/* End of Christmas Countdown styles */
-
-
 /* Media queries */
+/* Larger or landscape-positioned phones */
 @media screen and (min-width: 481px) {
   .section-heading .section-heading-lower {
     font-size: 2.5rem;
   }
 }
 
+/* Tablets */
 @media screen and (min-width: 769px) {
   #mainNav .container-fluid .navbar-nav .nav-item .nav-link {
     font-size: 2em;
@@ -291,6 +293,7 @@ div#xcd3248 a {
   }
 }
 
+/* Large tablet (eg. iPad Pro) or laptop */
 @media (min-width: 992px) {
   body {
     padding-bottom: 10rem;
@@ -333,10 +336,10 @@ footer .col-lg-9 a {
 }
 
 footer .col-lg-9 a:hover {
-  color: #000000;
-  font-weight: bold;
+  color: #28282890;
 }
 
+/* Large screens */
 @media (min-width: 1200px) {
   .container {
     max-width: 80%;
