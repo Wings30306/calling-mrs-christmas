@@ -56,11 +56,13 @@
           </li>
           {% if count > 0 %}
           <li class="nav-item">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'cart:view_cart' %}"><i
-                class="fas fa-shopping-cart"></i>
-                {% if count > 0 %}
-              <span class="badge badge-pill badge-warning">{{ count }}</span>
-              {% endif %}</a>
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'cart:view_cart' %}">
+              <i class="fas fa-shopping-cart"></i>
+              <!-- This code is uncommented so the badge can be readded later when service packages are added. Currently it only causes confusion, so leaving it out.
+              {% if count > 0 %}
+              <span class="badge badge-light">{{ count }}</span>
+              {% endif %} -->
+            </a>
           </li>
           {% endif %}
           <li class="nav-item dropdown">
