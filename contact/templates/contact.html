@@ -3,7 +3,10 @@
 {% load bootstrap_tags %}
 {% block content %}
 <section class="container bg-faded rounded my-3 p-3 text-center">
-  <h2>Contact form</h2>
+  <h2 class="section-heading">
+    <span class="section-heading-upper">Contact form</span>
+    <span class="section-heading-lower">We'd love to hear from you!</span>
+  </h2>
   <form method="POST">
     {% csrf_token %}
     {% for field in form %}
@@ -93,19 +96,11 @@
             <p>{{ location.number }} {{ location.street }}</p>
             <p>{{ location.town }}</p>
             <p>{{ location.postcode }}</p>
-            <p>
-              <a href="https://www.latlong.net/c/?lat={{ location.latitude }}&long={{ location.longitude }}"
-                target="_blank">View on map</a>
-            </p>
             <p><a href="mailto:{{ location.email }}">Email us!</a></p>
           </div>
 
           <div class="col-md-8">
-            {% if location.image %}
-            <img src="{{ MEDIA_URL }}{{ location.image }}" alt="Photo of our office in {{ location.town }}" />
-            {% else %}
-            <img src="{% static 'img/image-to-be-added.jpg' %}" alt="Image to be added">
-            {% endif %}
+            <img src="{% static 'img/team.jpg' %}" alt="the team at {{ location.town }}">
           </div>
         </div>
         {% empty %}
