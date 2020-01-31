@@ -4,6 +4,7 @@ from services.models import Service
 
 # Create your models here.
 class Order(models.Model):
+    """ Model to save order data: user, contact number, delivery address """
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)
@@ -20,6 +21,7 @@ class Order(models.Model):
 
 
 class OrderLineItem(models.Model):
+    """ Model to save ordered service and quantity """
     order = models.ForeignKey(Order, null=False, on_delete=models.CASCADE)
     service = models.ForeignKey(Service, null=False, on_delete=models.CASCADE)
     quantity = models.IntegerField(blank=False)

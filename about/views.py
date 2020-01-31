@@ -50,7 +50,7 @@ def detail_view(request, user):
     return render(request, template_name, context)
 
 def casestudy_list_view(request):
-    """ Render index page with case study as success story """
+    """ Render a list of case studies """
     template_name = "casestudies.html"
     queryset = CaseStudy.objects.all()
     context = {

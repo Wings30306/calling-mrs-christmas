@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class ContactDetails(models.Model):
+    """ Save contact details to populate order form if user chooses this option """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=50, blank=False)
     phone_number = models.CharField(max_length=20, blank=False)

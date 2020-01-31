@@ -164,15 +164,3 @@ def user_profile(request):
             "purchases": purchases
         }
     return render(request, 'profile.html', context)
-
-
-@login_required
-def edit_profile(request):
-    """Allow user to edit their profile info"""
-    form = UserRegistrationForm
-    context = {
-        "form": form,
-        "form_title": "Edit my profile",
-        "button_text": "Save"
-    }
-    return render(request, "form.html", context)

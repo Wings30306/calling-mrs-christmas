@@ -61,6 +61,7 @@ class UserRegistrationForm(UserCreationForm):
                   'last_name', 'password1', 'password2']
 
     def clean_email(self):
+        """ Validate email data """
         email = self.cleaned_data.get('email')
         username = self.cleaned_data.get('username')
         if User.objects.filter(email=email).exclude(username=username):
@@ -68,6 +69,7 @@ class UserRegistrationForm(UserCreationForm):
         return email
 
     def clean_password2(self):
+        """ Make sure password inputs are identical """
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
         if not password1 or not password2:
@@ -77,6 +79,7 @@ class UserRegistrationForm(UserCreationForm):
         return password2
 
 class ContactDetailsForm(forms.ModelForm):
+    """ Form to save contact details from profile """
     class Meta:
         model = ContactDetails
         fields = ('user', 'full_name', 'phone_number', 'street_address1', 'street_address2',

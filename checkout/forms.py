@@ -3,7 +3,8 @@ from .models import Order
 
 
 class MakePaymentForm(forms.Form):
-
+    """ Prepare the form for input of credit card details:
+    expiry date, credit card number, CVV """
     MONTH_CHOICES = [(i, i) for i in range(1, 12+1)]
     YEAR_CHOICES = [(i, i) for i in range(2020, 2038)]
 
@@ -31,6 +32,9 @@ class MakePaymentForm(forms.Form):
 
 
 class OrderForm(forms.ModelForm):
+    """ Form for input of user data: contact details for delivery address.
+    Not related to ContactDetails model, though it can be used to populate it
+    if the user checks a checkbox """
     class Meta:
         model = Order
         fields = ('user', 'full_name', 'phone_number', 'street_address1', 'street_address2',
@@ -80,4 +84,3 @@ class OrderForm(forms.ModelForm):
                        "default": "United Kingdom"
                    }),
                    }
-

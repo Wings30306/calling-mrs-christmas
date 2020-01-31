@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 
 class Employee(models.Model):
+    """ Model to save employee profile data """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     intro = models.TextField()
@@ -19,6 +20,7 @@ class Employee(models.Model):
 
 
 class CaseStudy(models.Model):
+    """ Model to save case study to showcase to visitors """
     title = models.CharField(max_length=100)
     client_first_name = models.CharField(max_length=100)
     client_last_name_initial = models.CharField(

@@ -17,6 +17,8 @@ stripe.api_key = settings.STRIPE_SECRET
 
 @login_required
 def checkout_view(request):
+    """ Render checkout page,
+    on post check payment details and process order """
     if request.method == "POST":
         order_form = OrderForm(request.POST)
         order_dict = order_form.__dict__

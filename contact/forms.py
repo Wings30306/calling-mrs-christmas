@@ -4,6 +4,7 @@ from .models import ContactMessage
 
 
 class ContactForm(forms.ModelForm):
+    """ Form for the input of contact messages """
     class Meta:
         model = ContactMessage
         fields = [

@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class Location(models.Model):
+    """ model for saving location details so users can visit in person """
     street = models.CharField(max_length=100, default="High Street")
     number = models.DecimalField(max_digits=5, decimal_places=0, default="120")
     postcode = models.CharField(max_length=12, default="HP1 3AR")
@@ -13,12 +14,15 @@ class Location(models.Model):
     email = models.EmailField(default="info@callingmrschristmas.com")
 
     def get_absolute_url(self):
+        """ sets the absolute url for a location """
         return reverse("contact:location", kwargs={"pk": self.id})
 
     def __str__(self):
         return self.town
 
 class ContactMessage(models.Model):
+    """ Model for saving contact messages sent by users in the contact page
+    Also saves admin replies """
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=50)
     email = models.EmailField()
