@@ -1,10 +1,8 @@
-# Calling Mrs Christmas
+# Calling Mrs Christmas ![alt text](https://travis-ci.com/Wings30306/callingmrschristmas.svg?branch=master "Build status")
 
 Calling Mrs Christmas! You haven't got the time or the energy for Christmas this year but still want to enjoy a nicely decorated tree? You want to have a Christmas party for your office, family or friends but don't know where to start? You want a lavish getaway with the people closest to you? We can help!
 
 Cassie and her mischievous little elves have been working hard to make their clients' Christmases magical since 2013, from getting those beloved baubles down from the attic to lavish holidays to Lapland, the home of Santa himself, including a visit to the world-famous Ice Hotel. Want to see what we have to offer? Find out more at [Calling Mrs Christmas](https://callingmrschristmas.herokuapp.com)!
-
-Current build continuous integration status: ![alt text](https://travis-ci.com/Wings30306/callingmrschristmas.svg?branch=master "Build status")
 
 ## UX
 
@@ -290,22 +288,22 @@ This project is hosted on [Heroku](https://heroku.com). It's been deployed using
 1. You now have the choice to enable automatic deploys or deploy manually. _This project uses automated deployment_
 1. Your project will need to contain the following in order for Heroku to deploy it:
 
-   - A Procfile: this specifies the commands that are executed by the app on startup. You can use a Procfile to declare a variety of process types, including:
+    - A Procfile: this specifies the commands that are executed by the app on startup. You can use a Procfile to declare a variety of process types, including:
 
-     - Your app’s web server
-     - Multiple types of worker processes
-     - A singleton process, such as a clock
-     - Tasks to run before a new release is deployed.
+        - Your app’s web server
+        - Multiple types of worker processes
+        - A singleton process, such as a clock
+        - Tasks to run before a new release is deployed.
 
-     _In the case of this project, the Procfile contains only a single line:_
+      _In the case of this project, the Procfile contains only a single line:_
 
-     ```yml
-     web: gunicorn callingmrschristmas.wsgi:application
-     ```
+      ```yml
+      web: gunicorn callingmrschristmas.wsgi:application
+      ```
 
-     _To allow this to run, gunicorn was added to the [requirements](requirements.txt)_
+      _To allow this to run, gunicorn was added to the [requirements](requirements.txt)_
 
-   - A requirements.txt file. This tells Heroku which dependencies need to be installed in order for the project to run. It's created by using the command `pip install` + the name of any dependencies you have (for example, Flask needs to be installed for this project) in the terminal of your prefered editor, followed by the command `pip freeze > requirements.txt` which will write the installed dependencies to a text file which Heroku then installs using `pip install requirements.txt`.
+    - A requirements.txt file. This tells Heroku which dependencies need to be installed in order for the project to run. It's created by using the command `pip install` + the name of any dependencies you have (for example, Flask needs to be installed for this project) in the terminal of your prefered editor, followed by the command `pip freeze > requirements.txt` which will write the installed dependencies to a text file which Heroku then installs using `pip install requirements.txt`.
 
 1. Add a PostgreSQL database Plug-In. This will generate a database url in the Config vars.
 1. Go to settings in the Heroku tab. Click "Reveal Config Vars". Add the relevant environment variables you've used in your project to the Config Vars so Heroku can access them. Specifically, for this particular project, that means the following Config Vars were added:
