@@ -61,31 +61,21 @@ The original inspiration for the lay-out, and also part of the source code, was 
 1. Add a countdown to Christmas in the footer.
 1. Make the pages dynamic Django templates rather than hardcoded plain HTML pages.
 
-#### Wireframes
+### Wireframes
 
-Wireframes were created in Paint to speed up creating them.
-The following wireframes were used:
+Wireframes were created in Paint. I've included the wireframes for the homepage on different screen sizes here in the README. You can find the others in the [wireframes folder](wireframes).
 
-##### Mobile
+#### Mobile Phone (portrait mode)
 
-To be added
+![Wireframe for Home Page on mobile](wireframes/homepage-mobile.jpg "Home page")
 
-##### Tablet
+#### Mobile Phone (landscape mode), Tablet (portrait mode)
 
-To be added
+![Wireframe for Home Page on Tablet](wireframes/homepage-tablet.jpg "Home page")
 
-##### Desktop
+#### Tablet (landscape mode), Large Tablet, Laptop, Desktop
 
-1. Home page:
-   ![Wireframe for Home page](readme-files/wireframes/homepage-desktop.jpg "Home page")
-1. About page:
-   ![Wireframe for About page](readme-files/wireframes/about-desktop.jpg "about page")
-1. Services & Services by Category pages:
-   ![Wireframe for Services pages](readme-files/wireframes/services-desktop.jpg "Services pages")
-1. Service detail page and staffmember page:
-   ![Wireframe for detail page](readme-files/wireframes/detail-desktop.jpg "detail page")
-1. Cart page:
-   ![Wireframe for Cart page](readme-files/wireframes/cart-desktop.jpg "Cart page")
+![Wireframe for Home Page on Desktop](wireframes/homepage-desktop.jpg "Home page")
 
 ## Features
 
