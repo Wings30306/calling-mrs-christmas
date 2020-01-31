@@ -25,6 +25,8 @@ body {
   min-height: 100vh;
   position: relative;
   padding-bottom: 7rem;
+  background-color: #28282810;
+  backdrop-filter: blur(1.3px);
 }
 
 .container {
@@ -92,12 +94,6 @@ img.product-item-img {
   height: auto;
   border-radius: 0;
   margin: 0;
-}
-
-.site-heading,
-.page-title {
-  background-color: #28282870;
-  backdrop-filter: blur(1.3px);
 }
 
 .site-heading .site-heading-upper {
