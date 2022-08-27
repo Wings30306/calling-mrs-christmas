@@ -1,3 +1,5 @@
 .xmas/
 .vscode/
 *__pycache__/
+env.py
+db.sqlite3

@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
+if os.path.isfile("env.py"):
+    import env
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,13 +23,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'os.environ.get("SECRET_KEY")'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(os.getenv("DEV"))
+DEBUG = True
 
-ALLOWED_HOSTS = [os.getenv("HOSTNAME")]
-
+ALLOWED_HOSTS = ["localhost", os.getenv("HOSTNAME")]
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
@@ -89,7 +93,7 @@ WSGI_APPLICATION = 'callingmrschristmas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if os.getenv("DATABASE_URL"):
+if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(
         os.environ.get('DATABASE_URL'))}
 else:
